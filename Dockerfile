@@ -10,7 +10,7 @@ RUN useradd -md /home/tomcat -u 1001 tomcat
 USER tomcat
 WORKDIR /home/tomcat
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz -O tomcat.tar.gz && \
-    tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && chmod a+x /home/tomcat/apache-tomcat-8.5.78/bin/*
+    tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && chown -R tomcat:tomcat /home/tomcat/ && chmod a+x /home/tomcat/apache-tomcat-8.5.78/bin/*
 EXPOSE 8080/tcp
 
 ENV PATH ${PATH}:/home/tomcat/apache-tomcat-8.5.78/bin/

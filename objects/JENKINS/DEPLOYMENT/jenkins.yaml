@@ -14,12 +14,15 @@ spec:
         app: jenkins
     spec:
       volumes:
+      - name: certs-jenkins-openshift
+        secret:
+          secretName: certs-jenkins-openshift
       - name: jenkins-pvc
         persistentVolumeClaim:
           claimName: jenkins-pvc
       containers:
         - name: container-0
-          image: default-route-openshift-image-registry.apps-crc.testing/portic-devops/jenkins:2.319.2-alpine
+          image: default-route-openshift-image-registry.apps-crc.testing/portic-devops/jenkins-docker:v1
           imagePullPolicy: Always
           ports:
             - name: http-port
@@ -29,3 +32,5 @@ spec:
           volumeMounts:
           - mountPath: /var/jenkins_home
             name: jenkins-pvc
+          - mountPath: /etc/docker/certs.d/192.168.130.11:5000/
+            name: certs-jenkins-openshift

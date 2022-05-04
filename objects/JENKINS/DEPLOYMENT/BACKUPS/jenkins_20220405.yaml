@@ -1,0 +1,224 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "28"
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"jenkins","namespace":"portic-devops"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"jenkins"}},"template":{"metadata":{"labels":{"app":"jenkins"}},"spec":{"containers":[{"image":"default-route-openshift-image-registry.apps-crc.testing/portic-devops/jenkins-docker:v1","imagePullPolicy":"Always","name":"container-0","ports":[{"containerPort":8080,"name":"http-port"},{"containerPort":50000,"name":"jnlp-port"}],"volumeMounts":[{"mountPath":"/var/jenkins_home","name":"jenkins-pvc"},{"mountPath":"/etc/docker/certs.d/192.168.130.11:5000/","name":"certs-jenkins-openshift"}]}],"volumes":[{"name":"certs-jenkins-openshift","secret":{"secretName":"certs-jenkins-openshift"}},{"name":"jenkins-pvc","persistentVolumeClaim":{"claimName":"jenkins-pvc"}}]}}}}
+  creationTimestamp: "2022-05-04T14:14:09Z"
+  generation: 38
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app: {}
+          f:spec:
+            f:containers:
+              k:{"name":"container-0"}:
+                .: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":8080,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                  k:{"containerPort":50000,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/var/jenkins_home"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"certs-jenkins-openshift"}:
+                .: {}
+                f:name: {}
+                f:secret:
+                  .: {}
+                  f:defaultMode: {}
+                  f:secretName: {}
+              k:{"name":"jenkins-pvc"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2022-05-04T16:28:29Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:template:
+          f:spec:
+            f:containers:
+              k:{"name":"container-0"}:
+                f:securityContext: {}
+                f:volumeMounts:
+                  k:{"mountPath":"/etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing/"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+    manager: Mozilla
+    operation: Update
+    time: "2022-05-04T19:11:42Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:template:
+          f:spec:
+            f:containers:
+              k:{"name":"container-0"}:
+                f:image: {}
+                f:securityContext:
+                  f:privileged: {}
+                  f:runAsUser: {}
+    manager: kubectl-edit
+    operation: Update
+    time: "2022-05-04T22:10:00Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    subresource: status
+    time: "2022-05-04T22:10:05Z"
+  name: jenkins
+  namespace: portic-devops
+  resourceVersion: "322057"
+  uid: cf743722-a38e-4abf-98cf-aea5fa6f27fc
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: jenkins
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jenkins
+    spec:
+      containers:
+      - image: default-route-openshift-image-registry.apps-crc.testing/portic-devops/jenkins:1.0
+        imagePullPolicy: Always
+        name: container-0
+        ports:
+        - containerPort: 8080
+          name: http-port
+          protocol: TCP
+        - containerPort: 50000
+          name: jnlp-port
+          protocol: TCP
+        resources: {}
+        securityContext:
+          privileged: true
+          runAsUser: 0
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/jenkins_home
+          name: jenkins-pvc
+        - mountPath: /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing/
+          name: certs-jenkins-openshift
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: certs-jenkins-openshift
+        secret:
+          defaultMode: 420
+          secretName: certs-jenkins-openshift
+      - name: jenkins-pvc
+        persistentVolumeClaim:
+          claimName: jenkins-pvc
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2022-05-04T19:47:38Z"
+    lastUpdateTime: "2022-05-04T19:47:38Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2022-05-04T14:14:09Z"
+    lastUpdateTime: "2022-05-04T22:10:05Z"
+    message: ReplicaSet "jenkins-f9d69b589" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 38
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
