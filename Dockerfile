@@ -1,4 +1,4 @@
-FROM redhat/ubi8
+FROM docker.io/redhat/ubi8
 
 LABEL MAINTAINER=cmajo@kyndryl.com
 
