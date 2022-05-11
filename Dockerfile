@@ -10,6 +10,7 @@ WORKDIR /home/tomcat
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz -O tomcat.tar.gz && \
     tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz  && chmod a+x /home/tomcat/apache-tomcat-8.5.78/bin/*
 ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat-8.5.78/webapps/
+COPY daemon.json /etc/docker/
 RUN chown -R tomcat:tomcat /home/tomcat/ 
 USER tomcat
 EXPOSE 8080/tcp
