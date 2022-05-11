@@ -1,3 +1,0 @@
-{
-    "insecure-registries" : ["image-registry.openshift-image-registry.svc:5000","default-route-openshift-image-registry.apps-crc.testing","default-route-openshift-image-registry.apps-crc.testing:443"]
-}
