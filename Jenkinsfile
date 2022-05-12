@@ -5,6 +5,6 @@ node {
 		customImage.push("latest")	
 	}	
 	//sh "docker image prune --all --force"
-	sh "docker image prune --force --filter=until="$(date -d '7 days ago' +'%Y-%M-%dT00:00:00')"
+	sh "docker image prune --force --filter=until="$(date -d \'7 days ago\' +'%Y-%M-%dT00:00:00')"
 }
 
