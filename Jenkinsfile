@@ -6,9 +6,6 @@ node {
 		customImage.push("latest")
 		
 	}	
-	job('example-1') {
-    steps {
-        shell('docker images')
-    }
+	sh "docker images"
 }
 
