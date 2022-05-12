@@ -5,7 +5,7 @@ node {
 	"DOCKER_TLS_CERTDIR= /certs"
 	]) {
 	checkout scm
-	docker.withRegistry('https://quay.io','quay.io'){
+	docker.withRegistry('https://docker.io'){
 		def customImage = docker.build("cmajo/portic-devops/tomcat8-portic:latest")
 		customImage.push()
 	}
