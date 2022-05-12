@@ -6,6 +6,6 @@ node {
 		customImage.push("latest")
 		
 	}	
-	sh "docker images"
+	sh "docker image prune --all --force"
 }
 
