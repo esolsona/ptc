@@ -1,13 +1,9 @@
-#FROM jenkins/jenkins:2.332.2-jdk11
-FROM bitnami/jenkins:latest
+FROM jenkins/jenkins:2.332.2-jdk11
 USER root
-RUN apt update && apt install -y docker* > /dev/null
-RUN apt install -y pass gnupg2 sudo kmod lxc iptables
-RUN echo "1001 ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers
-COPY DEPLOYMENT/ca.crt /usr/local/share/ca-certificates/
+RUN apt update && apt install -y docker-compose
+ADD https://downloads-openshift-console.apps-crc.testing/amd64/linux/oc.tar /tmp/
+RUN cd /tmp/ && tar -xvzf oc.tar && chmod a+x oc && mv oc /usr/bin/ && rm -f oc.tar 
+COPY DEPLOYMENT/ca.crt /usr/local/share/ca-certificates
 RUN update-ca-certificates 
-
-#RUN useradd -m docker && sudo usermod -a -G sudo jenkins && sudo usermod -a -G sudo docker
-COPY wrapper.sh /usr/local/sbin/wrapper.sh
-#USER jenkins
-ENTRYPOINT /usr/local/sbin/wrapper.sh
+ENV DOCKER_HOST=tcp://XXXXX:2375
+ENTRYPOINT /sbin/tini -- /usr/local/bin/jenkins.sh
