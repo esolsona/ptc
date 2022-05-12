@@ -1,6 +1,6 @@
 node {
 	checkout scm
-	docker.withRegistry('https://default-route-openshift-image-registry.apps-crc.testing','portic_image_puller'){
+	docker.withRegistry('https://quay.io','quay.io'){
 		def customImage = docker.build("portic-devops/tomcat8-portic:latest")
 		customImage.push()
 	}
