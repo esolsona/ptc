@@ -1,0 +1,2 @@
+export CATALINA_OPTS="-Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=8686 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=your.server.domain.com"
+export JAVA_OPTS="-Xmx4g -Xms2g -XX:+UseParallelGC -javaagent:/home/tomcat/apache-tomcat/lib/jmx_prometheus_javaagent.jar=3004:/home/tomcat/apache-tomcat/conf/tomcat.yml"
