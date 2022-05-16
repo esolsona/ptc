@@ -16,7 +16,7 @@ RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz && tar -xvzf tomcat.tar.gz && rm -f t
 RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
 ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
 
-RUN chown -R tomcat:tomcat /home/tomcat/ 
+
 
 COPY bin/ /home/tomcat/apache-tomcat/bin/
 COPY conf/ /home/tomcat/apache-tomcat/conf/
@@ -25,6 +25,7 @@ COPY lib/ /home/tomcat/apache-tomcat/lib/
 USER root
 #Parametros del prometheus se definen en setenv.sh
 RUN chmod a+x /home/tomcat/apache-tomcat/bin/setenv.sh
+RUN chown -R tomcat:tomcat /home/tomcat/ 
 USER tomcat
 EXPOSE 8080/tcp
 
