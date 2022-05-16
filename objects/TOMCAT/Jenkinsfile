@@ -1,8 +1,10 @@
 node {
 	checkout scm
-	docker.withRegistry('https://default-route-openshift-image-registry.apps-crc.testing/','openshift_developer'){
-		def customImage = docker.build("portic-devops/tomcat8-portic:${env.BUILD_ID}")
-		customImage.push()
-	}
+	docker.withRegistry('https://quay.io/','quay.io'){
+		def customImage = docker.build("quay.io/cmajo/tomcat8-portic:${BUILD_NUMBER}")
+		customImage.push("latest")	
+	}	
+	//sh "docker image prune --all --force"
+	sh ''' docker image prune --force --filter=until=$(date -d '7 days ago' +'%Y-%m-%dT00:00:00') '''
 }
 
