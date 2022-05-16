@@ -12,10 +12,11 @@ USER tomcat
 
 WORKDIR /home/tomcat
 
-RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz && \
-    tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && mv apache-tomcat-* apache-tomcat && chown -R tomcat:tomcat /home/tomcat/ && chmod a+x /home/tomcat/apache-tomcat/bin/*
+RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz && tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && mv apache-tomcat-* apache-tomcat && chmod a+x /home/tomcat/apache-tomcat/bin/*
 RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
 ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
+
+RUN chown -R tomcat:tomcat /home/tomcat/ 
 
 COPY bin/ /home/tomcat/apache-tomcat/bin/
 COPY conf/ /home/tomcat/apache-tomcat/conf/
