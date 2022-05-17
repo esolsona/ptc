@@ -1,9 +1,9 @@
 TOMCAT
 =================
 NOM CONFIGMAPS 				PUNT MUNTATGE					PERMISOS
-tomcat-prometheus-config 	/home/tomcat/apache-tomcat/conf/tomcat.yml 		r--r--...
-tomcat-serverxml		/home/tomcat/apache-tomcat/conf/server.xml		r--r--...
-tomcat-setenv			/home/tomcat/apache-tomcat/bin/setenv.sh		rx-rx-...
+tomcat-prometheus-config 	/home/tomcat/apache-tomcat/conf/tomcat.yml 		r--r--r--
+tomcat-serverxml		/home/tomcat/apache-tomcat/conf/server.xml		r--r--r--
+tomcat-setenv			/home/tomcat/apache-tomcat/bin/setenv.sh		r--r--r--
 
 
 PORTS
