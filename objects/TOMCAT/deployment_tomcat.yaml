@@ -34,7 +34,7 @@ spec:
               name: tomcat-setenv
               subPath: setenv.sh
           image: >-
-            image-registry.openshift-image-registry.svc:5000/portic-devops/tomcat8-portic@sha256:c2aa5268d65ad0d5db2d1a9de10bbd715cde441e61e62ca8dbaf09a92b6e64ba
+                  image-registry.openshift-image-registry.svc:5000/portic-devops/tomcat8-portic:latest
           ports:
             - containerPort: 3004
               protocol: TCP
