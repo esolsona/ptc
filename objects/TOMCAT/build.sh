@@ -1,6 +1,6 @@
 #!/bin/bash
 cd $(dirname $0)
-oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops || exit 1
+oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify || exit 1
 
 oc delete configmap tomcat-serverxml --ignore-not-found=true
 oc delete configmap tomcat-prometheus-config --ignore-not-found=true
