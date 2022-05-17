@@ -5,8 +5,8 @@ oc delete configmap tomcat-serverxml --ignore-not-found=true
 oc delete configmap tomcat-prometheus-config --ignore-not-found=true
 oc delete configmap tomcat-setenv --ignore-not-found=true
 
-oc create configmap tomcat-serverxml --from-file $0/conf/server.xml
-oc create configmap tomcat-prometheus-config --from-file $0/conf/tomcat.yml
-oc create configmap tomcat-setenv --from-file $0/bin/setenv.sh
+oc create configmap tomcat-serverxml --from-file $(dirname $0)/conf/server.xml
+oc create configmap tomcat-prometheus-config --from-file $(dirname $0)/conf/tomcat.yml
+oc create configmap tomcat-setenv --from-file $(dirname $0)/bin/setenv.sh
 
 oc apply -f deployment_tomcat.yaml 
