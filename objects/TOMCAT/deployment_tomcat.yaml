@@ -1,0 +1,74 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  annotations:
+  name: tomcat8-portic
+  namespace: portic-devops
+  labels:
+    app: tomcat8-portic
+    app.kubernetes.io/component: tomcat8-portic
+    app.kubernetes.io/instance: tomcat8-portic
+    app.kubernetes.io/name: tomcat8-portic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: tomcat8-portic
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        deployment: tomcat8-portic
+    spec:
+      containers:
+        - name: tomcat8-portic
+
+          volumeMounts:
+            - mountPath: /home/tomcat/apache-tomcat/conf/server.xml
+              name: tomcat-serverxml
+              subPath: server.xml
+            - mountPath: /home/tomcat/apache-tomcat/conf/tomcat.yml
+              name: tomcat-prometheus-config
+              subPath: tomcat.yml
+            - mountPath: /home/tomcat/apache-tomcat/bin/setenv.sh
+              name: tomcat-setenv
+              subPath: setenv.sh
+          image: >-
+            image-registry.openshift-image-registry.svc:5000/portic-devops/tomcat8-portic@sha256:c2aa5268d65ad0d5db2d1a9de10bbd715cde441e61e62ca8dbaf09a92b6e64ba
+          ports:
+            - containerPort: 3004
+              protocol: TCP
+            - containerPort: 8080
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+
+      volumes:
+        - name: tomcat-serverxml
+          configMap:
+            defaultMode: 0444
+            name: tomcat-serverxml
+        - name: tomcat-prometheus-config
+          configMap:
+            defaultMode: 0444
+            name: tomcat-prometheus-config
+        - name: tomcat-setenv
+          configMap:
+            defaultMode: 0444
+            name: tomcat-setenv
+          
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
