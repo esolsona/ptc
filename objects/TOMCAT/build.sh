@@ -11,3 +11,5 @@ oc create configmap tomcat-prometheus-config --from-file conf/tomcat.yml
 oc create configmap tomcat-setenv --from-file bin/setenv.sh
 
 oc apply -f deployment_tomcat.yaml 
+oc apply -f tomcat-service.yaml
+oc apply -f route-tomcat8.yaml

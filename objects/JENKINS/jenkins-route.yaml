@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: jenkins2.carles.cat
+  namespace: portic-devops
+spec:
+  host: jenkins2.carles.cat
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: jenkins2
+    weight: 100
+  wildcardPolicy: None
