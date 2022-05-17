@@ -1,6 +1,12 @@
 #!/bin/bash
 cd $(dirname $0)
-oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify || exit 1
+#oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify || exit 1
+
+
+docker build . -t default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}
+docker login default-route-openshift-image-registry.apps-crc.testing/portic-devops -u ${USER} -p ${PASS}
+docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}
+docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:latest
 
 oc delete configmap tomcat-serverxml --ignore-not-found=true
 oc delete configmap tomcat-prometheus-config --ignore-not-found=true
