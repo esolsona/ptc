@@ -16,6 +16,7 @@ oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops
 docker build . -t default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}
 docker login default-route-openshift-image-registry.apps-crc.testing/portic-devops -u ${USER} -p ${PASS}
 docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}
+docker tag default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER} default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:latest
 docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:latest
 
 oc delete configmap tomcat-serverxml --ignore-not-found=true
