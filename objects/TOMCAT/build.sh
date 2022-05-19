@@ -6,9 +6,9 @@ echo "******************"
 echo $USER
 echo $PASS
 echo $BUILD_NUMBER
-
 echo "******************"
 
+wget https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war --user ${ART_USER} --password ${ART_PASSWD} || { echo "No se ha podido descargar el war del artifactory" && exit 1; }
 cd $(dirname $0)
 oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify || exit 1
 
