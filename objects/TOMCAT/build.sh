@@ -12,11 +12,15 @@ echo "******************"
 cd $(dirname $0)
 oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify || exit 1
 
-
+echo "Build ${IMAGE}:${BUILD_NUMBER}"
 docker build . -t default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}
+echo "LOGIN REPO:"
 docker login default-route-openshift-image-registry.apps-crc.testing/portic-devops -u ${USER} -p ${PASS}
+echo "PUSH default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}"
 docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}
+echo "TAG LATEST"
 docker tag default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER} default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:latest
+echo "PUSH LATEST"
 docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:latest
 
 oc delete configmap tomcat-serverxml --ignore-not-found=true
