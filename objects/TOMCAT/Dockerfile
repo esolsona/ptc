@@ -12,12 +12,11 @@ USER tomcat
 
 WORKDIR /home/tomcat
 
-RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz && tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && mv apache-tomcat-* apache-tomcat && chmod a+x /home/tomcat/apache-tomcat/bin/*
+RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz && \
+    tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && chown -R tomcat:tomcat /home/tomcat/ && mv apache-tomcat-* apache-tomcat &&  chmod a+x /home/tomcat/apache-tomcat/bin/*
 RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
 ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
 ADD  https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war /home/tomcat/apache-tomcat/webapps/
-
-
 
 COPY bin/ /home/tomcat/apache-tomcat/bin/
 COPY conf/ /home/tomcat/apache-tomcat/conf/
@@ -26,12 +25,11 @@ COPY lib/ /home/tomcat/apache-tomcat/lib/
 USER root
 #Parametros del prometheus se definen en setenv.sh
 RUN chmod a+x /home/tomcat/apache-tomcat/bin/setenv.sh
-RUN chown -R tomcat:tomcat /home/tomcat/ 
 USER tomcat
 EXPOSE 8080/tcp
 
 #Puerto Prometheus
-EXPOSE 3004/tcp
+EXPOSE 8686/tcp
 
 ENV PATH ${PATH}:/home/tomcat/apache-tomcat/bin/
 
