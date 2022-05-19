@@ -5,7 +5,7 @@ metadata:
   namespace: portic-devops
 spec:
   host: tomcat.carles.cat
-  path: /sample
+  path: /
   port:
     targetPort: 8080
   to:
