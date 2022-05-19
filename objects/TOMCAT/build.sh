@@ -2,6 +2,13 @@
 
 IMAGE=tomcat8-portic
 
+echo "******************"
+echo $USER
+echo $PASS
+echo $BUILD_NUMBER
+
+echo "******************"
+
 cd $(dirname $0)
 oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify || exit 1
 
