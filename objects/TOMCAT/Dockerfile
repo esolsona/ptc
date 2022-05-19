@@ -15,6 +15,7 @@ WORKDIR /home/tomcat
 RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz && tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && mv apache-tomcat-* apache-tomcat && chmod a+x /home/tomcat/apache-tomcat/bin/*
 RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
 ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
+ADD  https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war /home/tomcat/apache-tomcat/webapps/
 
 
 
