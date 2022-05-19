@@ -1,4 +1,7 @@
 #!/bin/bash
+
+IMAGE=tomcat8-portic
+
 cd $(dirname $0)
 oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify || exit 1
 
