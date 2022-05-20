@@ -1,0 +1,57 @@
+﻿kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: docker-builder2
+  uid: 468d4ed3-8f31-4376-a17b-652f3b9efaf1
+  namespace: portic-devops
+  labels:
+    app: docker-builder2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-builder2
+      deployment: docker-builder2
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: docker-builder2
+        deployment: docker-builder2
+      annotations:
+        openshift.io/generated-by: OpenShiftNewApp
+    spec:
+      volumes:
+        - name: docker-builder2-volume-1
+          emptyDir: {}
+      containers:
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: docker-builder2
+          env:
+            - name: DOCKER_TLS_CERTDIR
+          securityContext:
+            privileged: true
+          ports:
+            - containerPort: 2375
+              protocol: TCP
+            - containerPort: 2376
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: docker-builder2-volume-1
+              mountPath: /var/lib/docker
+          terminationMessagePolicy: File
+          image: default-route-openshift-image-registry.apps-crc.testing/portic-devops/docker-builder2:dind-2
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
