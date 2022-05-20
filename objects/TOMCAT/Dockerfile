@@ -17,7 +17,7 @@ RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz && \
 RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
 ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
 #RUN wget https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war --user ${ART_USER} --password ${ART_PASSWD}
-COPY hello-world-maven-1.war /home/tomcat/apache-tomcat/webapps/
+COPY war/* /home/tomcat/apache-tomcat/webapps/
 
 COPY bin/ /home/tomcat/apache-tomcat/bin/
 COPY conf/ /home/tomcat/apache-tomcat/conf/
