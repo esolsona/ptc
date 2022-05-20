@@ -18,7 +18,7 @@ echo "LOGIN REPO:"
 docker login default-route-openshift-image-registry.apps-crc.testing/portic-devops -u ${USER} -p ${PASS}
 echo "PUSH default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}"
 docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}
-oc set image --loglevel=8 deployment/tomcat8-portic tomcat8-portic=portic-devops/${IMAGE}:${BUILD_NUMBER}
+oc set image deployment/tomcat8-portic tomcat8-portic=portic-devops/${IMAGE}:${BUILD_NUMBER}
 #echo "TAG LATEST"
 #docker tag default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER} default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:latest
 #echo "PUSH LATEST"
