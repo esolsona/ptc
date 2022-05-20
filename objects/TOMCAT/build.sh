@@ -20,6 +20,7 @@ echo "PUSH default-route-openshift-image-registry.apps-crc.testing/portic-devops
 docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER}
 echo "SET IMAGE"
 oc set image --loglevel=1  deployment/tomcat8-portic tomcat8-portic=image-registry.openshift-image-registry.svc:5000/portic-devops/${IMAGE}:${BUILD_NUMBER}
+echo "c set image --loglevel=1  deployment/tomcat8-portic tomcat8-portic=image-registry.openshift-image-registry.svc:5000/portic-devops/${IMAGE}:${BUILD_NUMBER}"
 #echo "TAG LATEST"
 #docker tag default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:${BUILD_NUMBER} default-route-openshift-image-registry.apps-crc.testing/portic-devops/${IMAGE}:latest
 #echo "PUSH LATEST"
