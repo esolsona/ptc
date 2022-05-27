@@ -11,7 +11,8 @@ echo "******************"
 cd $(dirname $0)
 
 #Agafem artefactes 
-wget https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war --user ${ART_USER} --password ${ART_PASSWD} -O war/hello-world-maven-1.war || { echo "No se ha podido descargar el war del artifactory" && exit 1; }
+#wget https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war --user ${ART_USER} --password ${ART_PASSWD} -O war/hello-world-maven-1.war || { echo "No se ha podido descargar el war del artifactory" && exit 1; }
+wget ${ART_URL} --user ${ART_USER} --password ${ART_PASSWD} -O war/hello-world-maven-1.war || { echo "No se ha podido descargar el war del artifactory" && exit 1; }
 
 oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify || exit 1
 
