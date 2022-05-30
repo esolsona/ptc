@@ -30,6 +30,8 @@ USER tomcat
 EXPOSE 8080/tcp
 
 #Puerto Prometheus
+EXPOSE 3004/tcp
+#Puerto JMX
 EXPOSE 8686/tcp
 
 ENV PATH ${PATH}:/home/tomcat/apache-tomcat/bin/
