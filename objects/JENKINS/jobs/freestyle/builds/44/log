@@ -1,0 +1,1329 @@
+Started by user [8mha:////4FNfmFRewAwP4PwKcHVgBH5UKvxe8ao8Avf4ZfKbPbn5AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/freestyle
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/freestyle/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision ea143e4482b9c826bacacf42e3b44750d157bc88 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ea143e4482b9c826bacacf42e3b44750d157bc88 # timeout=10
+Commit message: "build.sh added login"
+ > git rev-list --no-walk 77b0c45ed7eeeb3b25e9f05e95ce3e5e973b8729 # timeout=10
+[freestyle] $ /bin/sh -xe /tmp/jenkins4406558641925956303.sh
++ objects/TOMCAT/build.sh
+******************
+developer
+****
+44
+******************
+--2022-05-19 23:58:27--  https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war
+Resolving carles.jfrog.io (carles.jfrog.io)... 34.255.62.106, 52.213.205.160, 52.49.71.71
+Connecting to carles.jfrog.io (carles.jfrog.io)|34.255.62.106|:443... connected.
+HTTP request sent, awaiting response... 401 
+Authentication selected: Basic realm="Artifactory Realm"
+Reusing existing connection to carles.jfrog.io:443.
+HTTP request sent, awaiting response... 200 
+Length: 2851 (2.8K) [application/java-archive]
+Saving to: ‘hello-world-maven-1.war.2’
+
+     0K ..                                                    100% 51.2M=0s
+
+2022-05-19 23:58:27 (51.2 MB/s) - ‘hello-world-maven-1.war.2’ saved [2851/2851]
+
+Login successful.
+
+You have one project on this server: "portic-devops"
+
+Using project "portic-devops".
+Build tomcat8-portic:44
+Sending build context to Docker daemon  585.7kB
+Step 1/21 : FROM redhat/ubi8
+ ---> 1264065f6ae8
+Step 2/21 : LABEL MAINTAINER=cmajo@kyndryl.com
+ ---> Using cache
+ ---> e3337e34003d
+Step 3/21 : ENV DOWNLOAD_URL="https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz"
+ ---> Using cache
+ ---> c182f8e46f77
+Step 4/21 : RUN yum install -y wget gzip java-1.8.0-openjdk.x86_64 procps-ng &&     yum clean all &&     rm -rf /var/cache/yum
+ ---> Using cache
+ ---> a2e20916bbea
+Step 5/21 : RUN useradd -md /home/tomcat -u 1001 tomcat
+ ---> Using cache
+ ---> 94ac8fa61fcc
+Step 6/21 : USER tomcat
+ ---> Using cache
+ ---> 4de26d189c71
+Step 7/21 : WORKDIR /home/tomcat
+ ---> Using cache
+ ---> 9bb1394e1f95
+Step 8/21 : RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz &&     tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && chown -R tomcat:tomcat /home/tomcat/ && mv apache-tomcat-* apache-tomcat &&  chmod a+x /home/tomcat/apache-tomcat/bin/*
+ ---> Using cache
+ ---> 2ab128ed6d45
+Step 9/21 : RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
+ ---> Using cache
+ ---> f0cdeb049e0d
+Step 10/21 : ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
+
+
+ ---> Using cache
+ ---> 104207c334e0
+Step 11/21 : COPY hello-world-maven-1.war /home/tomcat/apache-tomcat/webapps/
+ ---> Using cache
+ ---> c1443dbe8c4f
+Step 12/21 : COPY bin/ /home/tomcat/apache-tomcat/bin/
+ ---> Using cache
+ ---> 3c6a91cfaa10
+Step 13/21 : COPY conf/ /home/tomcat/apache-tomcat/conf/
+ ---> Using cache
+ ---> babaea964085
+Step 14/21 : COPY lib/ /home/tomcat/apache-tomcat/lib/
+ ---> Using cache
+ ---> 15014b39f13b
+Step 15/21 : USER root
+ ---> Using cache
+ ---> 7202aea6aa9d
+Step 16/21 : RUN chmod a+x /home/tomcat/apache-tomcat/bin/setenv.sh
+ ---> Using cache
+ ---> a6a2fba9b42d
+Step 17/21 : USER tomcat
+ ---> Using cache
+ ---> cbb2e4a8fa6c
+Step 18/21 : EXPOSE 8080/tcp
+ ---> Using cache
+ ---> 03b32e324409
+Step 19/21 : EXPOSE 8686/tcp
+ ---> Using cache
+ ---> cb7d1ac8a925
+Step 20/21 : ENV PATH ${PATH}:/home/tomcat/apache-tomcat/bin/
+ ---> Using cache
+ ---> baf0fae0f4e1
+Step 21/21 : CMD ["catalina.sh", "run"]
+ ---> Using cache
+ ---> b0e74c84105c
+Successfully built b0e74c84105c
+Successfully tagged default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:44
+LOGIN REPO:
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+PUSH default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:44
+The push refers to repository [default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic]
+e56e3df891be: Preparing
+ec2deddaf155: Preparing
+6e12c270494c: Preparing
+db3ff810379d: Preparing
+b2c1e0943e6a: Preparing
+5bb7587576f7: Preparing
+345018aa3573: Preparing
+aa38148ae805: Preparing
+d4388a5c8f60: Preparing
+4c269a482dd1: Preparing
+773711fd02f0: Preparing
+5bf135c4a0de: Preparing
+345018aa3573: Waiting
+5bb7587576f7: Waiting
+d4388a5c8f60: Waiting
+4c269a482dd1: Waiting
+773711fd02f0: Waiting
+5bf135c4a0de: Waiting
+aa38148ae805: Waiting
+6e12c270494c: Layer already exists
+ec2deddaf155: Layer already exists
+e56e3df891be: Layer already exists
+db3ff810379d: Layer already exists
+b2c1e0943e6a: Layer already exists
+345018aa3573: Layer already exists
+5bb7587576f7: Layer already exists
+d4388a5c8f60: Layer already exists
+4c269a482dd1: Layer already exists
+aa38148ae805: Layer already exists
+5bf135c4a0de: Layer already exists
+773711fd02f0: Layer already exists
+44: digest: sha256:555580f4c425985ef105a5e636447f092157a06fdab62401721a9468dcee0dc1 size: 2824
+I0519 23:58:29.044202     785 loader.go:372] Config loaded from file:  /root/.kube/config
+I0519 23:58:29.045787     785 round_trippers.go:463] GET https://api.crc.testing:6443/api?timeout=32s
+I0519 23:58:29.045815     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.045833     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.045849     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.045863     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.064761     785 round_trippers.go:574] Response Status: 200 OK in 18 milliseconds
+I0519 23:58:29.064951     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.065020     785 round_trippers.go:580]     Audit-Id: 41744097-867b-4574-a1c7-e7b7523e5135
+I0519 23:58:29.065085     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.065165     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.065227     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.065296     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.065374     785 round_trippers.go:580]     Content-Length: 137
+I0519 23:58:29.065447     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.068794     785 request.go:1181] Response Body: {"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"192.168.126.11:6443"}]}
+I0519 23:58:29.072404     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis?timeout=32s
+I0519 23:58:29.072520     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.072571     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.072618     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.072663     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.074111     785 round_trippers.go:574] Response Status: 200 OK in 1 milliseconds
+I0519 23:58:29.074240     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.074359     785 round_trippers.go:580]     Audit-Id: 158cb95e-06e1-430a-b1bb-9f84bb5c0e24
+I0519 23:58:29.074421     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.074464     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.074521     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.074568     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.074611     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.077154     785 request.go:1181] Response Body: {"kind":"APIGroupList","apiVersion":"v1","groups":[{"name":"apiregistration.k8s.io","versions":[{"groupVersion":"apiregistration.k8s.io/v1","version":"v1"}],"preferredVersion":{"groupVersion":"apiregistration.k8s.io/v1","version":"v1"}},{"name":"apps","versions":[{"groupVersion":"apps/v1","version":"v1"}],"preferredVersion":{"groupVersion":"apps/v1","version":"v1"}},{"name":"events.k8s.io","versions":[{"groupVersion":"events.k8s.io/v1","version":"v1"},{"groupVersion":"events.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"events.k8s.io/v1","version":"v1"}},{"name":"authentication.k8s.io","versions":[{"groupVersion":"authentication.k8s.io/v1","version":"v1"}],"preferredVersion":{"groupVersion":"authentication.k8s.io/v1","version":"v1"}},{"name":"authorization.k8s.io","versions":[{"groupVersion":"authorization.k8s.io/v1","version":"v1"}],"preferredVersion":{"groupVersion":"authorization.k8s.io/v1","version":"v1"}},{"name":"autoscaling","versions":[{"groupVersion":"autoscaling/v2","vers [truncated 10010 chars]
+I0519 23:58:29.082270     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/autoscaling/v1?timeout=32s
+I0519 23:58:29.082313     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.082335     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/apps/v1?timeout=32s
+I0519 23:58:29.082355     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.082357     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.082368     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.082380     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.082379     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.082392     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.082396     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/apiregistration.k8s.io/v1?timeout=32s
+I0519 23:58:29.082270     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/events.k8s.io/v1?timeout=32s
+I0519 23:58:29.082422     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.082430     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.082447     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.082453     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.082464     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.082474     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.082484     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.082496     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.082536     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/authorization.k8s.io/v1?timeout=32s
+I0519 23:58:29.082557     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.082579     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.082601     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.082624     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.082900     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/events.k8s.io/v1beta1?timeout=32s
+I0519 23:58:29.082908     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/autoscaling/v2?timeout=32s
+I0519 23:58:29.082928     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.082962     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.082405     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.083011     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.083036     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.083051     785 round_trippers.go:463] GET https://api.crc.testing:6443/api/v1?timeout=32s
+I0519 23:58:29.083058     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/authentication.k8s.io/v1?timeout=32s
+I0519 23:58:29.083079     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.083103     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.083125     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.083150     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.083177     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/policy/v1beta1?timeout=32s
+I0519 23:58:29.083189     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.083204     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.083215     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.083238     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.083439     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/batch/v1beta1?timeout=32s
+I0519 23:58:29.083458     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.083474     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/certificates.k8s.io/v1?timeout=32s
+I0519 23:58:29.083477     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.083487     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.083501     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.083501     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.083512     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.083063     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.083546     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.083572     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.083593     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.083636     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/networking.k8s.io/v1?timeout=32s
+I0519 23:58:29.083648     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.083660     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.083671     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.083681     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.083706     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/autoscaling/v2beta1?timeout=32s
+I0519 23:58:29.083727     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.083870     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.083894     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.083930     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.084325     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/batch/v1?timeout=32s
+I0519 23:58:29.084360     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.084343     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/admissionregistration.k8s.io/v1?timeout=32s
+I0519 23:58:29.084376     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.084404     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.084408     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.083522     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.084481     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.084528     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.084553     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.084790     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/scheduling.k8s.io/v1?timeout=32s
+I0519 23:58:29.084826     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.084839     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.084850     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.084875     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085060     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/autoscaling/v2beta2?timeout=32s
+I0519 23:58:29.085099     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.085123     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.085148     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085147     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/coordination.k8s.io/v1?timeout=32s
+I0519 23:58:29.085170     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.085231     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/apiextensions.k8s.io/v1?timeout=32s
+I0519 23:58:29.085243     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/rbac.authorization.k8s.io/v1?timeout=32s
+I0519 23:58:29.084795     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/policy/v1?timeout=32s
+I0519 23:58:29.085270     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.084426     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085297     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.085352     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.085384     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085427     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/storage.k8s.io/v1?timeout=32s
+I0519 23:58:29.085452     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.085485     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.083526     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085535     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085556     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.085172     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.085673     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.085732     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.085764     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085774     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/storage.k8s.io/v1beta1?timeout=32s
+I0519 23:58:29.085790     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.085805     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.085815     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.085826     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085275     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.085915     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.085942     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085982     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.085254     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.086087     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.086117     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.086140     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.082912     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.086337     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.086366     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.086393     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.085941     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/node.k8s.io/v1?timeout=32s
+I0519 23:58:29.086433     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.086462     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.086489     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.086512     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.086596     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/node.k8s.io/v1beta1?timeout=32s
+I0519 23:58:29.086609     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.086621     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.086632     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.086643     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.086759     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/discovery.k8s.io/v1?timeout=32s
+I0519 23:58:29.086793     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.086814     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.086834     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.086857     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.086966     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/machine.openshift.io/v1beta1?timeout=32s
+I0519 23:58:29.086982     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.087000     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087003     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/cloudcredential.openshift.io/v1?timeout=32s
+I0519 23:58:29.087020     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.087023     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.087036     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.087041     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087056     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.087077     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.087179     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/route.openshift.io/v1?timeout=32s
+I0519 23:58:29.087198     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.087215     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087235     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.087254     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.087314     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/operators.coreos.com/v2?timeout=32s
+I0519 23:58:29.087329     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/operators.coreos.com/v1?timeout=32s
+I0519 23:58:29.087348     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.087365     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.087383     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.087387     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/security.openshift.io/v1?timeout=32s
+I0519 23:58:29.087400     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.087399     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087410     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087419     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.087428     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.087487     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/console.openshift.io/v1?timeout=32s
+I0519 23:58:29.087503     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.087520     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.087552     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087573     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.087656     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/discovery.k8s.io/v1beta1?timeout=32s
+I0519 23:58:29.087676     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.087694     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087731     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.087772     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.087942     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/template.openshift.io/v1?timeout=32s
+I0519 23:58:29.087962     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.087980     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087995     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.088011     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.088099     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/flowcontrol.apiserver.k8s.io/v1beta2?timeout=32s
+I0519 23:58:29.088116     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.088135     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.088156     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.088174     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.088295     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/user.openshift.io/v1?timeout=32s
+I0519 23:58:29.088319     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.088334     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.088350     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.088366     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.088381     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/console.openshift.io/v1alpha1?timeout=32s
+I0519 23:58:29.088396     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.088412     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.088425     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.088442     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.088570     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/flowcontrol.apiserver.k8s.io/v1beta1?timeout=32s
+I0519 23:58:29.088579     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/operators.coreos.com/v1alpha2?timeout=32s
+I0519 23:58:29.088585     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.088597     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.088608     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.088612     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.088628     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.088632     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.088647     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.088654     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.088810     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/imageregistry.operator.openshift.io/v1?timeout=32s
+I0519 23:58:29.088825     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.088842     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.088858     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.088875     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.088973     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/packages.operators.coreos.com/v1?timeout=32s
+I0519 23:58:29.088990     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089030     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/apps.openshift.io/v1?timeout=32s
+I0519 23:58:29.089042     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089047     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089059     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089069     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089077     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089085     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089105     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089114     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/operators.coreos.com/v1alpha1?timeout=32s
+I0519 23:58:29.089131     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089146     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089163     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089182     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089263     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/ingress.operator.openshift.io/v1?timeout=32s
+I0519 23:58:29.089297     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089321     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089336     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089353     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089392     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/authorization.openshift.io/v1?timeout=32s
+I0519 23:58:29.089409     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089430     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089448     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089466     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089499     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/samples.operator.openshift.io/v1?timeout=32s
+I0519 23:58:29.089515     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089531     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089547     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089565     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089616     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/config.openshift.io/v1?timeout=32s
+I0519 23:58:29.089633     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089651     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089673     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089691     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089778     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/k8s.cni.cncf.io/v1?timeout=32s
+I0519 23:58:29.089794     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089810     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089831     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089847     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089899     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/security.internal.openshift.io/v1?timeout=32s
+I0519 23:58:29.089915     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.089930     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.089948     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.089963     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.089983     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/build.openshift.io/v1?timeout=32s
+I0519 23:58:29.090000     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.090018     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.090036     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.090058     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.090102     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/machineconfiguration.openshift.io/v1?timeout=32s
+I0519 23:58:29.090118     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.090135     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.090150     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.090167     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.090224     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/tuned.openshift.io/v1?timeout=32s
+I0519 23:58:29.090240     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.090260     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.090274     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.090290     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.090333     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/operator.openshift.io/v1?timeout=32s
+I0519 23:58:29.090350     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.090365     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.090382     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.090399     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.090426     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/image.openshift.io/v1?timeout=32s
+I0519 23:58:29.090446     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.090462     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.090479     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.090494     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.090505     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/monitoring.coreos.com/v1?timeout=32s
+I0519 23:58:29.090523     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.090544     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.090560     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.090575     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.090824     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/oauth.openshift.io/v1?timeout=32s
+I0519 23:58:29.090842     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.090861     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.090878     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.090890     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/monitoring.coreos.com/v1alpha1?timeout=32s
+I0519 23:58:29.090898     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.090905     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.090919     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.090931     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.090945     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.091200     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/network.openshift.io/v1?timeout=32s
+I0519 23:58:29.091215     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.091232     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.091245     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.091260     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.091362     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/quota.openshift.io/v1?timeout=32s
+I0519 23:58:29.091378     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.091395     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.091413     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.091434     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.091501     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/network.operator.openshift.io/v1?timeout=32s
+I0519 23:58:29.091514     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.091528     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.091542     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.091556     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.091200     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/project.openshift.io/v1?timeout=32s
+I0519 23:58:29.091698     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.091823     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/controlplane.operator.openshift.io/v1alpha1?timeout=32s
+I0519 23:58:29.091840     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.091859     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.091878     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.091895     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.092209     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/metal3.io/v1alpha1?timeout=32s
+I0519 23:58:29.092231     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.092259     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.092273     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.092292     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.092681     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/migration.k8s.io/v1alpha1?timeout=32s
+I0519 23:58:29.092705     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.092766     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.092785     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.092799     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.087330     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.093061     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.093080     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.093094     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/whereabouts.cni.cncf.io/v1alpha1?timeout=32s
+I0519 23:58:29.093110     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.093133     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.093148     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.093162     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.093294     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/operator.openshift.io/v1alpha1?timeout=32s
+I0519 23:58:29.093311     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.093327     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.093344     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.093358     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.093482     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/helm.openshift.io/v1beta1?timeout=32s
+I0519 23:58:29.093495     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.093508     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.093521     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.093534     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.093659     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/apiserver.openshift.io/v1?timeout=32s
+I0519 23:58:29.093098     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.093871     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/autoscaling.openshift.io/v1?timeout=32s
+I0519 23:58:29.093888     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.093904     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.093919     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.093936     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.094021     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/autoscaling.openshift.io/v1beta1?timeout=32s
+I0519 23:58:29.094037     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.094052     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.094067     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.094081     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.093676     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.094131     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.094149     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.094169     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.095647     785 round_trippers.go:574] Response Status: 200 OK in 13 milliseconds
+I0519 23:58:29.095671     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.095688     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.095704     785 round_trippers.go:580]     Content-Length: 2196
+I0519 23:58:29.095739     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.095784     785 round_trippers.go:580]     Audit-Id: e081576a-100b-4abb-832f-9965e2ef905a
+I0519 23:58:29.095801     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.095815     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.095830     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.100628     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.100684     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.100703     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.101937     785 round_trippers.go:574] Response Status: 200 OK in 16 milliseconds
+I0519 23:58:29.101961     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.101977     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.101990     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.102002     785 round_trippers.go:580]     Content-Length: 316
+I0519 23:58:29.102015     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.102030     785 round_trippers.go:580]     Audit-Id: b2a4a269-15fa-451a-af14-8603e0a51969
+I0519 23:58:29.102042     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.102054     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.102093     785 round_trippers.go:574] Response Status: 200 OK in 19 milliseconds
+I0519 23:58:29.102107     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.102122     785 round_trippers.go:580]     Audit-Id: 933b992f-e70b-4939-9e3b-1a9edff7dcdd
+I0519 23:58:29.102134     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.102146     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.102158     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.102171     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.102183     785 round_trippers.go:580]     Content-Length: 455
+I0519 23:58:29.102195     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.102806     785 round_trippers.go:574] Response Status: 200 OK in 19 milliseconds
+I0519 23:58:29.102831     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.102848     785 round_trippers.go:580]     Audit-Id: 5f1bb440-1e5b-434b-80ba-ccc483df38d2
+I0519 23:58:29.102881     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.102898     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.102912     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.102926     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.102953     785 round_trippers.go:580]     Content-Length: 864
+I0519 23:58:29.102899     785 round_trippers.go:574] Response Status: 200 OK in 19 milliseconds
+I0519 23:58:29.102969     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.102983     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103034     785 round_trippers.go:574] Response Status: 200 OK in 14 milliseconds
+I0519 23:58:29.103047     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.103069     785 round_trippers.go:580]     Audit-Id: 3dac5e56-3d38-4e4d-9f69-b65670372365
+I0519 23:58:29.103073     785 round_trippers.go:574] Response Status: 200 OK in 16 milliseconds
+I0519 23:58:29.103091     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103105     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.103121     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.103086     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.103134     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.103146     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.103164     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.103170     785 round_trippers.go:574] Response Status: 200 OK in 19 milliseconds
+I0519 23:58:29.103188     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103202     785 round_trippers.go:580]     Audit-Id: 3ae69f6d-a1bd-418b-bcc4-dd567e8c9b2b
+I0519 23:58:29.103214     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.103215     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.103228     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.103240     785 round_trippers.go:580]     Content-Length: 504
+I0519 23:58:29.103242     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.103259     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.103271     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.103148     785 round_trippers.go:580]     Content-Length: 537
+I0519 23:58:29.103419     785 round_trippers.go:574] Response Status: 200 OK in 20 milliseconds
+I0519 23:58:29.103011     785 round_trippers.go:574] Response Status: 200 OK in 19 milliseconds
+I0519 23:58:29.103438     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103451     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103504     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.103526     785 round_trippers.go:580]     Content-Length: 202
+I0519 23:58:29.103541     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.103589     785 round_trippers.go:580]     Audit-Id: f8d69b8d-de64-4af5-a399-6a7a9800dd63
+I0519 23:58:29.103601     785 round_trippers.go:574] Response Status: 200 OK in 14 milliseconds
+I0519 23:58:29.103610     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.103620     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103626     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.103635     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.103641     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.103675     785 round_trippers.go:574] Response Status: 200 OK in 15 milliseconds
+I0519 23:58:29.103650     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.103734     785 round_trippers.go:574] Response Status: 200 OK in 17 milliseconds
+I0519 23:58:29.103710     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.103794     785 round_trippers.go:580]     Content-Length: 491
+I0519 23:58:29.103827     785 round_trippers.go:574] Response Status: 200 OK in 17 milliseconds
+I0519 23:58:29.103842     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103848     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.103853     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.103869     785 round_trippers.go:580]     Audit-Id: f4b9af3e-1691-4b58-8c0a-b8037bffe521
+I0519 23:58:29.103874     785 round_trippers.go:580]     Content-Length: 302
+I0519 23:58:29.103885     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.103888     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.103905     785 round_trippers.go:580]     Audit-Id: ae9e6604-6402-429b-98d9-c918417b6bca
+I0519 23:58:29.103918     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.103932     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.103796     785 round_trippers.go:574] Response Status: 200 OK in 17 milliseconds
+I0519 23:58:29.103366     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.103964     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103974     785 round_trippers.go:580]     Audit-Id: adba25c0-c1c1-4436-b71f-c47304d69a9f
+I0519 23:58:29.103982     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.103985     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.103946     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.103051     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.103997     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.104034     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.104050     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.104050     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.104062     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.104069     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.104073     785 round_trippers.go:580]     Content-Length: 819
+I0519 23:58:29.104083     785 round_trippers.go:580]     Content-Length: 308
+I0519 23:58:29.103692     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.104141     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.104154     785 round_trippers.go:580]     Content-Length: 819
+I0519 23:58:29.104159     785 round_trippers.go:580]     Audit-Id: 014a4120-b779-48b5-be78-82ea8bedefbf
+I0519 23:58:29.104166     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.104178     785 round_trippers.go:580]     Audit-Id: 1938a8bc-0db6-49c9-a11b-02ad05be0765
+I0519 23:58:29.104193     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.104208     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.103453     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.104245     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.104262     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.104353     785 round_trippers.go:580]     Content-Length: 591
+I0519 23:58:29.104376     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.104449     785 round_trippers.go:580]     Audit-Id: 76af8d1e-54b3-42d2-87de-266297e867c2
+I0519 23:58:29.104467     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.103770     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.104554     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.104571     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.104620     785 round_trippers.go:580]     Content-Length: 297
+I0519 23:58:29.104639     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.104655     785 round_trippers.go:580]     Audit-Id: 8d933677-7c12-468c-b8e2-99c81d95b70c
+I0519 23:58:29.104671     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.104737     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.104087     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.104812     785 round_trippers.go:580]     Audit-Id: b5159b7b-6116-420f-b9cd-dde1d9992c09
+I0519 23:58:29.104834     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.104120     785 round_trippers.go:574] Response Status: 200 OK in 19 milliseconds
+I0519 23:58:29.105943     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.105970     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.105988     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.106043     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.106059     785 round_trippers.go:580]     Content-Length: 650
+I0519 23:58:29.106073     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.106124     785 round_trippers.go:580]     Audit-Id: 45d350d7-78ac-4ac5-930c-b66e5c62e5e4
+I0519 23:58:29.106144     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.104226     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.106223     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.109025     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiregistration.k8s.io/v1","resources":[{"name":"apiservices","singularName":"","namespaced":false,"kind":"APIService","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["api-extensions"],"storageVersionHash":"InPBPD7+PqM="},{"name":"apiservices/status","singularName":"","namespaced":false,"kind":"APIService","verbs":["get","patch","update"]}]}
+I0519 23:58:29.119565     785 round_trippers.go:574] Response Status: 200 OK in 29 milliseconds
+I0519 23:58:29.122812     785 round_trippers.go:574] Response Status: 200 OK in 37 milliseconds
+I0519 23:58:29.122838     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.122855     785 round_trippers.go:580]     Content-Length: 653
+I0519 23:58:29.122870     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.122882     785 round_trippers.go:580]     Audit-Id: 4594ff89-1d7d-49a5-8a9f-d346bacd2064
+I0519 23:58:29.122896     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.122912     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.122925     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.122937     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.122819     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.122974     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.122989     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123004     785 round_trippers.go:580]     Audit-Id: dd0387b0-7ed6-4fe4-abbf-84d552e66a74
+I0519 23:58:29.123022     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.123037     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123051     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123195     785 round_trippers.go:574] Response Status: 200 OK in 36 milliseconds
+I0519 23:58:29.123208     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.122354     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authorization.k8s.io/v1","resources":[{"name":"localsubjectaccessreviews","singularName":"","namespaced":true,"kind":"LocalSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectaccessreviews","singularName":"","namespaced":false,"kind":"SelfSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectrulesreviews","singularName":"","namespaced":false,"kind":"SelfSubjectRulesReview","verbs":["create"]},{"name":"subjectaccessreviews","singularName":"","namespaced":false,"kind":"SubjectAccessReview","verbs":["create"]}]}
+I0519 23:58:29.123217     785 round_trippers.go:580]     Audit-Id: f5057d59-a027-446d-87ae-e814a572ed97
+I0519 23:58:29.123230     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.123237     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123245     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123252     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.123259     785 round_trippers.go:580]     Content-Length: 477
+I0519 23:58:29.122387     785 round_trippers.go:574] Response Status: 200 OK in 34 milliseconds
+I0519 23:58:29.123281     785 round_trippers.go:574] Response Status: 200 OK in 35 milliseconds
+I0519 23:58:29.123283     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123291     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123298     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123306     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123266     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123316     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.123323     785 round_trippers.go:580]     Content-Length: 307
+I0519 23:58:29.119627     785 round_trippers.go:574] Response Status: 200 OK in 30 milliseconds
+I0519 23:58:29.123344     785 round_trippers.go:574] Response Status: 200 OK in 37 milliseconds
+I0519 23:58:29.123346     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123364     785 round_trippers.go:580]     Audit-Id: 69e23ad1-57e7-4674-9562-26fc34d9c784
+I0519 23:58:29.123379     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.123393     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123406     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123420     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.123434     785 round_trippers.go:580]     Content-Length: 433
+I0519 23:58:29.123449     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123455     785 round_trippers.go:574] Response Status: 200 OK in 40 milliseconds
+I0519 23:58:29.123469     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123352     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123506     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123519     785 round_trippers.go:574] Response Status: 200 OK in 29 milliseconds
+I0519 23:58:29.123540     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123556     785 round_trippers.go:580]     Content-Length: 480
+I0519 23:58:29.123558     785 round_trippers.go:574] Response Status: 200 OK in 34 milliseconds
+I0519 23:58:29.123566     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123575     785 round_trippers.go:580]     Audit-Id: 1f2be9c7-5550-4ef1-925b-cffd0d5fc404
+I0519 23:58:29.123576     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123582     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.123592     785 round_trippers.go:580]     Audit-Id: e6ec4a36-6d60-4772-9efc-9ccde7c9f019
+I0519 23:58:29.123488     785 round_trippers.go:580]     Audit-Id: 786917ba-2d0b-49a2-ac63-b980dbbe8ab8
+I0519 23:58:29.123609     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.123614     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.123624     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123632     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123642     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123647     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123656     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.123657     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.123664     785 round_trippers.go:580]     Content-Length: 704
+I0519 23:58:29.123671     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123672     785 round_trippers.go:580]     Content-Length: 1691
+I0519 23:58:29.123689     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123331     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123711     785 round_trippers.go:580]     Audit-Id: 2b660af2-ab6d-4e9d-9d48-d524707cfdaf
+I0519 23:58:29.123725     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.123593     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123805     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123826     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.123870     785 round_trippers.go:574] Response Status: 200 OK in 38 milliseconds
+I0519 23:58:29.123881     785 round_trippers.go:574] Response Status: 200 OK in 38 milliseconds
+I0519 23:58:29.123899     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123914     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123924     785 round_trippers.go:574] Response Status: 200 OK in 39 milliseconds
+I0519 23:58:29.123929     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123947     785 round_trippers.go:574] Response Status: 200 OK in 32 milliseconds
+I0519 23:58:29.123950     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.123956     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.123964     785 round_trippers.go:580]     Content-Length: 989
+I0519 23:58:29.123964     785 round_trippers.go:580]     Content-Length: 289
+I0519 23:58:29.123977     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123983     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.123994     785 round_trippers.go:580]     Audit-Id: bd5cc341-13b7-4477-89c9-c14f0d050b8b
+I0519 23:58:29.123998     785 round_trippers.go:580]     Audit-Id: 9cd9cff7-ada5-4912-a517-cb7802b52733
+I0519 23:58:29.124006     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124013     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124018     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123934     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124045     785 round_trippers.go:580]     Audit-Id: eec1ad78-b80b-40bb-9709-ea43dd31e043
+I0519 23:58:29.124061     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124066     785 round_trippers.go:574] Response Status: 200 OK in 29 milliseconds
+I0519 23:58:29.124075     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124083     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124090     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124096     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124106     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124109     785 round_trippers.go:580]     Content-Length: 458
+I0519 23:58:29.124120     785 round_trippers.go:580]     Content-Length: 325
+I0519 23:58:29.124125     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124135     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124159     785 round_trippers.go:574] Response Status: 200 OK in 33 milliseconds
+I0519 23:58:29.124138     785 round_trippers.go:580]     Audit-Id: fad4095d-6818-4cb7-bba8-239b859dc3da
+I0519 23:58:29.124190     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124203     785 round_trippers.go:574] Response Status: 200 OK in 33 milliseconds
+I0519 23:58:29.124210     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124219     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124227     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124233     785 round_trippers.go:580]     Audit-Id: a23ca646-684c-446e-9035-40e1c2730333
+I0519 23:58:29.124245     785 round_trippers.go:580]     Audit-Id: a23ca646-684c-446e-9035-40e1c2730333
+I0519 23:58:29.124283     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.123304     785 round_trippers.go:580]     Audit-Id: 8fbacb3e-447c-4f69-8ec5-db3cdfc452fa
+I0519 23:58:29.124300     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124314     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.123886     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124327     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124333     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124339     785 round_trippers.go:580]     Content-Length: 1250
+I0519 23:58:29.124348     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124351     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124363     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124367     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124377     785 round_trippers.go:580]     Content-Length: 745
+I0519 23:58:29.124397     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124408     785 round_trippers.go:574] Response Status: 200 OK in 32 milliseconds
+I0519 23:58:29.124413     785 round_trippers.go:580]     Audit-Id: b552fe7e-b6dd-4678-b8fd-62e35889f1c2
+I0519 23:58:29.124426     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124429     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124440     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124380     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124454     785 round_trippers.go:580]     Content-Length: 2243
+I0519 23:58:29.124466     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124471     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124031     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124486     785 round_trippers.go:580]     Audit-Id: 734c0e80-b633-477b-a6b0-e2565eb3e692
+I0519 23:58:29.124498     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124501     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124313     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124516     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124526     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124544     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124556     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124561     785 round_trippers.go:574] Response Status: 200 OK in 33 milliseconds
+I0519 23:58:29.124568     785 round_trippers.go:580]     Content-Length: 1586
+I0519 23:58:29.124578     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124583     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124593     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124530     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124606     785 round_trippers.go:580]     Audit-Id: d01519b9-afd4-411c-a8cf-836ec93f162a
+I0519 23:58:29.123522     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124618     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124629     785 round_trippers.go:580]     Content-Length: 462
+I0519 23:58:29.124633     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124643     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124647     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124655     785 round_trippers.go:580]     Audit-Id: f7fa2034-70c7-4b4e-9d8f-d6355886e7e4
+I0519 23:58:29.124660     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124667     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124672     785 round_trippers.go:580]     Content-Length: 1849
+I0519 23:58:29.124679     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124173     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124706     785 round_trippers.go:580]     Content-Length: 1862
+I0519 23:58:29.124739     785 round_trippers.go:574] Response Status: 200 OK in 35 milliseconds
+I0519 23:58:29.124760     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124776     785 round_trippers.go:580]     Content-Length: 762
+I0519 23:58:29.124791     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.124804     785 round_trippers.go:580]     Audit-Id: ba173cc2-272b-46ad-820e-910ca8972180
+I0519 23:58:29.124819     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124836     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124853     785 round_trippers.go:574] Response Status: 200 OK in 34 milliseconds
+I0519 23:58:29.124869     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124883     785 round_trippers.go:580]     Audit-Id: adf4fe7a-e9bc-4742-bf52-1ac99411d713
+I0519 23:58:29.124894     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124907     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.124921     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124901     785 round_trippers.go:574] Response Status: 200 OK in 32 milliseconds
+I0519 23:58:29.124854     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124953     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.124970     785 round_trippers.go:580]     Audit-Id: 0f2ec3f2-61aa-45c9-a636-7f46eb912b0c
+I0519 23:58:29.124973     785 round_trippers.go:574] Response Status: 200 OK in 34 milliseconds
+I0519 23:58:29.124981     785 round_trippers.go:574] Response Status: 200 OK in 34 milliseconds
+I0519 23:58:29.124955     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.124993     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125013     785 round_trippers.go:580]     Content-Length: 336
+I0519 23:58:29.125024     785 round_trippers.go:574] Response Status: 200 OK in 36 milliseconds
+I0519 23:58:29.125028     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125039     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125050     785 round_trippers.go:580]     Audit-Id: ec541094-d6bd-4155-99d1-1ea4a5fe9892
+I0519 23:58:29.125052     785 round_trippers.go:580]     Audit-Id: f1de2879-e949-408e-ba39-4b6e61b07dd8
+I0519 23:58:29.125065     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125070     785 round_trippers.go:580]     Audit-Id: f1de2879-e949-408e-ba39-4b6e61b07dd8
+I0519 23:58:29.125122     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125140     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.125156     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125172     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125185     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125200     785 round_trippers.go:574] Response Status: 200 OK in 36 milliseconds
+I0519 23:58:29.125219     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125226     785 round_trippers.go:574] Response Status: 200 OK in 24 milliseconds
+I0519 23:58:29.125229     785 round_trippers.go:574] Response Status: 200 OK in 37 milliseconds
+I0519 23:58:29.125079     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125250     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125254     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125264     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125269     785 round_trippers.go:574] Response Status: 200 OK in 36 milliseconds
+I0519 23:58:29.125280     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125286     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125293     785 round_trippers.go:580]     Content-Length: 2038
+I0519 23:58:29.125302     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125306     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125331     785 round_trippers.go:580]     Audit-Id: 9d9a2a20-ef8a-434b-bf63-f12613051508
+I0519 23:58:29.125342     785 round_trippers.go:580]     Audit-Id: 6780300b-ceee-4012-b53d-3d04bb8b25d5
+I0519 23:58:29.125349     785 round_trippers.go:580]     Audit-Id: 9d9a2a20-ef8a-434b-bf63-f12613051508
+I0519 23:58:29.125356     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125364     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125374     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125381     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125392     785 round_trippers.go:574] Response Status: 200 OK in 31 milliseconds
+I0519 23:58:29.125203     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125409     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125414     785 round_trippers.go:580]     Content-Length: 968
+I0519 23:58:29.125422     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125234     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.124998     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125456     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125463     785 round_trippers.go:574] Response Status: 200 OK in 36 milliseconds
+I0519 23:58:29.125242     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125480     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125487     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125493     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125500     785 round_trippers.go:580]     Content-Length: 354
+I0519 23:58:29.125506     785 round_trippers.go:580]     Content-Length: 999
+I0519 23:58:29.125512     785 round_trippers.go:580]     Audit-Id: 7e55dcc0-d1fd-4d4a-95d9-3453b9e36df5
+I0519 23:58:29.125521     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125527     785 round_trippers.go:580]     Audit-Id: 7e55dcc0-d1fd-4d4a-95d9-3453b9e36df5
+I0519 23:58:29.125534     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125539     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125547     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125551     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.125561     785 round_trippers.go:580]     Audit-Id: ded2b6c3-be42-4ace-8a14-2ce53bf49ae3
+I0519 23:58:29.125564     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125570     785 round_trippers.go:574] Response Status: 200 OK in 38 milliseconds
+I0519 23:58:29.125574     785 round_trippers.go:580]     Audit-Id: ded2b6c3-be42-4ace-8a14-2ce53bf49ae3
+I0519 23:58:29.125580     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125586     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125590     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125596     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125600     785 round_trippers.go:580]     Content-Length: 302
+I0519 23:58:29.125605     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.125614     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125471     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125652     785 round_trippers.go:580]     Audit-Id: 38d75573-5f30-4aa0-9779-005580960127
+I0519 23:58:29.125660     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125667     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125675     785 round_trippers.go:580]     Content-Length: 326
+I0519 23:58:29.125681     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125690     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125395     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125732     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125748     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125763     785 round_trippers.go:580]     Content-Length: 331
+I0519 23:58:29.125693     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125809     785 round_trippers.go:574] Response Status: 200 OK in 34 milliseconds
+I0519 23:58:29.125829     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125834     785 round_trippers.go:574] Response Status: 200 OK in 35 milliseconds
+I0519 23:58:29.125846     785 round_trippers.go:580]     Audit-Id: cc309a9f-4ac1-4294-a604-cb8861ab1e5c
+I0519 23:58:29.125849     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125862     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.125811     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125881     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.125896     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.124742     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125271     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125957     785 round_trippers.go:574] Response Status: 200 OK in 41 milliseconds
+I0519 23:58:29.125977     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.125988     785 round_trippers.go:574] Response Status: 200 OK in 31 milliseconds
+I0519 23:58:29.126011     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.126026     785 round_trippers.go:580]     Audit-Id: 00ee3b6e-060c-4867-8d0b-12b99fe22101
+I0519 23:58:29.126037     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.126094     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.126101     785 round_trippers.go:574] Response Status: 200 OK in 37 milliseconds
+I0519 23:58:29.126111     785 round_trippers.go:574] Response Status: 200 OK in 34 milliseconds
+I0519 23:58:29.126135     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.126154     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.126165     785 round_trippers.go:580]     Content-Length: 493
+I0519 23:58:29.126168     785 round_trippers.go:574] Response Status: 200 OK in 36 milliseconds
+I0519 23:58:29.126183     785 round_trippers.go:574] Response Status: 200 OK in 40 milliseconds
+I0519 23:58:29.126173     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125867     785 round_trippers.go:580]     Content-Length: 392
+I0519 23:58:29.126236     785 round_trippers.go:574] Response Status: 200 OK in 38 milliseconds
+I0519 23:58:29.126249     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.126271     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.126275     785 round_trippers.go:580]     Audit-Id: 9c36ef78-8652-46c9-b25e-a9731b51a2e7
+I0519 23:58:29.126302     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.126318     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.126340     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.126366     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.126136     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.126389     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.126391     785 round_trippers.go:574] Response Status: 200 OK in 36 milliseconds
+I0519 23:58:29.125992     785 round_trippers.go:580]     Content-Length: 509
+I0519 23:58:29.126406     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.126414     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.126415     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.126422     785 round_trippers.go:580]     Audit-Id: 852a6e02-47f4-44ca-98f4-aba280bc8a81
+I0519 23:58:29.126431     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.126433     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.126120     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.126225     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.126451     785 round_trippers.go:580]     Audit-Id: b00a6791-c8d9-483f-8ee0-fec7a9941348
+I0519 23:58:29.126462     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.126463     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.126465     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.126478     785 round_trippers.go:580]     Content-Length: 509
+I0519 23:58:29.126476     785 round_trippers.go:574] Response Status: 200 OK in 33 milliseconds
+I0519 23:58:29.126488     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.126450     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.126500     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.126506     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.126513     785 round_trippers.go:580]     Content-Length: 510
+I0519 23:58:29.126520     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.128874     785 round_trippers.go:580]     Content-Length: 420
+I0519 23:58:29.124936     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.128973     785 round_trippers.go:580]     Content-Length: 494
+I0519 23:58:29.128991     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125546     785 round_trippers.go:574] Response Status: 200 OK in 32 milliseconds
+I0519 23:58:29.129069     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.129089     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.129106     785 round_trippers.go:580]     Content-Length: 574
+I0519 23:58:29.129126     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.129143     785 round_trippers.go:580]     Audit-Id: 410e8230-de78-4f69-aad7-e2dd7a7223c4
+I0519 23:58:29.129160     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.129187     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.129204     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.125466     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.129283     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.129302     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.126438     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.129323     785 round_trippers.go:580]     Content-Length: 1189
+I0519 23:58:29.129338     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.129347     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.129361     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.129365     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.126420     785 round_trippers.go:574] Response Status: 200 OK in 32 milliseconds
+I0519 23:58:29.126527     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.129494     785 round_trippers.go:580]     Audit-Id: 0e6f800e-4d87-4b09-9981-84d2dcdc64d5
+I0519 23:58:29.129510     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.129520     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.129532     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.129542     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.125437     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.129611     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.129622     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.129635     785 round_trippers.go:580]     Content-Length: 512
+I0519 23:58:29.129651     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.129664     785 round_trippers.go:580]     Audit-Id: 2c51f559-2386-45c3-ab62-745501fc890c
+I0519 23:58:29.124985     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.129735     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.129750     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.126470     785 round_trippers.go:580]     Content-Length: 661
+I0519 23:58:29.127206     785 round_trippers.go:574] Response Status: 200 OK in 37 milliseconds
+I0519 23:58:29.127021     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.127370     785 round_trippers.go:574] Response Status: 200 OK in 40 milliseconds
+I0519 23:58:29.127376     785 round_trippers.go:574] Response Status: 200 OK in 36 milliseconds
+I0519 23:58:29.126183     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.126199     785 round_trippers.go:574] Response Status: 200 OK in 34 milliseconds
+I0519 23:58:29.127517     785 round_trippers.go:580]     Audit-Id: 5f0207d8-e0d8-4542-a40b-5e07c2f8be9c
+I0519 23:58:29.127518     785 round_trippers.go:574] Response Status: 200 OK in 42 milliseconds
+I0519 23:58:29.126528     785 round_trippers.go:574] Response Status: 200 OK in 42 milliseconds
+I0519 23:58:29.127699     785 round_trippers.go:574] Response Status: 200 OK in 40 milliseconds
+I0519 23:58:29.126384     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.127845     785 round_trippers.go:574] Response Status: 200 OK in 42 milliseconds
+I0519 23:58:29.127965     785 round_trippers.go:580]     Audit-Id: dc3ae6e4-39fe-4e62-89de-0b5a8d102b23
+I0519 23:58:29.128071     785 round_trippers.go:574] Response Status: 200 OK in 42 milliseconds
+I0519 23:58:29.128113     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling/v1","resources":[{"name":"horizontalpodautoscalers","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["hpa"],"categories":["all"],"storageVersionHash":"oQlkt7f5j/A="},{"name":"horizontalpodautoscalers/status","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["get","patch","update"]}]}
+I0519 23:58:29.128126     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"flowcontrol.apiserver.k8s.io/v1beta1","resources":[{"name":"flowschemas","singularName":"","namespaced":false,"kind":"FlowSchema","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"9bSnTLYweJ0="},{"name":"flowschemas/status","singularName":"","namespaced":false,"kind":"FlowSchema","verbs":["get","patch","update"]},{"name":"prioritylevelconfigurations","singularName":"","namespaced":false,"kind":"PriorityLevelConfiguration","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"BFVwf8eYnsw="},{"name":"prioritylevelconfigurations/status","singularName":"","namespaced":false,"kind":"PriorityLevelConfiguration","verbs":["get","patch","update"]}]}
+I0519 23:58:29.126493     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.125671     785 round_trippers.go:574] Response Status: 200 OK in 35 milliseconds
+I0519 23:58:29.129696     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.129927     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.129940     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.129965     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.129986     785 round_trippers.go:580]     Content-Length: 490
+I0519 23:58:29.129992     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.130009     785 round_trippers.go:580]     Content-Length: 1059
+I0519 23:58:29.130010     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130032     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.130037     785 round_trippers.go:580]     Audit-Id: 67b02dcd-2902-499b-a98a-85368e063c58
+I0519 23:58:29.130043     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130053     785 round_trippers.go:580]     Audit-Id: f4d87910-78ac-496b-86fa-4fe246bb7be6
+I0519 23:58:29.130053     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130064     785 round_trippers.go:580]     Audit-Id: f4d87910-78ac-496b-86fa-4fe246bb7be6
+I0519 23:58:29.130075     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.127206     785 round_trippers.go:574] Response Status: 200 OK in 44 milliseconds
+I0519 23:58:29.130095     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.130093     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130106     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130115     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.130129     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130143     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130156     785 round_trippers.go:580]     Content-Length: 418
+I0519 23:58:29.130166     785 round_trippers.go:580]     Audit-Id: d13e892c-c261-42e0-92d0-b9ea25d438a6
+I0519 23:58:29.130176     785 round_trippers.go:580]     Audit-Id: d13e892c-c261-42e0-92d0-b9ea25d438a6
+I0519 23:58:29.130186     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.130116     785 round_trippers.go:580]     Audit-Id: e3feb8c6-f490-4567-8720-b0623bc6e483
+I0519 23:58:29.130246     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130259     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.130269     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130279     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.130297     785 round_trippers.go:580]     Content-Length: 303
+I0519 23:58:29.130294     785 round_trippers.go:580]     Audit-Id: c004027b-99c7-4f91-ac9e-56eadd5de97a
+I0519 23:58:29.129821     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.130326     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130339     785 round_trippers.go:580]     Content-Length: 378
+I0519 23:58:29.130348     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.130350     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130368     785 round_trippers.go:580]     Audit-Id: 19ef7e34-14c4-49e1-8d78-0889c5cfe1eb
+I0519 23:58:29.130367     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130379     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130389     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.130399     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130409     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.129867     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.129855     785 round_trippers.go:580]     Audit-Id: 50aaf4da-bd11-49ef-8875-6f9119a26275
+I0519 23:58:29.130440     785 round_trippers.go:580]     Audit-Id: 596ce737-ebde-4614-92ce-c6f0ac384016
+I0519 23:58:29.130451     785 round_trippers.go:580]     Audit-Id: 50aaf4da-bd11-49ef-8875-6f9119a26275
+I0519 23:58:29.130459     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130474     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.130480     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.130496     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130517     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130462     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130486     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130548     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.130549     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.130566     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130579     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130591     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.130596     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.130616     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.130613     785 round_trippers.go:580]     Content-Length: 915
+I0519 23:58:29.130632     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130642     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130649     785 round_trippers.go:580]     Content-Length: 1578
+I0519 23:58:29.130704     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.130753     785 round_trippers.go:580]     Content-Length: 438
+I0519 23:58:29.130750     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.130662     785 round_trippers.go:580]     Audit-Id: 87106b2b-71c3-4c99-9b50-630c7f1fbc3a
+I0519 23:58:29.130785     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.130809     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130828     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130850     785 round_trippers.go:580]     Content-Length: 1664
+I0519 23:58:29.130078     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130873     785 round_trippers.go:580]     Audit-Id: ab1ca1f8-c0fb-4673-a281-de7b25b1db2e
+I0519 23:58:29.130530     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.130877     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.130938     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.126400     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130992     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.131007     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.131017     785 round_trippers.go:580]     Content-Length: 937
+I0519 23:58:29.131007     785 round_trippers.go:580]     Audit-Id: 94dcbd0e-d9c7-4b47-afb8-0bb8a7164d7f
+I0519 23:58:29.131043     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.130020     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.131070     785 round_trippers.go:580]     Audit-Id: 277d6ea9-79f1-4a53-bed3-259f95563d01
+I0519 23:58:29.131072     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.131081     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.131091     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.131108     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.129780     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.131127     785 round_trippers.go:580]     Content-Length: 534
+I0519 23:58:29.129832     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.131163     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.131176     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.129803     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.131201     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.131213     785 round_trippers.go:580]     Audit-Id: 881d6794-7d2d-4a93-acc4-f441cd2d9909
+I0519 23:58:29.131214     785 round_trippers.go:580]     Audit-Id: a62bc442-79a0-48c1-85d9-6fcf8cb66ec7
+I0519 23:58:29.131223     785 round_trippers.go:580]     Audit-Id: 881d6794-7d2d-4a93-acc4-f441cd2d9909
+I0519 23:58:29.131235     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.131255     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.129762     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.129913     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.129844     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.129792     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.130904     785 round_trippers.go:580]     Audit-Id: ab1ca1f8-c0fb-4673-a281-de7b25b1db2e
+I0519 23:58:29.131317     785 round_trippers.go:580]     Audit-Id: 1196e7d4-4e7e-4108-a0a1-8730a24a5fbf
+I0519 23:58:29.131330     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.131328     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.131343     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.131351     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.131360     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.131367     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.131383     785 round_trippers.go:580]     Content-Length: 839
+I0519 23:58:29.131395     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.131441     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.131372     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.131471     785 round_trippers.go:580]     Content-Length: 504
+I0519 23:58:29.130766     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.131302     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.131577     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.131597     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.131453     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.131692     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.131706     785 round_trippers.go:580]     Content-Length: 824
+I0519 23:58:29.131736     785 round_trippers.go:580]     Audit-Id: 319e19be-1cc7-4dc4-94aa-4a421f628617
+I0519 23:58:29.131747     785 round_trippers.go:580]     Audit-Id: 319e19be-1cc7-4dc4-94aa-4a421f628617
+I0519 23:58:29.131791     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.131811     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.131468     785 round_trippers.go:580]     Audit-Id: 80370eeb-9516-40d6-ac4a-5974d7a3ebaf
+I0519 23:58:29.131882     785 round_trippers.go:580]     Audit-Id: 80370eeb-9516-40d6-ac4a-5974d7a3ebaf
+I0519 23:58:29.131496     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.130922     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.131931     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.131943     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.131951     785 round_trippers.go:580]     Content-Length: 589
+I0519 23:58:29.131964     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.131191     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.131982     785 round_trippers.go:580]     Content-Length: 1295
+I0519 23:58:29.131983     785 round_trippers.go:580]     Cache-Control: no-store
+I0519 23:58:29.131999     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.132011     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.132023     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.132220     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.132233     785 round_trippers.go:580]     Audit-Id: e39b5046-03f9-4ed1-bf8a-d4924980f490
+I0519 23:58:29.132242     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.134417     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apps/v1","resources":[{"name":"controllerrevisions","singularName":"","namespaced":true,"kind":"ControllerRevision","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"85nkx63pcBU="},{"name":"daemonsets","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ds"],"categories":["all"],"storageVersionHash":"dd7pWHUlMKQ="},{"name":"daemonsets/status","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["get","patch","update"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"],"categories":["all"],"storageVersionHash":"8aSe+NMegvE="},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"autoscaling","version":"v1","kind":"Scale","verbs":[ [truncated 1172 chars]
+I0519 23:58:29.140924     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiextensions.k8s.io/v1","resources":[{"name":"customresourcedefinitions","singularName":"","namespaced":false,"kind":"CustomResourceDefinition","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["crd","crds"],"categories":["api-extensions"],"storageVersionHash":"jfWCUB31mvA="},{"name":"customresourcedefinitions/status","singularName":"","namespaced":false,"kind":"CustomResourceDefinition","verbs":["get","patch","update"]}]}
+I0519 23:58:29.143276     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authentication.k8s.io/v1","resources":[{"name":"tokenreviews","singularName":"","namespaced":false,"kind":"TokenReview","verbs":["create"]}]}
+I0519 23:58:29.145244     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"networking.k8s.io/v1","resources":[{"name":"ingressclasses","singularName":"","namespaced":false,"kind":"IngressClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"l/iqIbDgFyQ="},{"name":"ingresses","singularName":"","namespaced":true,"kind":"Ingress","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ing"],"storageVersionHash":"39NQlfNR+bo="},{"name":"ingresses/status","singularName":"","namespaced":true,"kind":"Ingress","verbs":["get","patch","update"]},{"name":"networkpolicies","singularName":"","namespaced":true,"kind":"NetworkPolicy","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["netpol"],"storageVersionHash":"YpfwF18m1G8="}]}
+I0519 23:58:29.147183     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"ingress.operator.openshift.io/v1","resources":[{"name":"dnsrecords","singularName":"dnsrecord","namespaced":true,"kind":"DNSRecord","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"S3Nu5BOcJQA="},{"name":"dnsrecords/status","singularName":"","namespaced":true,"kind":"DNSRecord","verbs":["get","patch","update"]}]}
+I0519 23:58:29.148967     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"policy/v1beta1","resources":[{"name":"poddisruptionbudgets","singularName":"","namespaced":true,"kind":"PodDisruptionBudget","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pdb"],"storageVersionHash":"6BGBu0kpHtk="},{"name":"poddisruptionbudgets/status","singularName":"","namespaced":true,"kind":"PodDisruptionBudget","verbs":["get","patch","update"]},{"name":"podsecuritypolicies","singularName":"","namespaced":false,"kind":"PodSecurityPolicy","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["psp"],"storageVersionHash":"khBLobUXkqA="}]}
+I0519 23:58:29.150883     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"operators.coreos.com/v1alpha1","resources":[{"name":"installplans","singularName":"installplan","namespaced":true,"kind":"InstallPlan","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["ip"],"categories":["olm"],"storageVersionHash":"6gw8IwttiW4="},{"name":"installplans/status","singularName":"","namespaced":true,"kind":"InstallPlan","verbs":["get","patch","update"]},{"name":"subscriptions","singularName":"subscription","namespaced":true,"kind":"Subscription","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["sub","subs"],"categories":["olm"],"storageVersionHash":"cJUAl67Y7C4="},{"name":"subscriptions/status","singularName":"","namespaced":true,"kind":"Subscription","verbs":["get","patch","update"]},{"name":"catalogsources","singularName":"catalogsource","namespaced":true,"kind":"CatalogSource","verbs":["delete","deletecollection","get","list","patch","c [truncated 667 chars]
+I0519 23:58:29.152785     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"discovery.k8s.io/v1beta1","resources":[{"name":"endpointslices","singularName":"","namespaced":true,"kind":"EndpointSlice","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"Nx3SIv6I0mE="}]}
+I0519 23:58:29.154612     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"helm.openshift.io/v1beta1","resources":[{"name":"helmchartrepositories","singularName":"helmchartrepository","namespaced":false,"kind":"HelmChartRepository","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"ufyXG8CiCus="},{"name":"helmchartrepositories/status","singularName":"","namespaced":false,"kind":"HelmChartRepository","verbs":["get","patch","update"]}]}
+I0519 23:58:29.156536     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"events.k8s.io/v1beta1","resources":[{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"],"storageVersionHash":"r2yiGXH7wu8="}]}
+I0519 23:58:29.158513     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"scheduling.k8s.io/v1","resources":[{"name":"priorityclasses","singularName":"","namespaced":false,"kind":"PriorityClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pc"],"storageVersionHash":"1QwjyaZjj3Y="}]}
+I0519 23:58:29.160555     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiserver.openshift.io/v1","resources":[{"name":"apirequestcounts","singularName":"apirequestcount","namespaced":false,"kind":"APIRequestCount","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"S/jlubifV1Y="},{"name":"apirequestcounts/status","singularName":"","namespaced":false,"kind":"APIRequestCount","verbs":["get","patch","update"]}]}
+I0519 23:58:29.163058     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"flowcontrol.apiserver.k8s.io/v1beta2","resources":[{"name":"flowschemas","singularName":"","namespaced":false,"kind":"FlowSchema","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"9bSnTLYweJ0="},{"name":"flowschemas/status","singularName":"","namespaced":false,"kind":"FlowSchema","verbs":["get","patch","update"]},{"name":"prioritylevelconfigurations","singularName":"","namespaced":false,"kind":"PriorityLevelConfiguration","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"BFVwf8eYnsw="},{"name":"prioritylevelconfigurations/status","singularName":"","namespaced":false,"kind":"PriorityLevelConfiguration","verbs":["get","patch","update"]}]}
+I0519 23:58:29.165417     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"batch/v1","resources":[{"name":"cronjobs","singularName":"","namespaced":true,"kind":"CronJob","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cj"],"categories":["all"],"storageVersionHash":"sd5LIXh4Fjs="},{"name":"cronjobs/status","singularName":"","namespaced":true,"kind":"CronJob","verbs":["get","patch","update"]},{"name":"jobs","singularName":"","namespaced":true,"kind":"Job","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["all"],"storageVersionHash":"mudhfqk/qZY="},{"name":"jobs/status","singularName":"","namespaced":true,"kind":"Job","verbs":["get","patch","update"]}]}
+I0519 23:58:29.167837     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"oauth.openshift.io/v1","resources":[{"name":"oauthaccesstokens","singularName":"","namespaced":false,"kind":"OAuthAccessToken","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"Hss+eIbWaq4="},{"name":"oauthauthorizetokens","singularName":"","namespaced":false,"kind":"OAuthAuthorizeToken","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"boIUgj6jo8I="},{"name":"oauthclientauthorizations","singularName":"","namespaced":false,"kind":"OAuthClientAuthorization","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"Q0jsEj2AFkk="},{"name":"oauthclients","singularName":"","namespaced":false,"kind":"OAuthClient","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"8NZGiGeCmFo="},{"name":"tokenreviews","singularName":"","namespaced":false,"gro [truncated 226 chars]
+I0519 23:58:29.169928     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"imageregistry.operator.openshift.io/v1","resources":[{"name":"configs","singularName":"config","namespaced":false,"kind":"Config","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"ezezfcipwsQ="},{"name":"configs/status","singularName":"","namespaced":false,"kind":"Config","verbs":["get","patch","update"]},{"name":"imagepruners","singularName":"imagepruner","namespaced":false,"kind":"ImagePruner","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"csaZlx1bqEc="},{"name":"imagepruners/status","singularName":"","namespaced":false,"kind":"ImagePruner","verbs":["get","patch","update"]}]}
+I0519 23:58:29.172419     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"cloudcredential.openshift.io/v1","resources":[{"name":"credentialsrequests","singularName":"credentialsrequest","namespaced":true,"kind":"CredentialsRequest","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"Y1KpLs3mWDk="},{"name":"credentialsrequests/status","singularName":"","namespaced":true,"kind":"CredentialsRequest","verbs":["get","patch","update"]}]}
+I0519 23:58:29.225588     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"operators.coreos.com/v1","resources":[{"name":"operatorgroups","singularName":"operatorgroup","namespaced":true,"kind":"OperatorGroup","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["og"],"categories":["olm"],"storageVersionHash":"smrHN4vKoms="},{"name":"operatorgroups/status","singularName":"","namespaced":true,"kind":"OperatorGroup","verbs":["get","patch","update"]},{"name":"olmconfigs","singularName":"olmconfig","namespaced":false,"kind":"OLMConfig","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"categories":["olm"],"storageVersionHash":"rV2ESbqnZdM="},{"name":"olmconfigs/status","singularName":"","namespaced":false,"kind":"OLMConfig","verbs":["get","patch","update"]},{"name":"operatorconditions","singularName":"operatorcondition","namespaced":true,"kind":"OperatorCondition","verbs":["delete","deletecollection","get","list","patch","create","update","watch"], [truncated 562 chars]
+I0519 23:58:29.228290     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"network.openshift.io/v1","resources":[{"name":"netnamespaces","singularName":"netnamespace","namespaced":false,"kind":"NetNamespace","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"wF0kNnaqHak="},{"name":"hostsubnets","singularName":"hostsubnet","namespaced":false,"kind":"HostSubnet","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"bNBR0awPHLM="},{"name":"clusternetworks","singularName":"clusternetwork","namespaced":false,"kind":"ClusterNetwork","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"auQsassZNlY="},{"name":"egressnetworkpolicies","singularName":"egressnetworkpolicy","namespaced":true,"kind":"EgressNetworkPolicy","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"HMi9agCKOMY="}]}
+I0519 23:58:29.231216     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"metal3.io/v1alpha1","resources":[{"name":"provisionings","singularName":"provisioning","namespaced":false,"kind":"Provisioning","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"MFsHXPBs+No="},{"name":"provisionings/status","singularName":"","namespaced":false,"kind":"Provisioning","verbs":["get","patch","update"]},{"name":"hostfirmwaresettings","singularName":"hostfirmwaresettings","namespaced":true,"kind":"HostFirmwareSettings","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["hfs"],"storageVersionHash":"Ok8ThNUbb4U="},{"name":"hostfirmwaresettings/status","singularName":"","namespaced":true,"kind":"HostFirmwareSettings","verbs":["get","patch","update"]},{"name":"preprovisioningimages","singularName":"preprovisioningimage","namespaced":true,"kind":"PreprovisioningImage","verbs":["delete","deletecollection","get","list","patch","create","update [truncated 1219 chars]
+I0519 23:58:29.233662     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"policy/v1","resources":[{"name":"poddisruptionbudgets","singularName":"","namespaced":true,"kind":"PodDisruptionBudget","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pdb"],"storageVersionHash":"6BGBu0kpHtk="},{"name":"poddisruptionbudgets/status","singularName":"","namespaced":true,"kind":"PodDisruptionBudget","verbs":["get","patch","update"]}]}
+I0519 23:58:29.236013     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"monitoring.coreos.com/v1","resources":[{"name":"podmonitors","singularName":"podmonitor","namespaced":true,"kind":"PodMonitor","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"categories":["prometheus-operator"],"storageVersionHash":"t6BHpUAzPig="},{"name":"alertmanagers","singularName":"alertmanager","namespaced":true,"kind":"Alertmanager","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"categories":["prometheus-operator"],"storageVersionHash":"NshW3zg1K7o="},{"name":"prometheusrules","singularName":"prometheusrule","namespaced":true,"kind":"PrometheusRule","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"categories":["prometheus-operator"],"storageVersionHash":"RSJ8iG+KDOo="},{"name":"servicemonitors","singularName":"servicemonitor","namespaced":true,"kind":"ServiceMonitor","verbs":["delete","deletecollection","get","list","patch","create" [truncated 825 chars]
+I0519 23:58:29.238520     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"operators.coreos.com/v1alpha2","resources":[{"name":"operatorgroups","singularName":"operatorgroup","namespaced":true,"kind":"OperatorGroup","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["og"],"categories":["olm"],"storageVersionHash":"smrHN4vKoms="},{"name":"operatorgroups/status","singularName":"","namespaced":true,"kind":"OperatorGroup","verbs":["get","patch","update"]}]}
+I0519 23:58:29.242013     785 request.go:1181] Response Body: {"kind":"APIResourceList","groupVersion":"v1","resources":[{"name":"bindings","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"componentstatuses","singularName":"","namespaced":false,"kind":"ComponentStatus","verbs":["get","list"],"shortNames":["cs"]},{"name":"configmaps","singularName":"","namespaced":true,"kind":"ConfigMap","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cm"],"storageVersionHash":"qFsyl6wFWjQ="},{"name":"endpoints","singularName":"","namespaced":true,"kind":"Endpoints","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ep"],"storageVersionHash":"fWeeMqaN/OA="},{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"],"storageVersionHash":"r2yiGXH7wu8="},{"name":"limitranges","singularName":"","namespaced":true,"kind":"LimitRange","verbs":["create [truncated 5179 chars]
+I0519 23:58:29.244440     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"console.openshift.io/v1","resources":[{"name":"consolenotifications","singularName":"consolenotification","namespaced":false,"kind":"ConsoleNotification","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"fjLb6xIjTp8="},{"name":"consolenotifications/status","singularName":"","namespaced":false,"kind":"ConsoleNotification","verbs":["get","patch","update"]},{"name":"consoleyamlsamples","singularName":"consoleyamlsample","namespaced":false,"kind":"ConsoleYAMLSample","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"/0X4p1qvFq0="},{"name":"consoleexternalloglinks","singularName":"consoleexternalloglink","namespaced":false,"kind":"ConsoleExternalLogLink","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"JNNWRK5+6qk="},{"name":"consoleexternalloglinks/status","singularName":"","namespaced" [truncated 1014 chars]
+I0519 23:58:29.246907     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"template.openshift.io/v1","resources":[{"name":"brokertemplateinstances","singularName":"","namespaced":false,"kind":"BrokerTemplateInstance","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"Jxj8HlN0pXU="},{"name":"processedtemplates","singularName":"","namespaced":true,"kind":"Template","verbs":["create"]},{"name":"templateinstances","singularName":"","namespaced":true,"kind":"TemplateInstance","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"Q8UwfyPqly4="},{"name":"templateinstances/status","singularName":"","namespaced":true,"kind":"TemplateInstance","verbs":["get","patch","update"]},{"name":"templates","singularName":"","namespaced":true,"kind":"Template","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"utuWisMumJk="}]}
+I0519 23:58:29.249211     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"node.k8s.io/v1","resources":[{"name":"runtimeclasses","singularName":"","namespaced":false,"kind":"RuntimeClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"WQTu1GL3T2Q="}]}
+I0519 23:58:29.251290     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"project.openshift.io/v1","resources":[{"name":"projectrequests","singularName":"","namespaced":false,"kind":"ProjectRequest","verbs":["create","list"]},{"name":"projects","singularName":"","namespaced":false,"kind":"Project","verbs":["create","delete","get","list","patch","update","watch"]}]}
+I0519 23:58:29.253346     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apps.openshift.io/v1","resources":[{"name":"deploymentconfigs","singularName":"","namespaced":true,"kind":"DeploymentConfig","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["dc"],"categories":["all"],"storageVersionHash":"6xyoXGsxfiA="},{"name":"deploymentconfigs/instantiate","singularName":"","namespaced":true,"kind":"DeploymentRequest","verbs":["create"]},{"name":"deploymentconfigs/log","singularName":"","namespaced":true,"kind":"DeploymentLog","verbs":["get"]},{"name":"deploymentconfigs/rollback","singularName":"","namespaced":true,"kind":"DeploymentConfigRollback","verbs":["create"]},{"name":"deploymentconfigs/scale","singularName":"","namespaced":true,"group":"extensions","version":"v1beta1","kind":"Scale","verbs":["get","patch","update"]},{"name":"deploymentconfigs/status","singularName":"","namespaced":true,"kind":"DeploymentConfig","verbs":["get","patch","update"]}]}
+I0519 23:58:29.255401     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"packages.operators.coreos.com/v1","resources":[{"name":"packagemanifests","singularName":"","namespaced":true,"kind":"PackageManifest","verbs":["get","list"]},{"name":"packagemanifests/icon","singularName":"","namespaced":true,"kind":"PackageManifest","verbs":["get"]}]}
+I0519 23:58:29.257440     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"discovery.k8s.io/v1","resources":[{"name":"endpointslices","singularName":"","namespaced":true,"kind":"EndpointSlice","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"Nx3SIv6I0mE="}]}
+I0519 23:58:29.259824     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"node.k8s.io/v1beta1","resources":[{"name":"runtimeclasses","singularName":"","namespaced":false,"kind":"RuntimeClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"WQTu1GL3T2Q="}]}
+I0519 23:58:29.262534     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"coordination.k8s.io/v1","resources":[{"name":"leases","singularName":"","namespaced":true,"kind":"Lease","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"gqkMMb/YqFM="}]}
+I0519 23:58:29.265068     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"storage.k8s.io/v1beta1","resources":[{"name":"csistoragecapacities","singularName":"","namespaced":true,"kind":"CSIStorageCapacity","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"4as6MA/kOg0="}]}
+I0519 23:58:29.267521     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"certificates.k8s.io/v1","resources":[{"name":"certificatesigningrequests","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["csr"],"storageVersionHash":"95fRKMXA+00="},{"name":"certificatesigningrequests/approval","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["get","patch","update"]},{"name":"certificatesigningrequests/status","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["get","patch","update"]}]}
+I0519 23:58:29.269737     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling.openshift.io/v1beta1","resources":[{"name":"machineautoscalers","singularName":"machineautoscaler","namespaced":true,"kind":"MachineAutoscaler","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["ma"],"storageVersionHash":"ZDYdQVLj5g4="},{"name":"machineautoscalers/status","singularName":"","namespaced":true,"kind":"MachineAutoscaler","verbs":["get","patch","update"]}]}
+I0519 23:58:29.272098     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"k8s.cni.cncf.io/v1","resources":[{"name":"network-attachment-definitions","singularName":"network-attachment-definition","namespaced":true,"kind":"NetworkAttachmentDefinition","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["net-attach-def"],"storageVersionHash":"BNF/SJ3/If4="}]}
+I0519 23:58:29.274334     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"admissionregistration.k8s.io/v1","resources":[{"name":"mutatingwebhookconfigurations","singularName":"","namespaced":false,"kind":"MutatingWebhookConfiguration","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["api-extensions"],"storageVersionHash":"Sqi0GUgDaX0="},{"name":"validatingwebhookconfigurations","singularName":"","namespaced":false,"kind":"ValidatingWebhookConfiguration","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["api-extensions"],"storageVersionHash":"B0wHjQmsGNk="}]}
+I0519 23:58:29.276566     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"security.internal.openshift.io/v1","resources":[{"name":"rangeallocations","singularName":"rangeallocation","namespaced":false,"kind":"RangeAllocation","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"qZRTPsGHJXw="}]}
+I0519 23:58:29.279010     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"operator.openshift.io/v1","resources":[{"name":"servicecas","singularName":"serviceca","namespaced":false,"kind":"ServiceCA","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"+DF3a5EUlMc="},{"name":"servicecas/status","singularName":"","namespaced":false,"kind":"ServiceCA","verbs":["get","patch","update"]},{"name":"cloudcredentials","singularName":"cloudcredential","namespaced":false,"kind":"CloudCredential","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"rJ9MVOyFQKo="},{"name":"cloudcredentials/status","singularName":"","namespaced":false,"kind":"CloudCredential","verbs":["get","patch","update"]},{"name":"openshiftapiservers","singularName":"openshiftapiserver","namespaced":false,"kind":"OpenShiftAPIServer","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"categories":["coreoperators"],"storageVersio [truncated 5579 chars]
+I0519 23:58:29.281216     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"samples.operator.openshift.io/v1","resources":[{"name":"configs","singularName":"config","namespaced":false,"kind":"Config","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"ky0OJqa2Yqg="},{"name":"configs/status","singularName":"","namespaced":false,"kind":"Config","verbs":["get","patch","update"]}]}
+I0519 23:58:29.283662     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"tuned.openshift.io/v1","resources":[{"name":"tuneds","singularName":"tuned","namespaced":true,"kind":"Tuned","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"UFSFmIApyE0="},{"name":"profiles","singularName":"profile","namespaced":true,"kind":"Profile","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"Ymd5utw2PCg="}]}
+I0519 23:58:29.286015     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"whereabouts.cni.cncf.io/v1alpha1","resources":[{"name":"overlappingrangeipreservations","singularName":"overlappingrangeipreservation","namespaced":true,"kind":"OverlappingRangeIPReservation","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"QAFn0NjLYV0="},{"name":"ippools","singularName":"ippool","namespaced":true,"kind":"IPPool","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"XbcZnDfxtSo="}]}
+I0519 23:58:29.288373     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"operator.openshift.io/v1alpha1","resources":[{"name":"imagecontentsourcepolicies","singularName":"imagecontentsourcepolicy","namespaced":false,"kind":"ImageContentSourcePolicy","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"SlI7gNbjdUA="},{"name":"imagecontentsourcepolicies/status","singularName":"","namespaced":false,"kind":"ImageContentSourcePolicy","verbs":["get","patch","update"]}]}
+I0519 23:58:29.291052     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling/v2beta1","resources":[{"name":"horizontalpodautoscalers","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["hpa"],"categories":["all"],"storageVersionHash":"oQlkt7f5j/A="},{"name":"horizontalpodautoscalers/status","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["get","patch","update"]}]}
+I0519 23:58:29.293463     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"operators.coreos.com/v2","resources":[{"name":"operatorconditions","singularName":"operatorcondition","namespaced":true,"kind":"OperatorCondition","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["condition"],"categories":["olm"],"storageVersionHash":"Cil3d/t/Kpc="},{"name":"operatorconditions/status","singularName":"","namespaced":true,"kind":"OperatorCondition","verbs":["get","patch","update"]}]}
+I0519 23:58:29.296086     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"console.openshift.io/v1alpha1","resources":[{"name":"consoleplugins","singularName":"consoleplugin","namespaced":false,"kind":"ConsolePlugin","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"ACCeQvz0mH0="}]}
+I0519 23:58:29.302126     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling.openshift.io/v1","resources":[{"name":"clusterautoscalers","singularName":"clusterautoscaler","namespaced":false,"kind":"ClusterAutoscaler","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["ca"],"storageVersionHash":"zBaLBLdlZGk="},{"name":"clusterautoscalers/status","singularName":"","namespaced":false,"kind":"ClusterAutoscaler","verbs":["get","patch","update"]}]}
+I0519 23:58:29.304673     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"route.openshift.io/v1","resources":[{"name":"routes","singularName":"","namespaced":true,"kind":"Route","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["all"],"storageVersionHash":"jo1F7GfnXH4="},{"name":"routes/status","singularName":"","namespaced":true,"kind":"Route","verbs":["get","patch","update"]}]}
+I0519 23:58:29.311337     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"events.k8s.io/v1","resources":[{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"],"storageVersionHash":"r2yiGXH7wu8="}]}
+I0519 23:58:29.313851     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling/v2beta2","resources":[{"name":"horizontalpodautoscalers","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["hpa"],"categories":["all"],"storageVersionHash":"oQlkt7f5j/A="},{"name":"horizontalpodautoscalers/status","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["get","patch","update"]}]}
+I0519 23:58:29.316276     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"monitoring.coreos.com/v1alpha1","resources":[{"name":"alertmanagerconfigs","singularName":"alertmanagerconfig","namespaced":true,"kind":"AlertmanagerConfig","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"categories":["prometheus-operator"],"storageVersionHash":"95DNJ6wsUCg="}]}
+I0519 23:58:29.318604     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"rbac.authorization.k8s.io/v1","resources":[{"name":"clusterrolebindings","singularName":"","namespaced":false,"kind":"ClusterRoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"48tpQ8gZHFc="},{"name":"clusterroles","singularName":"","namespaced":false,"kind":"ClusterRole","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"bYE5ZWDrJ44="},{"name":"rolebindings","singularName":"","namespaced":true,"kind":"RoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"eGsCzGH6b1g="},{"name":"roles","singularName":"","namespaced":true,"kind":"Role","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"7FuwZcIIItM="}]}
+I0519 23:58:29.321149     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authorization.openshift.io/v1","resources":[{"name":"clusterrolebindings","singularName":"","namespaced":false,"kind":"ClusterRoleBinding","verbs":["create","delete","get","list","patch","update"]},{"name":"clusterroles","singularName":"","namespaced":false,"kind":"ClusterRole","verbs":["create","delete","get","list","patch","update"]},{"name":"localresourceaccessreviews","singularName":"","namespaced":true,"kind":"LocalResourceAccessReview","verbs":["create"]},{"name":"localsubjectaccessreviews","singularName":"","namespaced":true,"kind":"LocalSubjectAccessReview","verbs":["create"]},{"name":"resourceaccessreviews","singularName":"","namespaced":false,"kind":"ResourceAccessReview","verbs":["create"]},{"name":"rolebindingrestrictions","singularName":"","namespaced":true,"kind":"RoleBindingRestriction","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"rolebindings","singularName":"","namespaced":true,"kind" [truncated 554 chars]
+I0519 23:58:29.323820     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"security.openshift.io/v1","resources":[{"name":"podsecuritypolicyreviews","singularName":"","namespaced":true,"kind":"PodSecurityPolicyReview","verbs":["create"]},{"name":"podsecuritypolicyselfsubjectreviews","singularName":"","namespaced":true,"kind":"PodSecurityPolicySelfSubjectReview","verbs":["create"]},{"name":"podsecuritypolicysubjectreviews","singularName":"","namespaced":true,"kind":"PodSecurityPolicySubjectReview","verbs":["create"]},{"name":"rangeallocations","singularName":"","namespaced":false,"kind":"RangeAllocation","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"8/BJx/M8Ga0="},{"name":"securitycontextconstraints","singularName":"","namespaced":false,"kind":"SecurityContextConstraints","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["scc"]}]}
+I0519 23:58:29.329554     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"storage.k8s.io/v1","resources":[{"name":"csidrivers","singularName":"","namespaced":false,"kind":"CSIDriver","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"hL6j/rwBV5w="},{"name":"csinodes","singularName":"","namespaced":false,"kind":"CSINode","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"Pe62DkZtjuo="},{"name":"storageclasses","singularName":"","namespaced":false,"kind":"StorageClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sc"],"storageVersionHash":"K+m6uJwbjGY="},{"name":"volumeattachments","singularName":"","namespaced":false,"kind":"VolumeAttachment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"tJx/ezt6UDU="},{"name":"volumeattachments/status","singularName":"","namespaced":false,"kind":"VolumeAttachment"," [truncated 35 chars]
+I0519 23:58:29.331826     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"network.operator.openshift.io/v1","resources":[{"name":"egressrouters","singularName":"egressrouter","namespaced":true,"kind":"EgressRouter","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"whcNhkpRCxc="},{"name":"egressrouters/status","singularName":"","namespaced":true,"kind":"EgressRouter","verbs":["get","patch","update"]},{"name":"operatorpkis","singularName":"operatorpki","namespaced":true,"kind":"OperatorPKI","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"05e+cURVIcw="}]}
+I0519 23:58:29.334011     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"controlplane.operator.openshift.io/v1alpha1","resources":[{"name":"podnetworkconnectivitychecks","singularName":"podnetworkconnectivitycheck","namespaced":true,"kind":"PodNetworkConnectivityCheck","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"OAM77/d6N/I="},{"name":"podnetworkconnectivitychecks/status","singularName":"","namespaced":true,"kind":"PodNetworkConnectivityCheck","verbs":["get","patch","update"]}]}
+I0519 23:58:29.336222     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"build.openshift.io/v1","resources":[{"name":"buildconfigs","singularName":"","namespaced":true,"kind":"BuildConfig","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["bc"],"categories":["all"],"storageVersionHash":"2ooe95Eo6Y4="},{"name":"buildconfigs/instantiate","singularName":"","namespaced":true,"kind":"BuildRequest","verbs":["create"]},{"name":"buildconfigs/instantiatebinary","singularName":"","namespaced":true,"kind":"BinaryBuildRequestOptions","verbs":["create"]},{"name":"buildconfigs/webhooks","singularName":"","namespaced":true,"kind":"Build","verbs":["create"]},{"name":"builds","singularName":"","namespaced":true,"kind":"Build","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["all"],"storageVersionHash":"Iv+mFnvyzFc="},{"name":"builds/clone","singularName":"","namespaced":true,"kind":"BuildRequest","verbs":["create"]},{"name":"builds/details", [truncated 165 chars]
+I0519 23:58:29.338409     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"migration.k8s.io/v1alpha1","resources":[{"name":"storageversionmigrations","singularName":"storageversionmigration","namespaced":false,"kind":"StorageVersionMigration","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"X3bkZSayqxI="},{"name":"storageversionmigrations/status","singularName":"","namespaced":false,"kind":"StorageVersionMigration","verbs":["get","patch","update"]},{"name":"storagestates","singularName":"storagestate","namespaced":false,"kind":"StorageState","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"7abAo0yHdNM="},{"name":"storagestates/status","singularName":"","namespaced":false,"kind":"StorageState","verbs":["get","patch","update"]}]}
+I0519 23:58:29.340972     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"image.openshift.io/v1","resources":[{"name":"images","singularName":"","namespaced":false,"kind":"Image","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"FX/i8Tt+3Fc="},{"name":"imagesignatures","singularName":"","namespaced":false,"kind":"ImageSignature","verbs":["create","delete"]},{"name":"imagestreamimages","singularName":"","namespaced":true,"kind":"ImageStreamImage","verbs":["get"],"shortNames":["isimage"]},{"name":"imagestreamimports","singularName":"","namespaced":true,"kind":"ImageStreamImport","verbs":["create"]},{"name":"imagestreammappings","singularName":"","namespaced":true,"kind":"ImageStreamMapping","verbs":["create"]},{"name":"imagestreams","singularName":"","namespaced":true,"kind":"ImageStream","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["is"],"categories":["all"],"storageVersionHash":"mwmf9lCqOiA="},{"name":"imagestream [truncated 640 chars]
+I0519 23:58:29.344032     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"batch/v1beta1","resources":[{"name":"cronjobs","singularName":"","namespaced":true,"kind":"CronJob","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cj"],"categories":["all"],"storageVersionHash":"sd5LIXh4Fjs="},{"name":"cronjobs/status","singularName":"","namespaced":true,"kind":"CronJob","verbs":["get","patch","update"]}]}
+I0519 23:58:29.346367     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"config.openshift.io/v1","resources":[{"name":"dnses","singularName":"dns","namespaced":false,"kind":"DNS","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"SAHetG08gBY="},{"name":"dnses/status","singularName":"","namespaced":false,"kind":"DNS","verbs":["get","patch","update"]},{"name":"oauths","singularName":"oauth","namespaced":false,"kind":"OAuth","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"4BZS3Rc6+4g="},{"name":"oauths/status","singularName":"","namespaced":false,"kind":"OAuth","verbs":["get","patch","update"]},{"name":"schedulers","singularName":"scheduler","namespaced":false,"kind":"Scheduler","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"ptedUcY9aMg="},{"name":"schedulers/status","singularName":"","namespaced":false,"kind":"Scheduler","verbs":["get","patch","update" [truncated 4877 chars]
+I0519 23:58:29.348803     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"user.openshift.io/v1","resources":[{"name":"groups","singularName":"","namespaced":false,"kind":"Group","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"YhnYEx+IpBw="},{"name":"identities","singularName":"","namespaced":false,"kind":"Identity","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"/S8uaPXlz9c="},{"name":"useridentitymappings","singularName":"","namespaced":false,"kind":"UserIdentityMapping","verbs":["create","delete","get","patch","update"]},{"name":"users","singularName":"","namespaced":false,"kind":"User","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"storageVersionHash":"Hbwv6GYPwoQ="}]}
+I0519 23:58:29.351354     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling/v2","resources":[{"name":"horizontalpodautoscalers","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["hpa"],"categories":["all"],"storageVersionHash":"oQlkt7f5j/A="},{"name":"horizontalpodautoscalers/status","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["get","patch","update"]}]}
+I0519 23:58:29.353840     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"machineconfiguration.openshift.io/v1","resources":[{"name":"kubeletconfigs","singularName":"kubeletconfig","namespaced":false,"kind":"KubeletConfig","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"d0/BkupJ0L0="},{"name":"kubeletconfigs/status","singularName":"","namespaced":false,"kind":"KubeletConfig","verbs":["get","patch","update"]},{"name":"machineconfigs","singularName":"machineconfig","namespaced":false,"kind":"MachineConfig","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["mc"],"storageVersionHash":"BDX8m3QUIEc="},{"name":"containerruntimeconfigs","singularName":"containerruntimeconfig","namespaced":false,"kind":"ContainerRuntimeConfig","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["ctrcfg"],"storageVersionHash":"zQKIZo2axmg="},{"name":"containerruntimeconfigs/status","singularName": [truncated 838 chars]
+I0519 23:58:29.356075     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"quota.openshift.io/v1","resources":[{"name":"appliedclusterresourcequotas","singularName":"","namespaced":true,"kind":"AppliedClusterResourceQuota","verbs":["get","list"]},{"name":"clusterresourcequotas","singularName":"","namespaced":false,"kind":"ClusterResourceQuota","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["clusterquota"]},{"name":"clusterresourcequotas/status","singularName":"","namespaced":false,"kind":"ClusterResourceQuota","verbs":["get","patch","update"]}]}
+I0519 23:58:29.358212     785 request.go:1181] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"machine.openshift.io/v1beta1","resources":[{"name":"machines","singularName":"machine","namespaced":true,"kind":"Machine","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"GLEf6/W/4xY="},{"name":"machines/status","singularName":"","namespaced":true,"kind":"Machine","verbs":["get","patch","update"]},{"name":"machinehealthchecks","singularName":"machinehealthcheck","namespaced":true,"kind":"MachineHealthCheck","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["mhc","mhcs"],"storageVersionHash":"qvQyPZn5SE8="},{"name":"machinehealthchecks/status","singularName":"","namespaced":true,"kind":"MachineHealthCheck","verbs":["get","patch","update"]},{"name":"machinesets","singularName":"machineset","namespaced":true,"kind":"MachineSet","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"p7ZEIilFKZ0="}, [truncated 271 chars]
+I0519 23:58:29.530623     785 round_trippers.go:463] GET https://api.crc.testing:6443/apis/apps/v1/namespaces/portic-devops/deployments/tomcat8-portic
+I0519 23:58:29.530821     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.530874     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.530918     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.530977     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.537514     785 round_trippers.go:574] Response Status: 200 OK in 6 milliseconds
+I0519 23:58:29.537551     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.537567     785 round_trippers.go:580]     Audit-Id: a906724d-84ad-4dce-909e-c3764541a033
+I0519 23:58:29.537579     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.537591     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.537602     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.537615     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.537629     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.538262     785 request.go:1181] Response Body: {"kind":"Deployment","apiVersion":"apps/v1","metadata":{"name":"tomcat8-portic","namespace":"portic-devops","uid":"8153a078-16f4-406b-9154-8752e2a21f3c","resourceVersion":"2683032","generation":40,"creationTimestamp":"2022-05-17T09:02:29Z","labels":{"app":"tomcat8-portic","app.kubernetes.io/component":"tomcat8-portic","app.kubernetes.io/instance":"tomcat8-portic","app.kubernetes.io/name":"tomcat8-portic"},"annotations":{"deployment.kubernetes.io/revision":"4","kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"tomcat8-portic\",\"app.kubernetes.io/component\":\"tomcat8-portic\",\"app.kubernetes.io/instance\":\"tomcat8-portic\",\"app.kubernetes.io/name\":\"tomcat8-portic\"},\"name\":\"tomcat8-portic\",\"namespace\":\"portic-devops\"},\"spec\":{\"progressDeadlineSeconds\":600,\"replicas\":1,\"revisionHistoryLimit\":10,\"selector\":{\"matchLabels\":{\"deployment\":\"tomcat8-portic\"}},\"strategy\":{\"rolling [truncated 6505 chars]
+I0519 23:58:29.544609     785 request.go:1181] Request Body: {"spec":{"template":{"spec":{"$setElementOrder/containers":[{"name":"tomcat8-portic"}],"containers":[{"image":"portic-devops/tomcat8-portic:44","name":"tomcat8-portic"}]}}}}
+I0519 23:58:29.544893     785 round_trippers.go:463] PATCH https://api.crc.testing:6443/apis/apps/v1/namespaces/portic-devops/deployments/tomcat8-portic?fieldManager=kubectl-set
+I0519 23:58:29.544979     785 round_trippers.go:469] Request Headers:
+I0519 23:58:29.545043     785 round_trippers.go:473]     User-Agent: oc/4.10.0 (linux/amd64) kubernetes/f93da17
+I0519 23:58:29.545098     785 round_trippers.go:473]     Accept: application/json, */*
+I0519 23:58:29.545146     785 round_trippers.go:473]     Content-Type: application/strategic-merge-patch+json
+I0519 23:58:29.545228     785 round_trippers.go:473]     Authorization: Bearer <masked>
+I0519 23:58:29.556613     785 round_trippers.go:574] Response Status: 200 OK in 11 milliseconds
+I0519 23:58:29.556657     785 round_trippers.go:577] Response Headers:
+I0519 23:58:29.556678     785 round_trippers.go:580]     Audit-Id: 1be7bba4-f4ec-40a0-b5b6-54cc22582cfe
+I0519 23:58:29.556697     785 round_trippers.go:580]     Cache-Control: no-cache, private
+I0519 23:58:29.556711     785 round_trippers.go:580]     Content-Type: application/json
+I0519 23:58:29.556725     785 round_trippers.go:580]     X-Kubernetes-Pf-Flowschema-Uid: 08552099-743d-44cc-ac23-0a4916294230
+I0519 23:58:29.556741     785 round_trippers.go:580]     X-Kubernetes-Pf-Prioritylevel-Uid: 139eacc7-bbb4-4bab-8d72-2befb6c40890
+I0519 23:58:29.556752     785 round_trippers.go:580]     Date: Thu, 19 May 2022 23:58:29 GMT
+I0519 23:58:29.557208     785 request.go:1181] Response Body: {"kind":"Deployment","apiVersion":"apps/v1","metadata":{"name":"tomcat8-portic","namespace":"portic-devops","uid":"8153a078-16f4-406b-9154-8752e2a21f3c","resourceVersion":"2683250","generation":41,"creationTimestamp":"2022-05-17T09:02:29Z","labels":{"app":"tomcat8-portic","app.kubernetes.io/component":"tomcat8-portic","app.kubernetes.io/instance":"tomcat8-portic","app.kubernetes.io/name":"tomcat8-portic"},"annotations":{"deployment.kubernetes.io/revision":"4","kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"tomcat8-portic\",\"app.kubernetes.io/component\":\"tomcat8-portic\",\"app.kubernetes.io/instance\":\"tomcat8-portic\",\"app.kubernetes.io/name\":\"tomcat8-portic\"},\"name\":\"tomcat8-portic\",\"namespace\":\"portic-devops\"},\"spec\":{\"progressDeadlineSeconds\":600,\"replicas\":1,\"revisionHistoryLimit\":10,\"selector\":{\"matchLabels\":{\"deployment\":\"tomcat8-portic\"}},\"strategy\":{\"rolling [truncated 6505 chars]
+deployment.apps/tomcat8-portic image updated
+configmap "tomcat-serverxml" deleted
+configmap "tomcat-prometheus-config" deleted
+configmap "tomcat-setenv" deleted
+configmap/tomcat-serverxml created
+configmap/tomcat-prometheus-config created
+configmap/tomcat-setenv created
+deployment.apps/tomcat8-portic configured
+service/tomcat8-portic unchanged
+route.route.openshift.io/tomcat8-portic unchanged
+Finished: SUCCESS

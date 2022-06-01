@@ -1,0 +1,11 @@
+commit edac4ca49a84ba295f18dcc71a5cbb541f484fc8
+tree 08140e59976da8b80dee7122fb0733a8f6839c18
+parent c51b6b6193fdc5a8b00e8a73c615c81350dae0ab
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:33:48 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:33:48 +0200
+
+    build.sh added login
+
+
+:100644 100644 da5a3b52939ee9bc1cb8ed734df429046815424c be63d96796f484f8c26b50fda22d5a95c57e9e80 M	objects/TOMCAT/Dockerfile
+:000000 100644 0000000000000000000000000000000000000000 7d43a060238f9560f58fe371616991b567c4bf0e A	objects/TOMCAT/hello-world-maven-1.war

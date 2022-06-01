@@ -1,0 +1,141 @@
+Started by user [8mha:////4FNfmFRewAwP4PwKcHVgBH5UKvxe8ao8Avf4ZfKbPbn5AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/openshift
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/openshift/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 60ead114e511ab1aba4ae37138f617b40040e611 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 60ead114e511ab1aba4ae37138f617b40040e611 # timeout=10
+Commit message: "Update Dockerfile"
+ > git rev-list --no-walk 60ead114e511ab1aba4ae37138f617b40040e611 # timeout=10
+[openshift] $ /bin/sh -xe /tmp/jenkins170115775483501306.sh
++ export IMG=carles
++ date +%Y%m%d
++ export TAG=20220516
++ export NS=portic-devops
++ export REPO=default-route-openshift-image-registry.apps-crc.testing
++ docker login https://default-route-openshift-image-registry.apps-crc.testing -u developer -p ****
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
++ docker build objects/TOMCAT/ -t default-route-openshift-image-registry.apps-crc.testing/portic-devops/carles:20220516
+Sending build context to Docker daemon  559.1kB
+Step 1/21 : FROM redhat/ubi8
+ ---> 1264065f6ae8
+Step 2/21 : LABEL MAINTAINER=cmajo@kyndryl.com
+ ---> Using cache
+ ---> e3337e34003d
+Step 3/21 : ENV DOWNLOAD_URL="https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz"
+ ---> Using cache
+ ---> c182f8e46f77
+Step 4/21 : RUN yum install -y wget gzip java-1.8.0-openjdk.x86_64 procps-ng &&     yum clean all &&     rm -rf /var/cache/yum
+ ---> Using cache
+ ---> a2e20916bbea
+Step 5/21 : RUN useradd -md /home/tomcat -u 1001 tomcat
+ ---> Using cache
+ ---> 94ac8fa61fcc
+Step 6/21 : USER tomcat
+ ---> Using cache
+ ---> 4de26d189c71
+Step 7/21 : WORKDIR /home/tomcat
+ ---> Using cache
+ ---> 9bb1394e1f95
+Step 8/21 : RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz && tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && mv apache-tomcat-* apache-tomcat && chmod a+x /home/tomcat/apache-tomcat/bin/*
+ ---> Using cache
+ ---> 0135b69367d4
+Step 9/21 : RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
+ ---> Using cache
+ ---> ccd5030848da
+Step 10/21 : ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
+
+
+ ---> Using cache
+ ---> 5d0b300447bc
+Step 11/21 : COPY bin/ /home/tomcat/apache-tomcat/bin/
+ ---> Using cache
+ ---> 5f872ef875ed
+Step 12/21 : COPY conf/ /home/tomcat/apache-tomcat/conf/
+ ---> Using cache
+ ---> 58cf8b4e4e70
+Step 13/21 : COPY lib/ /home/tomcat/apache-tomcat/lib/
+ ---> Using cache
+ ---> 80675335112f
+Step 14/21 : USER root
+ ---> Using cache
+ ---> 4a29bdaf0a9d
+Step 15/21 : RUN chmod a+x /home/tomcat/apache-tomcat/bin/setenv.sh
+ ---> Using cache
+ ---> 96c6856a72b8
+Step 16/21 : RUN chown -R tomcat:tomcat /home/tomcat/
+ ---> Using cache
+ ---> a55a66908a98
+Step 17/21 : USER tomcat
+ ---> Using cache
+ ---> a330b8efe633
+Step 18/21 : EXPOSE 8080/tcp
+ ---> Using cache
+ ---> 3105b2cdd188
+Step 19/21 : EXPOSE 3004/tcp
+ ---> Using cache
+ ---> 64253bcea504
+Step 20/21 : ENV PATH ${PATH}:/home/tomcat/apache-tomcat/bin/
+ ---> Using cache
+ ---> 60468dac3219
+Step 21/21 : CMD ["catalina.sh", "run"]
+ ---> Using cache
+ ---> 3f587df998d9
+Successfully built 3f587df998d9
+Successfully tagged default-route-openshift-image-registry.apps-crc.testing/portic-devops/carles:20220516
++ docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/carles:20220516
+The push refers to repository [default-route-openshift-image-registry.apps-crc.testing/portic-devops/carles]
+bda3f8efbea5: Preparing
+510ea9092839: Preparing
+ed096728eb1b: Preparing
+cc628be476f9: Preparing
+7d5bf11397b2: Preparing
+58f365e36665: Preparing
+297cf6cd39d5: Preparing
+2b5adb13d293: Preparing
+d4388a5c8f60: Preparing
+4c269a482dd1: Preparing
+773711fd02f0: Preparing
+5bf135c4a0de: Preparing
+297cf6cd39d5: Waiting
+4c269a482dd1: Waiting
+2b5adb13d293: Waiting
+d4388a5c8f60: Waiting
+58f365e36665: Waiting
+5bf135c4a0de: Waiting
+773711fd02f0: Waiting
+7d5bf11397b2: Layer already exists
+510ea9092839: Layer already exists
+cc628be476f9: Layer already exists
+ed096728eb1b: Layer already exists
+bda3f8efbea5: Layer already exists
+58f365e36665: Layer already exists
+2b5adb13d293: Layer already exists
+d4388a5c8f60: Layer already exists
+297cf6cd39d5: Layer already exists
+4c269a482dd1: Layer already exists
+773711fd02f0: Layer already exists
+5bf135c4a0de: Layer already exists
+20220516: digest: sha256:c2aa5268d65ad0d5db2d1a9de10bbd715cde441e61e62ca8dbaf09a92b6e64ba size: 2827
++ docker rmi -f default-route-openshift-image-registry.apps-crc.testing/portic-devops/carles:20220516
+Untagged: default-route-openshift-image-registry.apps-crc.testing/portic-devops/carles:20220516
+Executing: oc --server=https://10.217.4.1:443 --certificate-authority=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt --namespace=portic-devops --token=XXXXX get configmaps -o name 
+error: the server doesn't have a resource type "configmaps -o name"
+
+Client tool terminated with status: 1
+Build step 'OpenShift - Generic OC Invocation' marked build as failure
+Finished: FAILURE

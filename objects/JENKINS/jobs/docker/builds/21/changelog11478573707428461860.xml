@@ -1,0 +1,31 @@
+commit e7f37e0eaefb70e7d780dbc85f4444dd08959f2e
+tree 6ae4e79ace0d20760a6716375045e84e380d0469
+parent 3470bf6718afbc6ef32ec1b3058968959d37472b
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-16 15:54:29 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-16 15:54:29 +0200
+
+    .
+
+
+:100644 100644 c29fa0992eef29f353846253ec23755f11af7d33 92ec128c650a148b164058686f208ce5d1fdee8a M	objects/TOMCAT/Jenkinsfile
+commit 6d8bf89b209efd01f74033a75b3b3a841bfd4bd6
+tree 667c9dace06b58b27fd9250d9cfc8bb6fa19e3e0
+parent 7eb3e69d1a37f0732624226cf9e79186dea1e9fa
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-16 15:51:52 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-16 15:51:52 +0200
+
+    .
+
+
+:100644 100644 25f2f8dc1d242d0005b419a2d7f806f6f95db22a 2070436cabf3394ba60af17a5f2392d6fe07265a M	objects/JENKINS/Dockerfile
+commit 7eb3e69d1a37f0732624226cf9e79186dea1e9fa
+tree 9c069cee5fc4d6e3bf16a3b80678c2ca76b96778
+parent dca89be60867b10c8047aef25bf8c6e87578a228
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-16 15:51:03 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-16 15:51:03 +0200
+
+    .
+
+
+:100644 100644 b97554615abe60e1711a2f613274cab76f36251e 0d2cb35f465df5b536b2b7708a58a4269ef0ffae M	objects/TOMCAT/Jenkinsfile
+:000000 100644 0000000000000000000000000000000000000000 b97554615abe60e1711a2f613274cab76f36251e A	objects/TOMCAT/Jenkinsfile.old

@@ -1,0 +1,20 @@
+commit 1bcc1fee9dc98a1fccaf04c75bd9a8eb68d1a505
+tree ac2cd26990886a13c295dfbd668487affe4799e0
+parent 6300c8fdc254abac9f5daf4bc7b734e8aaf694c9
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 01:25:56 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 01:25:56 +0200
+
+    build.sh added login
+
+
+:100644 100644 5db339617d05efe984c55a5359b8f77206b892c8 230b21453bea3e4408135e4011c2655a2f838f3d M	objects/TOMCAT/Dockerfile
+commit 6300c8fdc254abac9f5daf4bc7b734e8aaf694c9
+tree 3dd71b79b9767e4dabd92c0890df9b82f5113a94
+parent e5f6ce38a48c55f3d6dda0f7a065127c399ac587
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 01:21:45 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 01:21:45 +0200
+
+    build.sh added login
+
+
+:100644 100644 88f66ce33668292e06f02c1695f9f05aa9473922 c45ad8c14db0bf197bde66405b40a867a5de95fe M	objects/TOMCAT/route-tomcat8.yaml

@@ -1,0 +1,204 @@
+Started by upstream project "[8mha:////4GkuQ8xr3wq2zNkClvdCeLTtK1Z+TdyoSYtPaBWc9E4EAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/az8JP3cxLLUPH0A68kDAcAAAAA=[0mmaven" build number [8mha:////4ACR3J4HnovPTmYno6lOQwZw37wRUJvLn8L/5Cpmxm0uAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZe/az8JP3cxLLUPH1DSwCI++NfwgAAAA==[0m19
+originally caused by:
+ Started by user [8mha:////4FNfmFRewAwP4PwKcHVgBH5UKvxe8ao8Avf4ZfKbPbn5AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/freestyle
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/freestyle/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision e5873a5960535c5da504325a3ad49da1f6089581 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e5873a5960535c5da504325a3ad49da1f6089581 # timeout=10
+Commit message: "DOCKER BUILDER  + updated script builder.sh"
+ > git rev-list --no-walk 2341eceb0aa501822da28f6ee715eab4f6520eed # timeout=10
+[freestyle] $ /bin/sh -xe /tmp/jenkins9219411616889058867.sh
++ objects/TOMCAT/build.sh
+******************
+developer
+****
+54
+******************
+--2022-05-20 07:49:31--  https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war
+Resolving carles.jfrog.io (carles.jfrog.io)... 52.213.205.160, 52.49.71.71, 34.255.62.106
+Connecting to carles.jfrog.io (carles.jfrog.io)|52.213.205.160|:443... connected.
+HTTP request sent, awaiting response... 401 
+Authentication selected: Basic realm="Artifactory Realm"
+Reusing existing connection to carles.jfrog.io:443.
+HTTP request sent, awaiting response... 200 
+Length: 2851 (2.8K) [application/java-archive]
+Saving to: ‘war/hello-world-maven-1.war’
+
+     0K ..                                                    100% 31.4M=0s
+
+2022-05-20 07:49:31 (31.4 MB/s) - ‘war/hello-world-maven-1.war’ saved [2851/2851]
+
+Login successful.
+
+You have one project on this server: "portic-devops"
+
+Using project "portic-devops".
+Welcome! See 'oc help' to get started.
+Build tomcat8-portic:54
+Sending build context to Docker daemon  582.1kB
+Step 1/21 : FROM redhat/ubi8
+ ---> 1264065f6ae8
+Step 2/21 : LABEL MAINTAINER=cmajo@kyndryl.com
+ ---> Using cache
+ ---> fc1c50ed6447
+Step 3/21 : ENV DOWNLOAD_URL="https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz"
+ ---> Using cache
+ ---> 9bce8bafdc67
+Step 4/21 : RUN yum install -y wget gzip java-1.8.0-openjdk.x86_64 procps-ng &&     yum clean all &&     rm -rf /var/cache/yum
+ ---> Using cache
+ ---> 9e8044be249a
+Step 5/21 : RUN useradd -md /home/tomcat -u 1001 tomcat
+ ---> Using cache
+ ---> 04f8d6bc255c
+Step 6/21 : USER tomcat
+ ---> Using cache
+ ---> 0f6f12685f25
+Step 7/21 : WORKDIR /home/tomcat
+ ---> Using cache
+ ---> cb82580621f4
+Step 8/21 : RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz &&     tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && chown -R tomcat:tomcat /home/tomcat/ && mv apache-tomcat-* apache-tomcat &&  chmod a+x /home/tomcat/apache-tomcat/bin/*
+ ---> Using cache
+ ---> 23da4c0a2574
+Step 9/21 : RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
+ ---> Using cache
+ ---> c5a59dfdfdf4
+Step 10/21 : ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
+
+
+ ---> Using cache
+ ---> 868838293fd6
+Step 11/21 : COPY war/* /home/tomcat/apache-tomcat/webapps/
+ ---> 34a4c875f097
+Step 12/21 : COPY bin/ /home/tomcat/apache-tomcat/bin/
+ ---> 62f5a2bcdb9b
+Step 13/21 : COPY conf/ /home/tomcat/apache-tomcat/conf/
+ ---> 83b6664b017d
+Step 14/21 : COPY lib/ /home/tomcat/apache-tomcat/lib/
+ ---> e4e953519a57
+Step 15/21 : USER root
+ ---> Running in c88cf64c7eab
+Removing intermediate container c88cf64c7eab
+ ---> 6544d2cdc7ae
+Step 16/21 : RUN chmod a+x /home/tomcat/apache-tomcat/bin/setenv.sh
+ ---> Running in 7ff4235ff953
+Removing intermediate container 7ff4235ff953
+ ---> 94c8bb406f21
+Step 17/21 : USER tomcat
+ ---> Running in 218833cb1cb0
+Removing intermediate container 218833cb1cb0
+ ---> c47906eaf5c7
+Step 18/21 : EXPOSE 8080/tcp
+ ---> Running in ab6eb7b5819e
+Removing intermediate container ab6eb7b5819e
+ ---> 7f3266738392
+Step 19/21 : EXPOSE 8686/tcp
+ ---> Running in fd9ffe37e1d0
+Removing intermediate container fd9ffe37e1d0
+ ---> 67357181933f
+Step 20/21 : ENV PATH ${PATH}:/home/tomcat/apache-tomcat/bin/
+ ---> Running in 58e201ca7790
+Removing intermediate container 58e201ca7790
+ ---> 5578fe7be66e
+Step 21/21 : CMD ["catalina.sh", "run"]
+ ---> Running in e7b43aad6d19
+Removing intermediate container e7b43aad6d19
+ ---> 970922e05cf4
+Successfully built 970922e05cf4
+Successfully tagged default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:54
+LOGIN REPO:
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+PUSH default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:54
+The push refers to repository [default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic]
+d3279defef40: Preparing
+1ed9373b35e2: Preparing
+77a14b99fd52: Preparing
+b01b28780d6d: Preparing
+d3040c2c83f5: Preparing
+701e0e4a3b77: Preparing
+5fb4f5c9dc16: Preparing
+8715b347d011: Preparing
+74dda941ca03: Preparing
+0c9d450604ef: Preparing
+773711fd02f0: Preparing
+5bf135c4a0de: Preparing
+701e0e4a3b77: Waiting
+5fb4f5c9dc16: Waiting
+8715b347d011: Waiting
+74dda941ca03: Waiting
+0c9d450604ef: Waiting
+773711fd02f0: Waiting
+5bf135c4a0de: Waiting
+b01b28780d6d: Pushed
+d3040c2c83f5: Pushed
+701e0e4a3b77: Layer already exists
+77a14b99fd52: Pushed
+5fb4f5c9dc16: Layer already exists
+d3279defef40: Pushed
+1ed9373b35e2: Pushed
+8715b347d011: Layer already exists
+74dda941ca03: Layer already exists
+773711fd02f0: Layer already exists
+0c9d450604ef: Layer already exists
+5bf135c4a0de: Layer already exists
+54: digest: sha256:ab8be10ca4f845c89316392796365471f0d9e2bfea4ab8f7fd51723f35650fef size: 2825
+The push refers to repository [default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic]
+d3279defef40: Preparing
+1ed9373b35e2: Preparing
+77a14b99fd52: Preparing
+b01b28780d6d: Preparing
+d3040c2c83f5: Preparing
+701e0e4a3b77: Preparing
+5fb4f5c9dc16: Preparing
+8715b347d011: Preparing
+74dda941ca03: Preparing
+0c9d450604ef: Preparing
+773711fd02f0: Preparing
+5bf135c4a0de: Preparing
+701e0e4a3b77: Waiting
+5fb4f5c9dc16: Waiting
+8715b347d011: Waiting
+74dda941ca03: Waiting
+0c9d450604ef: Waiting
+773711fd02f0: Waiting
+5bf135c4a0de: Waiting
+d3279defef40: Layer already exists
+b01b28780d6d: Layer already exists
+77a14b99fd52: Layer already exists
+1ed9373b35e2: Layer already exists
+d3040c2c83f5: Layer already exists
+74dda941ca03: Layer already exists
+5fb4f5c9dc16: Layer already exists
+0c9d450604ef: Layer already exists
+8715b347d011: Layer already exists
+701e0e4a3b77: Layer already exists
+773711fd02f0: Layer already exists
+5bf135c4a0de: Layer already exists
+latest: digest: sha256:ab8be10ca4f845c89316392796365471f0d9e2bfea4ab8f7fd51723f35650fef size: 2825
+SET IMAGE
+deployment.apps/tomcat8-portic image updated
+configmap "tomcat-serverxml" deleted
+configmap "tomcat-prometheus-config" deleted
+configmap "tomcat-setenv" deleted
+configmap/tomcat-serverxml created
+configmap/tomcat-prometheus-config created
+configmap/tomcat-setenv created
+deployment.apps/tomcat8-portic configured
+service/tomcat8-portic unchanged
+route.route.openshift.io/tomcat8-portic unchanged
+Finished: SUCCESS

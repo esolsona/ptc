@@ -1,0 +1,401 @@
+commit efbc20c3357bb8373a4572c478bbd451555062b0
+tree 51ed7fc02a62abc7e90f7afc019cd53a3fa2410c
+parent cdd4ef94b63c97ef5effe2349bf98ee30910ab3e
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:20:19 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:20:19 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 74bd425d32648aa5d9143e0d6422e68f29ec1665 0d2cb35f465df5b536b2b7708a58a4269ef0ffae M	Jenkinsfile
+commit cdd4ef94b63c97ef5effe2349bf98ee30910ab3e
+tree d1349af2fe1fa303df8cb880888dcad72cc174b2
+parent dda8501fc92abc3f8c30fa8da9ee96b4da64189e
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:19:40 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:19:40 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 2fb3f790c918f0776e450e485d2582b9ba04d02d 74bd425d32648aa5d9143e0d6422e68f29ec1665 M	Jenkinsfile
+commit dda8501fc92abc3f8c30fa8da9ee96b4da64189e
+tree c88eb57568eb3aae841227a0047fa9e2414ff632
+parent 4f07317eee8ce876e5267f05ead332a8a183f1c4
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:16:57 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:16:57 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 df0806491052ed7be8121fa54c48060dc597c0cd 2fb3f790c918f0776e450e485d2582b9ba04d02d M	Jenkinsfile
+commit 4f07317eee8ce876e5267f05ead332a8a183f1c4
+tree 3698ebe03f15f97571ad2a535bf506490bbe0027
+parent 6650e5e7feb95862cda62629bac66faf2d93c91f
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:16:11 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:16:11 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 03a99a95aac78a98debce6f477fa1f60d1459bd2 df0806491052ed7be8121fa54c48060dc597c0cd M	Jenkinsfile
+commit 6650e5e7feb95862cda62629bac66faf2d93c91f
+tree 740d0bac5331ed7bc767050708f50ff739d44b30
+parent fa00a2c6420cd085e8f764d80a4666e2eaa88315
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:13:09 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:13:09 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 a001113b854edd5ee24709de37ca5704c0622b33 03a99a95aac78a98debce6f477fa1f60d1459bd2 M	Jenkinsfile
+commit fa00a2c6420cd085e8f764d80a4666e2eaa88315
+tree 21a298b3974b1bd82b5b79cb769ae033005d0550
+parent f9d4e19f1314b1ccb6590ae99acd1d60a177af0c
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:09:52 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:09:52 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 86b2e4028e2521c8a3b91b9976fe5d1c67e7d141 a001113b854edd5ee24709de37ca5704c0622b33 M	Jenkinsfile
+commit f9d4e19f1314b1ccb6590ae99acd1d60a177af0c
+tree 7f3ef7900dacf7d374403ddeafaa9a50d339af93
+parent b43b4ba65e9ab9b22c54d0f721f0e7d9eb37e557
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:09:16 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:09:16 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 5bdf0d2ee8dc918d3ddc34a0619210278b01e61a 86b2e4028e2521c8a3b91b9976fe5d1c67e7d141 M	Jenkinsfile
+commit b43b4ba65e9ab9b22c54d0f721f0e7d9eb37e557
+tree b3002cc34815241a5518c491b6a56eeee3f25fb6
+parent 3e04a9a1987d2a66a720915c0c35f0f8929bdddd
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:08:42 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:08:42 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 ce126df3b9d64db58e1746df4bae3e78aacb3377 5bdf0d2ee8dc918d3ddc34a0619210278b01e61a M	Jenkinsfile
+commit 3e04a9a1987d2a66a720915c0c35f0f8929bdddd
+tree d041eb6af7502f638ed6e0a41c8f94df1e363884
+parent eea67a19392010868cfc9fff1a6b0db5b788cdf9
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:07:42 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:07:42 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 74613f05b2899200204997a2452d844a56c4a65a ce126df3b9d64db58e1746df4bae3e78aacb3377 M	Jenkinsfile
+commit eea67a19392010868cfc9fff1a6b0db5b788cdf9
+tree 121ea675f47db1e177703b1ee39c75905b6dd24c
+parent 3662d7b455382ec595a3d076cc5395ded2e546cf
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 16:06:47 +0200
+committer GitHub <noreply@github.com> 2022-05-12 16:06:47 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 23bfc52c8d85e381cd919aec4a98d1a929923837 74613f05b2899200204997a2452d844a56c4a65a M	Jenkinsfile
+commit 3662d7b455382ec595a3d076cc5395ded2e546cf
+tree 0ea58c4b02ad8167993ee9401403303e510ce6bc
+parent b96bdc04fb2e6153559af045f1cb020ed066a7ee
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:53:41 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:53:41 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 a776d18b3ab447875d7fa412bd975f6241474283 23bfc52c8d85e381cd919aec4a98d1a929923837 M	Jenkinsfile
+commit b96bdc04fb2e6153559af045f1cb020ed066a7ee
+tree 4b9644fabb134452e34b34576a673af64324d2f3
+parent f316ef27d38efac61b1771d45dba95bed863b03e
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:49:22 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:49:22 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 2166cef6ed6bad9220ae3572c20dfeee14d77825 a776d18b3ab447875d7fa412bd975f6241474283 M	Jenkinsfile
+commit f316ef27d38efac61b1771d45dba95bed863b03e
+tree b8ca4b8169ad7e4f0fde911d5c2dccf228c170c8
+parent 404a64779468fd685a08713d6713941438174d17
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:44:18 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:44:18 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 7c7e7af251d84ebf63809cfbcc163bd0448312b5 2166cef6ed6bad9220ae3572c20dfeee14d77825 M	Jenkinsfile
+commit 404a64779468fd685a08713d6713941438174d17
+tree 6d9ebbe49ce0b75218ddb41de3daff4fc83559c1
+parent c1cb34432774e9353773a5b58b6d286acec115a4
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:42:57 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:42:57 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 f8cb2b18199d9dc2a845fad096c60112f3fed2cf 7c7e7af251d84ebf63809cfbcc163bd0448312b5 M	Jenkinsfile
+commit c1cb34432774e9353773a5b58b6d286acec115a4
+tree 6faff6960bfa17473aec9f6aba612456b5fcd70f
+parent 8cd25203a5f0c8369459ae30d149da9f94831e67
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:41:41 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:41:41 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 680b493c7b30ad63063329c460fc52e21a4c1df9 f8cb2b18199d9dc2a845fad096c60112f3fed2cf M	Jenkinsfile
+commit 8cd25203a5f0c8369459ae30d149da9f94831e67
+tree a213ac3e12e1070168e0a1e3f55201b2886498d1
+parent 5083fc96ce23662715c749acfd9518c6b923614c
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:40:00 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:40:00 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 c1bf50c5aa01428dfbcc5bce076a1e0fc725590e 680b493c7b30ad63063329c460fc52e21a4c1df9 M	Jenkinsfile
+commit 5083fc96ce23662715c749acfd9518c6b923614c
+tree b75aef778f95d8b1644d9732700e7fe4707b57a2
+parent 2ecc97922a372f24ddb40a34fbcfdacf29057e83
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:28:41 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:28:41 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 aa1bff3fb8855724c3003c7f54bd72c954d35bbf c1bf50c5aa01428dfbcc5bce076a1e0fc725590e M	Jenkinsfile
+commit 2ecc97922a372f24ddb40a34fbcfdacf29057e83
+tree 2aa8e95a673fa7960e8b617f67b88777652c62f4
+parent d51c7c95405d40ca0b1ec470d7e60ea76fca259a
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:18:15 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:18:15 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 50f6c98d31aee82da7b908bae4624593b02970ee aa1bff3fb8855724c3003c7f54bd72c954d35bbf M	Jenkinsfile
+commit d51c7c95405d40ca0b1ec470d7e60ea76fca259a
+tree bc9960be24e3b4fbd5c916374697d2f03ba70309
+parent 49aa68bddb98d1f40ad63bca0a60c5ab03196a83
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:06:49 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:06:49 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 e2668bdfed4edd25db81f1041bba2c9d55d8c89e 50f6c98d31aee82da7b908bae4624593b02970ee M	Jenkinsfile
+commit 49aa68bddb98d1f40ad63bca0a60c5ab03196a83
+tree 801f731a8d50b0b9c9dcd5bfb78e804c1eff1b94
+parent f78da729b717176ddbf8199a09db2f0d418c8201
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 15:01:04 +0200
+committer GitHub <noreply@github.com> 2022-05-12 15:01:04 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 50f6c98d31aee82da7b908bae4624593b02970ee e2668bdfed4edd25db81f1041bba2c9d55d8c89e M	Jenkinsfile
+commit f78da729b717176ddbf8199a09db2f0d418c8201
+tree bc9960be24e3b4fbd5c916374697d2f03ba70309
+parent aad1293b487856af9df6bb758b91efb1cb71c3a0
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:59:55 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:59:55 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 38aaf64d98de6d47a8eee0555d63e7d1f4410ecd 50f6c98d31aee82da7b908bae4624593b02970ee M	Jenkinsfile
+commit aad1293b487856af9df6bb758b91efb1cb71c3a0
+tree fa5eba5c0b02130883c71f69595cd33510d265e9
+parent 3945de40df47151ba0a5c863d3b7c5364f1557e1
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:56:43 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:56:43 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 e3311b5a5b53d45b9bc96523708b7ce0cfd0d25f 38aaf64d98de6d47a8eee0555d63e7d1f4410ecd M	Jenkinsfile
+commit 3945de40df47151ba0a5c863d3b7c5364f1557e1
+tree 72f539b1e6f54d2b33cbae5454bfd73c69c18686
+parent f7701ae31c500c9bfe55fdf28b51b27c96777372
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:56:02 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:56:02 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 d8ec8a82a027fa03e28b928c934887cb4cd19517 e3311b5a5b53d45b9bc96523708b7ce0cfd0d25f M	Jenkinsfile
+commit f7701ae31c500c9bfe55fdf28b51b27c96777372
+tree a3916256a23cdcee6fbd1650e5dc65ae3bef950e
+parent 5e4690ed5e6bb838ea5fc4a0d43b8f3fa31c2587
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:55:03 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:55:03 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 c8e550acea7e616101d0ddbfdcdd13e3b3cedeca d8ec8a82a027fa03e28b928c934887cb4cd19517 M	Jenkinsfile
+commit 5e4690ed5e6bb838ea5fc4a0d43b8f3fa31c2587
+tree a66939fe0e1179443680cc8d0e0863f7519ccf6a
+parent 241aa6eb85d924c682879cc883342fe0634646f0
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:53:50 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:53:50 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 6fd215f07f5a66bbef30db272008fcce36d6f8f4 c8e550acea7e616101d0ddbfdcdd13e3b3cedeca M	Jenkinsfile
+commit 241aa6eb85d924c682879cc883342fe0634646f0
+tree b8d6e2eaf78ea9adfdfa6aef676dc07f57b68b6c
+parent 9b4d5bb2ba96a3755a23f9363bbf232696b34954
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:51:08 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:51:08 +0200
+
+    Update Dockerfile
+
+:100644 100644 938f9c2c2f10954816775506d529abb9b538c822 43cfdc5d73021270d084e6fc109f15156fb51c99 M	Dockerfile
+commit 9b4d5bb2ba96a3755a23f9363bbf232696b34954
+tree 39cf3089e27466ff9c70283dd404c37852e1a97c
+parent e641e1ac362a44afd984d9380955e47036d9e729
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:50:46 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:50:46 +0200
+
+    Update Dockerfile
+
+:100644 100644 4f6c19156a6d41f6ceaa768713fdd7bc00b4b595 938f9c2c2f10954816775506d529abb9b538c822 M	Dockerfile
+commit e641e1ac362a44afd984d9380955e47036d9e729
+tree b660289bd6da15980f759a629859cfa8eb83e37e
+parent 0b9edc68a41fc8c1a844123acd4d7635065e967e
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:49:48 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:49:48 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 688101b9a4969af4f1ee9f18919c6a795b0ba484 6fd215f07f5a66bbef30db272008fcce36d6f8f4 M	Jenkinsfile
+commit 0b9edc68a41fc8c1a844123acd4d7635065e967e
+tree a1cfc34bb175def37549a506e96c8f5d21bdcfc6
+parent ce5f4a7f38345e87f243189cdc6f71f3458c6081
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:49:13 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:49:13 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 adf664da3d33a2a070a26385bbc5d73a13645bb7 688101b9a4969af4f1ee9f18919c6a795b0ba484 M	Jenkinsfile
+commit ce5f4a7f38345e87f243189cdc6f71f3458c6081
+tree 3e3af8404adc2740943e11e4b63ef6b5295d048d
+parent 22cbc1a8273338eae605d46bb7f5ff7d655c2e0a
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:27:29 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:27:29 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 3361407c23fbde4c2d2abdddf52ddfd7f431d9f8 adf664da3d33a2a070a26385bbc5d73a13645bb7 M	Jenkinsfile
+commit 22cbc1a8273338eae605d46bb7f5ff7d655c2e0a
+tree 1f1a1b13e339e033f617b630e99aed8f811a660c
+parent 39468675bb183c4517d248c754c09951cc64bbf5
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:25:50 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:25:50 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 7b4615683101ab734a5c1e4eaecd74a336e0020f 3361407c23fbde4c2d2abdddf52ddfd7f431d9f8 M	Jenkinsfile
+commit 39468675bb183c4517d248c754c09951cc64bbf5
+tree 166307b1a1c7ebb9cae04cb6cc380b487a2c0c5c
+parent e614585a3dabbd13b3f52ce95fe2d89e469a8c06
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:25:09 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:25:09 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 77ebd1a42cd490710461aff18dd3d66e419be7a7 7b4615683101ab734a5c1e4eaecd74a336e0020f M	Jenkinsfile
+commit e614585a3dabbd13b3f52ce95fe2d89e469a8c06
+tree 4460b0060271d05aba9b955ead13de795916ef69
+parent 7be2d860d67a00b9ac92bb87f638512c3a0c0aaf
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:22:53 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:22:53 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 a758857755876ccc8933430ab000fb093c849416 77ebd1a42cd490710461aff18dd3d66e419be7a7 M	Jenkinsfile
+commit 7be2d860d67a00b9ac92bb87f638512c3a0c0aaf
+tree b50b4bbc991c2edc151ff7b21ba2986b8d859328
+parent 4afae842b1d27401e5c756dc8418766eef40b315
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 14:20:46 +0200
+committer GitHub <noreply@github.com> 2022-05-12 14:20:46 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 24a2359f5402e53390009075273c47cd475570b9 a758857755876ccc8933430ab000fb093c849416 M	Jenkinsfile
+commit 4afae842b1d27401e5c756dc8418766eef40b315
+tree 41c6f193ddd528e7ddf7619de49d2212d1f4723e
+parent 2bc841f570fd89e04692627b9735f9b88be0c7b2
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 11:30:28 +0200
+committer GitHub <noreply@github.com> 2022-05-12 11:30:28 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 c78062054485990857d1ea8ec849f56916e41fa5 24a2359f5402e53390009075273c47cd475570b9 M	Jenkinsfile
+commit 2bc841f570fd89e04692627b9735f9b88be0c7b2
+tree 1e3865e86eb67eea3b1acefb79014bd97598e764
+parent 025338abfe91a2e3af3705059d62eb1e8f9c5f38
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 11:18:20 +0200
+committer GitHub <noreply@github.com> 2022-05-12 11:18:20 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 0c353bbf6bb03c9fdbba85e626bf7142bf8c7588 c78062054485990857d1ea8ec849f56916e41fa5 M	Jenkinsfile
+commit 025338abfe91a2e3af3705059d62eb1e8f9c5f38
+tree d6e6477e573a9642319546a3f196a085650f6734
+parent 7eea0a32a154ff34739014e801dc496a4ff34d7b
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 10:36:04 +0200
+committer GitHub <noreply@github.com> 2022-05-12 10:36:04 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 853ee8b787a1b4628ea2350d5d2cc3b937f55f01 0c353bbf6bb03c9fdbba85e626bf7142bf8c7588 M	Jenkinsfile
+commit 7eea0a32a154ff34739014e801dc496a4ff34d7b
+tree 0452f684c0c611454786ee874476e72bf08dfdb5
+parent 610360fb15e17e940f4716318f3b3767a0261a3b
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 10:16:44 +0200
+committer GitHub <noreply@github.com> 2022-05-12 10:16:44 +0200
+
+    Update Dockerfile
+
+:100644 100644 0c01087bb5720a7a19ef32ea83efce81d5c5af65 4f6c19156a6d41f6ceaa768713fdd7bc00b4b595 M	Dockerfile
+commit 610360fb15e17e940f4716318f3b3767a0261a3b
+tree 86ea81bdb01731dc2a7a3b445fd98400d22c4f7f
+parent c10fe7e2d63da91464d7510da1625e1ebfd84bd7
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 10:15:19 +0200
+committer GitHub <noreply@github.com> 2022-05-12 10:15:19 +0200
+
+    Update Dockerfile
+
+:100644 100644 12d9b224eddce5012818e849725d7cb9ac6ad1d1 0c01087bb5720a7a19ef32ea83efce81d5c5af65 M	Dockerfile
+commit c10fe7e2d63da91464d7510da1625e1ebfd84bd7
+tree 3077ef6f0e6ca0eb06521f3b8e4c9763a9bb8d7b
+parent 4219d0e8da1606226821dc439885cb7c2975bbea
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 10:13:57 +0200
+committer GitHub <noreply@github.com> 2022-05-12 10:13:57 +0200
+
+    Update Dockerfile
+
+:100644 100644 48bf77afceb74651f8562871b963548535cbcfb4 12d9b224eddce5012818e849725d7cb9ac6ad1d1 M	Dockerfile
+commit 4219d0e8da1606226821dc439885cb7c2975bbea
+tree 9c96dcd62d3a843a78e99bf86790c5d00d36d0a8
+parent bd7da43b80191b1d94970d9c6b1314054ccc8556
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 10:11:20 +0200
+committer GitHub <noreply@github.com> 2022-05-12 10:11:20 +0200
+
+    Update Dockerfile
+
+:100644 100644 0e2c2e6aa116a6a43cad7261da62a5af503d72fa 48bf77afceb74651f8562871b963548535cbcfb4 M	Dockerfile
+commit bd7da43b80191b1d94970d9c6b1314054ccc8556
+tree 8e51bda743302465508ff755f113753d37bd705c
+parent 032a687bdc9175defd6dbca04cf5aaabcd506731
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 10:10:43 +0200
+committer GitHub <noreply@github.com> 2022-05-12 10:10:43 +0200
+
+    Update Dockerfile
+
+:100644 100644 e819c5ce85af96561ebedacf0c8f35b8fd6622af 0e2c2e6aa116a6a43cad7261da62a5af503d72fa M	Dockerfile
+commit 032a687bdc9175defd6dbca04cf5aaabcd506731
+tree 01f8ca75fbea0d034ae1ca689417e5285546da47
+parent 1bafac4d5af2b5c1f0d91be85da044dbf2868fec
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-12 10:10:07 +0200
+committer GitHub <noreply@github.com> 2022-05-12 10:10:07 +0200
+
+    Update Dockerfile
+
+:100644 100644 5c06af2422feb47ea87bd21b88eab7c8b7d9dfe2 e819c5ce85af96561ebedacf0c8f35b8fd6622af M	Dockerfile
+commit d0b3c76d74be5f9749171fbcb347161f62e0ac00
+tree c8d87a10ac0140302912b3c1cfab9fcc7c0eb11e
+parent 31cd7f47531dc1cf3a1e0b4621ba2acc66da6cf4
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-12 09:30:10 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-12 09:30:10 +0200
+
+    Canvis en dockerfiles
+
+
+:100644 100644 cd87a1b35f332e5013080728240ecd3201fbd29b 81aa6e95603f6e9d5b57088ff11e4f94215fce20 M	objects/JENKINS/Dockerfile
+:000000 100644 0000000000000000000000000000000000000000 e9e5f587c5070359ef20c2f2a63e192fa4bfb91a A	objects/JENKINS/Dockerfile_alpine
+:000000 100644 0000000000000000000000000000000000000000 a99118c13ba473e52081ac5241ad945eb8cce5dd A	objects/JENKINS/Dockerfile_centos
+:000000 100644 0000000000000000000000000000000000000000 d3203a0fa61a2aeb1501cf7bd106d3940b287e3b A	objects/JENKINS/Dockerfile_noapk
+:100755 100755 3c2979ee07848c97359177fe27fe2766079c249d 33423c1b363783e21a2455bf6b8da36834bbafbd M	objects/JENKINS/wrapper.sh

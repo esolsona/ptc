@@ -1,0 +1,135 @@
+Started by user [8mha:////4FNfmFRewAwP4PwKcHVgBH5UKvxe8ao8Avf4ZfKbPbn5AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/freestyle
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/freestyle/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision cb2cedae4c4b563f579ece44b846452f44d197a4 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f cb2cedae4c4b563f579ece44b846452f44d197a4 # timeout=10
+Commit message: "build.sh added login"
+ > git rev-list --no-walk ebc758729e529c0b8f1d84f1a9cee7ce9275f221 # timeout=10
+[freestyle] $ /bin/sh -xe /tmp/jenkins13113862796265745595.sh
++ objects/TOMCAT/build.sh
+Login successful.
+
+You have one project on this server: "portic-devops"
+
+Using project "portic-devops".
+Sending build context to Docker daemon  581.6kB
+Step 1/22 : FROM redhat/ubi8
+ ---> 1264065f6ae8
+Step 2/22 : LABEL MAINTAINER=cmajo@kyndryl.com
+ ---> Using cache
+ ---> e3337e34003d
+Step 3/22 : ENV DOWNLOAD_URL="https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz"
+ ---> Using cache
+ ---> c182f8e46f77
+Step 4/22 : RUN yum install -y wget gzip java-1.8.0-openjdk.x86_64 procps-ng &&     yum clean all &&     rm -rf /var/cache/yum
+ ---> Using cache
+ ---> a2e20916bbea
+Step 5/22 : RUN useradd -md /home/tomcat -u 1001 tomcat
+ ---> Using cache
+ ---> 94ac8fa61fcc
+Step 6/22 : USER tomcat
+ ---> Using cache
+ ---> 4de26d189c71
+Step 7/22 : WORKDIR /home/tomcat
+ ---> Using cache
+ ---> 9bb1394e1f95
+Step 8/22 : RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz &&     tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && chown -R tomcat:tomcat /home/tomcat/ && mv apache-tomcat-* apache-tomcat &&  chmod a+x /home/tomcat/apache-tomcat/bin/*
+ ---> Using cache
+ ---> 2ab128ed6d45
+Step 9/22 : RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
+ ---> Using cache
+ ---> f0cdeb049e0d
+Step 10/22 : ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
+
+
+ ---> Using cache
+ ---> 104207c334e0
+Step 11/22 : RUN wget https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war --user portic --password 51005100Ies4ea@@@ -O war/hello-world-maven-1.war
+ ---> Running in c1cd7511b8bc
+[91mwar/hello-world-maven-1.war: No such file or directory
+[0mThe command '/bin/sh -c wget https://carles.jfrog.io/artifactory/maven-libs-release/io/happycoding/hello-world-maven/1/hello-world-maven-1.war --user portic --password 51005100Ies4ea@@@ -O war/hello-world-maven-1.war' returned a non-zero code: 1
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Error response from daemon: Get "https://default-route-openshift-image-registry.apps-crc.testing/v2/": unauthorized: authentication required
+The push refers to repository [default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic]
+e864df59899a: Preparing
+2b590563472e: Preparing
+618fb1e05bdb: Preparing
+25140fdd39c5: Preparing
+5bb7587576f7: Preparing
+345018aa3573: Preparing
+aa38148ae805: Preparing
+d4388a5c8f60: Preparing
+4c269a482dd1: Preparing
+773711fd02f0: Preparing
+5bf135c4a0de: Preparing
+d4388a5c8f60: Waiting
+4c269a482dd1: Waiting
+773711fd02f0: Waiting
+345018aa3573: Waiting
+aa38148ae805: Waiting
+5bf135c4a0de: Waiting
+e864df59899a: Layer already exists
+25140fdd39c5: Layer already exists
+2b590563472e: Layer already exists
+5bb7587576f7: Layer already exists
+618fb1e05bdb: Layer already exists
+345018aa3573: Layer already exists
+d4388a5c8f60: Layer already exists
+aa38148ae805: Layer already exists
+4c269a482dd1: Layer already exists
+5bf135c4a0de: Layer already exists
+773711fd02f0: Layer already exists
+29: digest: sha256:6514c45ce0744e4de614df99c45525336f6356093bcfeb0bdb8cbf9aac02303f size: 2616
+The push refers to repository [default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic]
+bda3f8efbea5: Preparing
+510ea9092839: Preparing
+ed096728eb1b: Preparing
+cc628be476f9: Preparing
+7d5bf11397b2: Preparing
+58f365e36665: Preparing
+297cf6cd39d5: Preparing
+58f365e36665: Waiting
+2b5adb13d293: Preparing
+d4388a5c8f60: Preparing
+297cf6cd39d5: Waiting
+2b5adb13d293: Waiting
+4c269a482dd1: Preparing
+773711fd02f0: Preparing
+5bf135c4a0de: Preparing
+d4388a5c8f60: Waiting
+773711fd02f0: Waiting
+4c269a482dd1: Waiting
+7d5bf11397b2: Layer already exists
+cc628be476f9: Layer already exists
+ed096728eb1b: Layer already exists
+510ea9092839: Layer already exists
+bda3f8efbea5: Layer already exists
+d4388a5c8f60: Layer already exists
+2b5adb13d293: Layer already exists
+297cf6cd39d5: Layer already exists
+4c269a482dd1: Layer already exists
+58f365e36665: Layer already exists
+773711fd02f0: Layer already exists
+5bf135c4a0de: Layer already exists
+latest: digest: sha256:c2aa5268d65ad0d5db2d1a9de10bbd715cde441e61e62ca8dbaf09a92b6e64ba size: 2827
+configmap "tomcat-serverxml" deleted
+configmap "tomcat-prometheus-config" deleted
+configmap "tomcat-setenv" deleted
+configmap/tomcat-serverxml created
+configmap/tomcat-prometheus-config created
+configmap/tomcat-setenv created
+deployment.apps/tomcat8-portic unchanged
+service/tomcat8-portic unchanged
+route.route.openshift.io/tomcat8-portic unchanged
+Finished: SUCCESS

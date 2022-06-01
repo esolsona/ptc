@@ -1,0 +1,55 @@
+Started by user [8mha:////4FNfmFRewAwP4PwKcHVgBH5UKvxe8ao8Avf4ZfKbPbn5AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/freestyle
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/freestyle/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 6e6c83c6f4ef808002a6728e08992e20973777e8 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 6e6c83c6f4ef808002a6728e08992e20973777e8 # timeout=10
+Commit message: "TOMCAT"
+ > git rev-list --no-walk 6e6c83c6f4ef808002a6728e08992e20973777e8 # timeout=10
+[freestyle] $ /bin/sh -xe /tmp/jenkins5452118875683518019.sh
++ docker login default-route-openshift-image-registry.apps-crc.testing -u developer -p ****
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
++ oc login -u developer -p developer https://api.crc.testing:6443 -n portic-devops --insecure-skip-tls-verify
+Login successful.
+
+You have access to the following projects and can switch between them with 'oc project <projectname>':
+
+  * portic-devops
+    test
+
+Using project "portic-devops".
+Welcome! See 'oc help' to get started.
+[freestyle] $ /bin/sh -xe /tmp/jenkins4709526864159673340.sh
++ objects/TOMCAT/build.sh
+Login successful.
+
+You have access to the following projects and can switch between them with 'oc project <projectname>':
+
+  * portic-devops
+    test
+
+Using project "portic-devops".
+configmap "tomcat-serverxml" deleted
+configmap "tomcat-prometheus-config" deleted
+configmap "tomcat-setenv" deleted
+error: error reading conf/server.xml: no such file or directory
+error: error reading conf/tomcat.yml: no such file or directory
+error: error reading bin/setenv.sh: no such file or directory
+error: the path "deployment_tomcat.yaml" does not exist
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

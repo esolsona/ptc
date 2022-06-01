@@ -1,0 +1,26 @@
+[INFO] Deployment in  (id=,uniqueVersion=true)
+Deploying the main artifact hello-world-maven-1.war
+org.eclipse.aether.transfer.NoTransporterException: Unsupported transport protocol 
+	at org.eclipse.aether.transport.wagon.WagonTransporter.<init>(WagonTransporter.java:122)
+	at org.eclipse.aether.transport.wagon.WagonTransporterFactory.newInstance(WagonTransporterFactory.java:121)
+	at org.eclipse.aether.internal.impl.DefaultTransporterProvider.newTransporter(DefaultTransporterProvider.java:107)
+Caused: org.eclipse.aether.transfer.NoTransporterException: Cannot access  using the registered transporter factories: WagonTransporterFactory
+	at org.eclipse.aether.internal.impl.DefaultTransporterProvider.newTransporter(DefaultTransporterProvider.java:147)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.<init>(BasicRepositoryConnector.java:129)
+Caused: org.eclipse.aether.transfer.NoRepositoryConnectorException: Cannot access  using the registered transporter factories: WagonTransporterFactory
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.<init>(BasicRepositoryConnector.java:133)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnectorFactory.newInstance(BasicRepositoryConnectorFactory.java:158)
+	at org.eclipse.aether.internal.impl.DefaultRepositoryConnectorProvider.newRepositoryConnector(DefaultRepositoryConnectorProvider.java:109)
+Caused: org.eclipse.aether.transfer.NoRepositoryConnectorException: Cannot access  with type default using the available connector factories: BasicRepositoryConnectorFactory
+	at org.eclipse.aether.internal.impl.DefaultRepositoryConnectorProvider.newRepositoryConnector(DefaultRepositoryConnectorProvider.java:169)
+	at org.eclipse.aether.internal.impl.DefaultDeployer.deploy(DefaultDeployer.java:235)
+Caused: org.eclipse.aether.deployment.DeploymentException: Failed to deploy artifacts/metadata: Cannot access  with type default using the available connector factories: BasicRepositoryConnectorFactory
+	at org.eclipse.aether.internal.impl.DefaultDeployer.deploy(DefaultDeployer.java:239)
+	at org.eclipse.aether.internal.impl.DefaultDeployer.deploy(DefaultDeployer.java:219)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.deploy(DefaultRepositorySystem.java:407)
+	at org.apache.maven.artifact.deployer.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:142)
+Caused: org.apache.maven.artifact.deployer.ArtifactDeploymentException: Failed to deploy artifacts/metadata: Cannot access  with type default using the available connector factories: BasicRepositoryConnectorFactory
+	at org.apache.maven.artifact.deployer.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:146)
+	at hudson.maven.reporters.MavenArtifactRecord.deploy(MavenArtifactRecord.java:198)
+	at hudson.maven.reporters.MavenAbstractArtifactRecord$1.perform(MavenAbstractArtifactRecord.java:235)
+	at hudson.model.TaskThread.run(TaskThread.java:129)

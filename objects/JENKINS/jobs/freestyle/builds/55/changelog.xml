@@ -1,0 +1,9 @@
+commit 9e8a620d7df1431559d6a8d43995ce5a401aed33
+tree b47431e347b53055422d60cc4c67402df6ec91a0
+parent e5873a5960535c5da504325a3ad49da1f6089581
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-27 12:23:39 +0200
+committer GitHub <noreply@github.com> 2022-05-27 12:23:39 +0200
+
+    Update build.sh
+
+:100755 100755 af6f183a97e0bc2052cb968e2d6e4eb237275dd9 26e72b031b4d818bce815145c28f8604c7ed2a47 M	objects/TOMCAT/build.sh

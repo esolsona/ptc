@@ -1,0 +1,99 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.maven.MavenModuleSetBuild plugin="maven-plugin@3.18">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>jenkins</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <jenkins.metrics.impl.TimeInQueueAction plugin="metrics@4.1.6.2">
+      <queuingDurationMillis>7059</queuingDurationMillis>
+      <blockedDurationMillis>0</blockedDurationMillis>
+      <buildableDurationMillis>7056</buildableDurationMillis>
+      <waitingDurationMillis>0</waitingDurationMillis>
+    </jenkins.metrics.impl.TimeInQueueAction>
+    <hudson.plugins.git.util.BuildData plugin="git@4.11.1">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/main</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@3.11.0">
+              <sha1>a7d2e517a4b079d73287f196c9b0623a48428149</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/main</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>16</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>https://github.com/cmajo/ptc.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.scm.SCMRevisionState_-None/>
+    <hudson.maven.reporters.MavenAggregatedArtifactRecord>
+      <records/>
+      <parent reference="../../.."/>
+    </hudson.maven.reporters.MavenAggregatedArtifactRecord>
+    <org.jfrog.hudson.BuildInfoResultAction plugin="artifactory@3.16.2">
+      <publishedBuildsDetails class="java.util.concurrent.CopyOnWriteArrayList">
+        <org.jfrog.hudson.PublishedBuildDetails>
+          <artifactoryUrl>https://carles.jfrog.io/artifactory</artifactoryUrl>
+          <buildNumber>16</buildNumber>
+          <buildName>maven</buildName>
+          <startedTimeStamp></startedTimeStamp>
+          <platformUrl></platformUrl>
+          <project></project>
+        </org.jfrog.hudson.PublishedBuildDetails>
+      </publishedBuildsDetails>
+      <build class="hudson.maven.MavenModuleSetBuild" reference="../../.."/>
+    </org.jfrog.hudson.BuildInfoResultAction>
+    <hudson.tasks.Fingerprinter_-FingerprintAction>
+      <record>
+        <entry>
+          <string>io.happycoding:hello-world-maven.war</string>
+          <string>1143a1ff505c8d9e1da0a8b28ff554bf</string>
+        </entry>
+        <entry>
+          <string>io.happycoding:hello-world-maven:pom.xml</string>
+          <string>879d47aecd038077b2c72d04d42b85d7</string>
+        </entry>
+        <entry>
+          <string>jakarta.servlet:jakarta.servlet-api-5.0.0.jar</string>
+          <string>b950da93e08cf6d5a2d73dc7a80f9403</string>
+        </entry>
+      </record>
+    </hudson.tasks.Fingerprinter_-FingerprintAction>
+  </actions>
+  <queueId>16</queueId>
+  <timestamp>1652997751884</timestamp>
+  <startTime>1652997751889</startTime>
+  <result>SUCCESS</result>
+  <duration>51683</duration>
+  <charset>US-ASCII</charset>
+  <keepLog>false</keepLog>
+  <builtOn>maven-14tjt</builtOn>
+  <workspace>/tmp/workspace/maven</workspace>
+  <hudsonVersion>2.332.2</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@4.11.1">
+    <authorOrCommitter>false</authorOrCommitter>
+    <showEntireCommitSummaryInChanges>true</showEntireCommitSummaryInChanges>
+  </scm>
+  <culprits class="java.util.Collections$UnmodifiableSet">
+    <c class="sorted-set">
+      <string>cmajo</string>
+    </c>
+  </culprits>
+  <mavenVersionUsed>3.6.2</mavenVersionUsed>
+</hudson.maven.MavenModuleSetBuild>

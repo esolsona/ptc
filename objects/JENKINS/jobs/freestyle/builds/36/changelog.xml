@@ -1,0 +1,10 @@
+commit cc5ca41bd75cdb478191fe9f11addea94b8d3334
+tree c236f1708dd8def23bb5a92ce4beac321cb97cf3
+parent 7bf61657e459519414ad2017512d4be4f739600e
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 01:05:32 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 01:05:32 +0200
+
+    build.sh added login
+
+
+:100755 100755 22de250a050d9c24b0f8f7832a9cce3347c8ec09 825536df78ef08fa3e821e2a3ee9fcbc3810c741 M	objects/TOMCAT/build.sh

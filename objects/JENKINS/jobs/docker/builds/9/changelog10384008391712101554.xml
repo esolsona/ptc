@@ -1,0 +1,24 @@
+commit dca89be60867b10c8047aef25bf8c6e87578a228
+tree cb4dbc98578a31b74f5181404d50325748264bde
+parent 1536ca3a7ed154c4a0b26f0bb747faeab3809981
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-16 13:34:17 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-16 13:34:17 +0200
+
+    Afegim monit tomcat y setenv amb xmx etc ...
+
+
+:100644 100644 06c97b054de70785f8608c2effa070028b9f485f 1ee457fced3847e755f3c32f39d2c2f89213d96b M	objects/TOMCAT/Dockerfile
+:000000 100644 0000000000000000000000000000000000000000 179f35b28305c32bef56c6f0026171c376a2ab71 A	objects/TOMCAT/bin/setenv.sh
+:000000 100644 0000000000000000000000000000000000000000 6f007dd353e4bc8396d04bd6ca36a2b23db37bb4 A	objects/TOMCAT/conf/server.xml
+:000000 100644 0000000000000000000000000000000000000000 925c2538637ef97ab45ee050de8bd6e6134a2466 A	objects/TOMCAT/conf/tomcat.yml
+:000000 100644 0000000000000000000000000000000000000000 0bb0952cf0071ca14e7bb4aa4596feaa53b46d8c A	objects/TOMCAT/lib/jmx_prometheus_javaagent.jar
+commit 1536ca3a7ed154c4a0b26f0bb747faeab3809981
+tree 2d751271c3bc37072ea84d5297bba218aec3effe
+parent efbc20c3357bb8373a4572c478bbd451555062b0
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-12 21:59:05 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-12 22:10:37 +0200
+
+    restore jenkins Dockerfile and add oc binary
+
+
+:100644 100644 81aa6e95603f6e9d5b57088ff11e4f94215fce20 25f2f8dc1d242d0005b419a2d7f806f6f95db22a M	objects/JENKINS/Dockerfile

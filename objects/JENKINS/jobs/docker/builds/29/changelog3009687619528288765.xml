@@ -1,0 +1,9 @@
+commit dd85f5ae4f9db63e68ade8503e3361efd92daae6
+tree 890f70600655772ef4ea4980f50a6a3ba9886219
+parent 212c509415e933e6a43585bdfb23856d6f7791b0
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-16 20:22:26 +0200
+committer GitHub <noreply@github.com> 2022-05-16 20:22:26 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 03e66d46ec8ea749d0e56825cde4480f7846770d 4fe7706592bfe35e1549e5ecf46527dbf8f67a54 M	objects/TOMCAT/Jenkinsfile

@@ -1,0 +1,1589 @@
+Started by user [8mha:////4FNfmFRewAwP4PwKcHVgBH5UKvxe8ao8Avf4ZfKbPbn5AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Checking out git https://github.com/cmajo/ptc.git into /var/jenkins_home/workspace/docker@script/e7b75f0f5e70d21a71ef869cf7e6114f6ad01128c5211349837d526d1ea6d25e to read objects/TOMCAT/Jenkinsfile
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/docker@script/e7b75f0f5e70d21a71ef869cf7e6114f6ad01128c5211349837d526d1ea6d25e/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision dd85f5ae4f9db63e68ade8503e3361efd92daae6 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f dd85f5ae4f9db63e68ade8503e3361efd92daae6 # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk 212c509415e933e6a43585bdfb23856d6f7791b0 # timeout=10
+[8mha:////4Jm8GNeOpbjJQpHbels8gm/hxIoTujwlcZFSnOydlVcvAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4ECx64eLgYfe0RkjDq/1+N3bmxOt8Wtf8wSq68+XaCaEAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4C65rR+l7Zk1UdYMIZUF0SIB65p1NcPxs/jOOn3sYRERAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZR/eT83ILSktQifY2k0sycEt3MPE19AHHxbH3KAAAA[0mJenkins in /var/jenkins_home/workspace/docker
+[8mha:////4HPauEQsZqie1f9qFBX0vqMaGpRPsn5PHaq1nWmKNeGlAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4EgNcGqBZPCNeWsben4cvxMQHcyS5zTXAi+a1f2T0HR/AAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaGWsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gdpL1fxvAAAAA==[0m[Pipeline] checkout
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/docker/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision dd85f5ae4f9db63e68ade8503e3361efd92daae6 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f dd85f5ae4f9db63e68ade8503e3361efd92daae6 # timeout=10
+Commit message: "Update Jenkinsfile"
+[8mha:////4GcwoTO1a5S5IjZEDOKuoZc7vD1rzjFWeY/fobfj/CvGAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0QSyIiTXKwglCEkLa6P82SWknTsTVuAOBSkxYsmRbst7zBXWKcKToeGux85i0530YXUl8othdA028pQvXhImC5dJOkow9LVVStrCIVbASsLaoAyWPLsNGtOqumqDQNeccy3YQUHkzwAOYKOSsYv6WOcL2NppE+OP8BcDcZ2C74v3nV78BmoXK/sAAAAA=[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/docker/objects/TOMCAT
+[8mha:////4He68Kv45TL733NZ09/CDKMaEnbZuqUBwBiPCOs2KVWFAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gwExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jcChmMxwAAAAA==[0m[Pipeline] {
+[8mha:////4F2IRw7gvLcpdJGbQBwxUckiieU+6oy7DYK+b4aWJxc8AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BAkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfpX/cvwAAAAA==[0m[Pipeline] withEnv
+[8mha:////4HywNutOfC9+5YPgZgSkGMeO1FP5pRmA8nL6cZOegeo8AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BSEm1igLJwhJCGmj/9skpZ04EVfjDgQqMWHJkm3Jes8X1CnCkaLjrcXOY9Ke92F0JfGJYncNNPGWLlwTJgqWSztJMva0VEnZwiJWwUrA2qIOlDy6DBvRqrtqgkLXnHMs20FA5c0AD2CikLOK+VvmCNvbaBLhj/MXAHOfge2K959f/QbB16AVwAAAAA==[0m[Pipeline] {
+[8mha:////4Nx2+WcA7De+VCLr8YjqahiXbA002HznANmWthOtEYiLAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDJUJUtJYbXmBiY5xYd8G+kFS8iK/xBwKRqNhqZ6XVPF9Q5gQHSl42DtuAuQ6yi72fmhwotZdIg2zoLGvCTNFJ7QZN1h1n1MQO5ogCFgqWDutIOaBnWKnG3E0VDfrqxGna9gqKYG/wAKEmM5vEXxgTrK+9zYQ/z18BjB2D2DEU283nWL4Bsam+msEAAAA=[0m[Pipeline] withDockerRegistry
+$ docker login -u developer -p ******** https://default-route-openshift-image-registry.apps-crc.testing/
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /var/jenkins_home/workspace/docker/objects/TOMCAT@tmp/01e07bed-11de-4f44-917c-f4964e06784b/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[8mha:////4Fo2iloWioTHNaTkpaLM8rTQAKUOWboLWXAfSmym9Pu2AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoiUzoiJNerCCUITQtLo/zZJSSdOxNW4Ay2VmPBg2Zas93pDGQOcKBjuNHYWY2t570czJ54pdDdPmTu68pYwkte80bkhpc9rbShpWFUw2AjYamw9RYsmwU44+ZCVl2iqSwrzdhTArBrgCYWYyUmG9C1TgP19VJHwx/kLgKlPwOrDYvXyLD8BobDcwgAAAA==[0m[Pipeline] {
+[8mha:////4DiGkyRBSLVaaa7JBpqVYaXHqqIb0pNYPoE0oRbqRqGIAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggysXWsbBkaT4AJIoT5nwCRVJ7Iq3kH0cxYucXOvm3e8wXrGOBIQTOrcDAYO8O8m3RZLFMYro4ys3RhHWEkp5hQWVCvTgsKSgqWVDWsOGwUdo6iQZ1gy628y8ZJ1M05hfIdONSmH+EBFS/mJEP6whxgd5v6SPjz/BXA7BPUbfupvX8DpQJrNb4AAAA=[0m[Pipeline] isUnix
+[8mha:////4DQUB5ZH2mXGA2M5/EpxfhEQPPZLSHrQl0rEeJrZT+LxAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUFSNiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPyt/2UMIAAAA=[0m[Pipeline] withEnv
+[8mha:////4M8aW3B8pGDfnmlI379W/EnxaZNqJ2/yt/qQzr5r4i5BAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUCDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAbNWnxXCAAAA[0m[Pipeline] {
+[8mha:////4OuIrXYcoKG8RAXp2pUU2+Fbecr3b9I6/6v3JRWmNRRrAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN8W7Eii+AAAA[0m[Pipeline] sh
++ docker build -t default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:29 .
+Sending build context to Docker daemon  559.1kB
+Step 1/20 : FROM redhat/ubi8
+ ---> 1264065f6ae8
+Step 2/20 : LABEL MAINTAINER=cmajo@kyndryl.com
+ ---> Using cache
+ ---> e3337e34003d
+Step 3/20 : ENV DOWNLOAD_URL="https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz"
+ ---> Running in 0f1fc6be6780
+Removing intermediate container 0f1fc6be6780
+ ---> c182f8e46f77
+Step 4/20 : RUN yum install -y wget gzip java-1.8.0-openjdk.x86_64 procps-ng &&     yum clean all &&     rm -rf /var/cache/yum
+ ---> Running in 81182ce4aefb
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Red Hat Universal Base Image 8 (RPMs) - BaseOS  367 kB/s | 781 kB     00:02    
+Red Hat Universal Base Image 8 (RPMs) - AppStre 1.4 MB/s | 2.9 MB     00:02    
+Red Hat Universal Base Image 8 (RPMs) - CodeRea 1.3 kB/s |  17 kB     00:12    
+Last metadata expiration check: 0:00:01 ago on Mon May 16 18:22:54 2022.
+Package gzip-1.9-13.el8_5.x86_64 is already installed.
+Dependencies resolved.
+==============================================================================================
+ Package                       Arch    Version                          Repository        Size
+==============================================================================================
+Installing:
+ java-1.8.0-openjdk            x86_64  1:1.8.0.332.b09-2.el8_6          ubi-8-appstream  347 k
+ procps-ng                     x86_64  3.3.15-6.el8                     ubi-8-baseos     329 k
+ wget                          x86_64  1.19.5-10.el8                    ubi-8-appstream  734 k
+Installing dependencies:
+ alsa-lib                      x86_64  1.2.6.1-3.el8                    ubi-8-appstream  491 k
+ atk                           x86_64  2.28.1-1.el8                     ubi-8-appstream  272 k
+ avahi-libs                    x86_64  0.7-20.el8                       ubi-8-baseos      62 k
+ cairo                         x86_64  1.15.12-6.el8                    ubi-8-appstream  719 k
+ copy-jdk-configs              noarch  4.0-2.el8                        ubi-8-appstream   31 k
+ cups-libs                     x86_64  1:2.2.6-44.el8                   ubi-8-baseos     434 k
+ dejavu-fonts-common           noarch  2.35-7.el8                       ubi-8-baseos      74 k
+ dejavu-sans-fonts             noarch  2.35-7.el8                       ubi-8-baseos     1.5 M
+ fontconfig                    x86_64  2.13.1-4.el8                     ubi-8-baseos     274 k
+ fontpackages-filesystem       noarch  1.44-22.el8                      ubi-8-baseos      16 k
+ freetype                      x86_64  2.9.1-4.el8_3.1                  ubi-8-baseos     394 k
+ fribidi                       x86_64  1.0.4-8.el8                      ubi-8-appstream   89 k
+ gdk-pixbuf2                   x86_64  2.36.12-5.el8                    ubi-8-baseos     467 k
+ gdk-pixbuf2-modules           x86_64  2.36.12-5.el8                    ubi-8-appstream  109 k
+ giflib                        x86_64  5.1.4-3.el8                      ubi-8-appstream   51 k
+ graphite2                     x86_64  1.3.10-10.el8                    ubi-8-appstream  122 k
+ gtk-update-icon-cache         x86_64  3.22.30-10.el8                   ubi-8-appstream   33 k
+ harfbuzz                      x86_64  1.7.5-3.el8                      ubi-8-appstream  294 k
+ hicolor-icon-theme            noarch  0.17-2.el8                       ubi-8-appstream   48 k
+ jasper-libs                   x86_64  2.0.14-5.el8                     ubi-8-appstream  167 k
+ java-1.8.0-openjdk-headless   x86_64  1:1.8.0.332.b09-2.el8_6          ubi-8-appstream   34 M
+ javapackages-filesystem       noarch  5.3.0-1.module+el8+2447+6f56d9a6 ubi-8-appstream   30 k
+ jbigkit-libs                  x86_64  2.1-14.el8                       ubi-8-appstream   55 k
+ libX11                        x86_64  1.6.8-5.el8                      ubi-8-appstream  611 k
+ libX11-common                 noarch  1.6.8-5.el8                      ubi-8-appstream  158 k
+ libXau                        x86_64  1.0.9-3.el8                      ubi-8-appstream   37 k
+ libXcomposite                 x86_64  0.4.4-14.el8                     ubi-8-appstream   29 k
+ libXcursor                    x86_64  1.1.15-3.el8                     ubi-8-appstream   36 k
+ libXdamage                    x86_64  1.1.4-14.el8                     ubi-8-appstream   27 k
+ libXext                       x86_64  1.3.4-1.el8                      ubi-8-appstream   45 k
+ libXfixes                     x86_64  5.0.3-7.el8                      ubi-8-appstream   25 k
+ libXft                        x86_64  2.3.3-1.el8                      ubi-8-appstream   67 k
+ libXi                         x86_64  1.7.10-1.el8                     ubi-8-appstream   49 k
+ libXinerama                   x86_64  1.1.4-1.el8                      ubi-8-appstream   16 k
+ libXrandr                     x86_64  1.5.2-1.el8                      ubi-8-appstream   34 k
+ libXrender                    x86_64  0.9.10-7.el8                     ubi-8-appstream   33 k
+ libXtst                       x86_64  1.2.3-7.el8                      ubi-8-appstream   22 k
+ libdatrie                     x86_64  0.2.9-7.el8                      ubi-8-appstream   33 k
+ libfontenc                    x86_64  1.1.3-8.el8                      ubi-8-appstream   37 k
+ libjpeg-turbo                 x86_64  1.5.3-12.el8                     ubi-8-appstream  157 k
+ libmetalink                   x86_64  0.1.3-7.el8                      ubi-8-baseos      32 k
+ libpkgconf                    x86_64  1.4.2-1.el8                      ubi-8-baseos      35 k
+ libpng                        x86_64  2:1.6.34-5.el8                   ubi-8-baseos     126 k
+ libthai                       x86_64  0.1.27-2.el8                     ubi-8-appstream  203 k
+ libtiff                       x86_64  4.0.9-21.el8                     ubi-8-appstream  188 k
+ libxcb                        x86_64  1.13.1-1.el8                     ubi-8-appstream  229 k
+ lksctp-tools                  x86_64  1.0.18-3.el8                     ubi-8-baseos     100 k
+ lua                           x86_64  5.3.4-12.el8                     ubi-8-appstream  192 k
+ nspr                          x86_64  4.32.0-1.el8_4                   ubi-8-appstream  142 k
+ nss                           x86_64  3.67.0-7.el8_5                   ubi-8-appstream  741 k
+ nss-softokn                   x86_64  3.67.0-7.el8_5                   ubi-8-appstream  487 k
+ nss-softokn-freebl            x86_64  3.67.0-7.el8_5                   ubi-8-appstream  395 k
+ nss-sysinit                   x86_64  3.67.0-7.el8_5                   ubi-8-appstream   73 k
+ nss-util                      x86_64  3.67.0-7.el8_5                   ubi-8-appstream  137 k
+ pango                         x86_64  1.42.4-8.el8                     ubi-8-appstream  297 k
+ pixman                        x86_64  0.38.4-2.el8                     ubi-8-appstream  257 k
+ pkgconf                       x86_64  1.4.2-1.el8                      ubi-8-baseos      38 k
+ pkgconf-m4                    noarch  1.4.2-1.el8                      ubi-8-baseos      17 k
+ pkgconf-pkg-config            x86_64  1.4.2-1.el8                      ubi-8-baseos      15 k
+ shared-mime-info              x86_64  1.9-3.el8                        ubi-8-baseos     329 k
+ ttmkfdir                      x86_64  3.0.9-54.el8                     ubi-8-appstream   62 k
+ tzdata-java                   noarch  2022a-1.el8                      ubi-8-appstream  191 k
+ xorg-x11-font-utils           x86_64  1:7.5-41.el8                     ubi-8-appstream  104 k
+ xorg-x11-fonts-Type1          noarch  7.5-19.el8                       ubi-8-appstream  522 k
+Installing weak dependencies:
+ gtk2                          x86_64  2.24.32-5.el8                    ubi-8-appstream  3.4 M
+Enabling module streams:
+ javapackages-runtime                  201801                                                 
+
+Transaction Summary
+==============================================================================================
+Install  68 Packages
+
+Total download size: 51 M
+Installed size: 170 M
+Downloading Packages:
+(1/68): fontpackages-filesystem-1.44-22.el8.noa 117 kB/s |  16 kB     00:00    
+(2/68): libpkgconf-1.4.2-1.el8.x86_64.rpm       399 kB/s |  35 kB     00:00    
+(3/68): gdk-pixbuf2-2.36.12-5.el8.x86_64.rpm    1.5 MB/s | 467 kB     00:00    
+(4/68): pkgconf-m4-1.4.2-1.el8.noarch.rpm        88 kB/s |  17 kB     00:00    
+(5/68): shared-mime-info-1.9-3.el8.x86_64.rpm   495 kB/s | 329 kB     00:00    
+(6/68): libpng-1.6.34-5.el8.x86_64.rpm          287 kB/s | 126 kB     00:00    
+(7/68): pkgconf-1.4.2-1.el8.x86_64.rpm          111 kB/s |  38 kB     00:00    
+(8/68): dejavu-fonts-common-2.35-7.el8.noarch.r 137 kB/s |  74 kB     00:00    
+(9/68): fontconfig-2.13.1-4.el8.x86_64.rpm      1.1 MB/s | 274 kB     00:00    
+(10/68): lksctp-tools-1.0.18-3.el8.x86_64.rpm   1.6 MB/s | 100 kB     00:00    
+(11/68): freetype-2.9.1-4.el8_3.1.x86_64.rpm    3.7 MB/s | 394 kB     00:00    
+(12/68): pkgconf-pkg-config-1.4.2-1.el8.x86_64. 269 kB/s |  15 kB     00:00    
+(13/68): procps-ng-3.3.15-6.el8.x86_64.rpm      5.6 MB/s | 329 kB     00:00    
+(14/68): avahi-libs-0.7-20.el8.x86_64.rpm        35 kB/s |  62 kB     00:01    
+(15/68): dejavu-sans-fonts-2.35-7.el8.noarch.rp 6.2 MB/s | 1.5 MB     00:00    
+(16/68): harfbuzz-1.7.5-3.el8.x86_64.rpm        4.1 MB/s | 294 kB     00:00    
+(17/68): jbigkit-libs-2.1-14.el8.x86_64.rpm     1.1 MB/s |  55 kB     00:00    
+(18/68): libXcomposite-0.4.4-14.el8.x86_64.rpm  719 kB/s |  29 kB     00:00    
+(19/68): javapackages-filesystem-5.3.0-1.module 477 kB/s |  30 kB     00:00    
+(20/68): libfontenc-1.1.3-8.el8.x86_64.rpm      939 kB/s |  37 kB     00:00    
+(21/68): libXrandr-1.5.2-1.el8.x86_64.rpm       824 kB/s |  34 kB     00:00    
+(22/68): libXfixes-5.0.3-7.el8.x86_64.rpm       639 kB/s |  25 kB     00:00    
+(23/68): libXft-2.3.3-1.el8.x86_64.rpm          1.0 MB/s |  67 kB     00:00    
+(24/68): libXext-1.3.4-1.el8.x86_64.rpm         746 kB/s |  45 kB     00:00    
+(25/68): libXtst-1.2.3-7.el8.x86_64.rpm         381 kB/s |  22 kB     00:00    
+(26/68): libXrender-0.9.10-7.el8.x86_64.rpm     755 kB/s |  33 kB     00:00    
+(27/68): libXinerama-1.1.4-1.el8.x86_64.rpm     413 kB/s |  16 kB     00:00    
+(28/68): atk-2.28.1-1.el8.x86_64.rpm            3.4 MB/s | 272 kB     00:00    
+(29/68): libdatrie-0.2.9-7.el8.x86_64.rpm       503 kB/s |  33 kB     00:00    
+(30/68): gdk-pixbuf2-modules-2.36.12-5.el8.x86_ 2.1 MB/s | 109 kB     00:00    
+(31/68): giflib-5.1.4-3.el8.x86_64.rpm          604 kB/s |  51 kB     00:00    
+(32/68): libXi-1.7.10-1.el8.x86_64.rpm          992 kB/s |  49 kB     00:00    
+(33/68): libmetalink-0.1.3-7.el8.x86_64.rpm      22 kB/s |  32 kB     00:01    
+(34/68): xorg-x11-fonts-Type1-7.5-19.el8.noarch 7.7 MB/s | 522 kB     00:00    
+(35/68): libXau-1.0.9-3.el8.x86_64.rpm          588 kB/s |  37 kB     00:00    
+(36/68): hicolor-icon-theme-0.17-2.el8.noarch.r 1.1 MB/s |  48 kB     00:00    
+(37/68): ttmkfdir-3.0.9-54.el8.x86_64.rpm       1.4 MB/s |  62 kB     00:00    
+(38/68): wget-1.19.5-10.el8.x86_64.rpm          6.4 MB/s | 734 kB     00:00    
+(39/68): libthai-0.1.27-2.el8.x86_64.rpm        4.0 MB/s | 203 kB     00:00    
+(40/68): gtk2-2.24.32-5.el8.x86_64.rpm           16 MB/s | 3.4 MB     00:00    
+(41/68): graphite2-1.3.10-10.el8.x86_64.rpm     2.9 MB/s | 122 kB     00:00    
+(42/68): libXcursor-1.1.15-3.el8.x86_64.rpm     551 kB/s |  36 kB     00:00    
+(43/68): libXdamage-1.1.4-14.el8.x86_64.rpm     631 kB/s |  27 kB     00:00    
+(44/68): libxcb-1.13.1-1.el8.x86_64.rpm         4.5 MB/s | 229 kB     00:00    
+(45/68): fribidi-1.0.4-8.el8.x86_64.rpm         1.6 MB/s |  89 kB     00:00    
+(46/68): cups-libs-2.2.6-44.el8.x86_64.rpm      214 kB/s | 434 kB     00:02    
+(47/68): nss-softokn-3.67.0-7.el8_5.x86_64.rpm  6.6 MB/s | 487 kB     00:00    
+(48/68): libjpeg-turbo-1.5.3-12.el8.x86_64.rpm  1.7 MB/s | 157 kB     00:00    
+(49/68): tzdata-java-2022a-1.el8.noarch.rpm     146 kB/s | 191 kB     00:01    
+(50/68): libtiff-4.0.9-21.el8.x86_64.rpm        2.7 MB/s | 188 kB     00:00    
+(51/68): lua-5.3.4-12.el8.x86_64.rpm            3.3 MB/s | 192 kB     00:00    
+(52/68): xorg-x11-font-utils-7.5-41.el8.x86_64. 2.1 MB/s | 104 kB     00:00    
+(53/68): nss-sysinit-3.67.0-7.el8_5.x86_64.rpm   47 kB/s |  73 kB     00:01    
+(54/68): gtk-update-icon-cache-3.22.30-10.el8.x 615 kB/s |  33 kB     00:00    
+(55/68): pixman-0.38.4-2.el8.x86_64.rpm         3.9 MB/s | 257 kB     00:00    
+(56/68): java-1.8.0-openjdk-1.8.0.332.b09-2.el8 3.7 MB/s | 347 kB     00:00    
+(57/68): alsa-lib-1.2.6.1-3.el8.x86_64.rpm      7.3 MB/s | 491 kB     00:00    
+(58/68): nss-util-3.67.0-7.el8_5.x86_64.rpm      77 kB/s | 137 kB     00:01    
+(59/68): copy-jdk-configs-4.0-2.el8.noarch.rpm  732 kB/s |  31 kB     00:00    
+(60/68): nss-softokn-freebl-3.67.0-7.el8_5.x86_ 153 kB/s | 395 kB     00:02    
+(61/68): jasper-libs-2.0.14-5.el8.x86_64.rpm    2.0 MB/s | 167 kB     00:00    
+(62/68): libX11-common-1.6.8-5.el8.noarch.rpm   2.1 MB/s | 158 kB     00:00    
+(63/68): cairo-1.15.12-6.el8.x86_64.rpm         5.5 MB/s | 719 kB     00:00    
+(64/68): java-1.8.0-openjdk-headless-1.8.0.332.  18 MB/s |  34 MB     00:01    
+(65/68): nspr-4.32.0-1.el8_4.x86_64.rpm          20 kB/s | 142 kB     00:07    
+(66/68): pango-1.42.4-8.el8.x86_64.rpm          441 kB/s | 297 kB     00:00    
+(67/68): libX11-1.6.8-5.el8.x86_64.rpm          907 kB/s | 611 kB     00:00    
+(68/68): nss-3.67.0-7.el8_5.x86_64.rpm          104 kB/s | 741 kB     00:07    
+--------------------------------------------------------------------------------
+Total                                           3.5 MB/s |  51 MB     00:14     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: copy-jdk-configs-4.0-2.el8.noarch                      1/1 
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.332.b09-2.el8_6.   1/1 
+  Preparing        :                                                        1/1 
+  Installing       : libjpeg-turbo-1.5.3-12.el8.x86_64                     1/68 
+  Installing       : nspr-4.32.0-1.el8_4.x86_64                            2/68 
+  Running scriptlet: nspr-4.32.0-1.el8_4.x86_64                            2/68 
+  Installing       : libpng-2:1.6.34-5.el8.x86_64                          3/68 
+  Installing       : freetype-2.9.1-4.el8_3.1.x86_64                       4/68 
+  Installing       : nss-util-3.67.0-7.el8_5.x86_64                        5/68 
+  Installing       : fontpackages-filesystem-1.44-22.el8.noarch            6/68 
+  Installing       : dejavu-fonts-common-2.35-7.el8.noarch                 7/68 
+  Installing       : dejavu-sans-fonts-2.35-7.el8.noarch                   8/68 
+  Installing       : fontconfig-2.13.1-4.el8.x86_64                        9/68 
+  Running scriptlet: fontconfig-2.13.1-4.el8.x86_64                        9/68 
+  Installing       : nss-softokn-freebl-3.67.0-7.el8_5.x86_64             10/68 
+  Installing       : nss-softokn-3.67.0-7.el8_5.x86_64                    11/68 
+  Installing       : nss-sysinit-3.67.0-7.el8_5.x86_64                    12/68 
+  Installing       : nss-3.67.0-7.el8_5.x86_64                            13/68 
+  Installing       : ttmkfdir-3.0.9-54.el8.x86_64                         14/68 
+  Installing       : jasper-libs-2.0.14-5.el8.x86_64                      15/68 
+  Installing       : libX11-common-1.6.8-5.el8.noarch                     16/68 
+  Installing       : alsa-lib-1.2.6.1-3.el8.x86_64                        17/68 
+  Running scriptlet: alsa-lib-1.2.6.1-3.el8.x86_64                        17/68 
+  Installing       : pixman-0.38.4-2.el8.x86_64                           18/68 
+  Installing       : lua-5.3.4-12.el8.x86_64                              19/68 
+  Installing       : copy-jdk-configs-4.0-2.el8.noarch                    20/68 
+  Installing       : tzdata-java-2022a-1.el8.noarch                       21/68 
+  Installing       : fribidi-1.0.4-8.el8.x86_64                           22/68 
+  Installing       : graphite2-1.3.10-10.el8.x86_64                       23/68 
+  Installing       : harfbuzz-1.7.5-3.el8.x86_64                          24/68 
+  Running scriptlet: harfbuzz-1.7.5-3.el8.x86_64                          24/68 
+  Installing       : hicolor-icon-theme-0.17-2.el8.noarch                 25/68 
+  Installing       : libXau-1.0.9-3.el8.x86_64                            26/68 
+  Installing       : libxcb-1.13.1-1.el8.x86_64                           27/68 
+  Installing       : libX11-1.6.8-5.el8.x86_64                            28/68 
+  Installing       : libXext-1.3.4-1.el8.x86_64                           29/68 
+  Installing       : libXrender-0.9.10-7.el8.x86_64                       30/68 
+  Installing       : libXi-1.7.10-1.el8.x86_64                            31/68 
+  Installing       : libXfixes-5.0.3-7.el8.x86_64                         32/68 
+  Installing       : cairo-1.15.12-6.el8.x86_64                           33/68 
+  Installing       : libXcomposite-0.4.4-14.el8.x86_64                    34/68 
+  Installing       : libXcursor-1.1.15-3.el8.x86_64                       35/68 
+  Installing       : libXdamage-1.1.4-14.el8.x86_64                       36/68 
+  Installing       : libXtst-1.2.3-7.el8.x86_64                           37/68 
+  Installing       : libXrandr-1.5.2-1.el8.x86_64                         38/68 
+  Installing       : libXft-2.3.3-1.el8.x86_64                            39/68 
+  Installing       : libXinerama-1.1.4-1.el8.x86_64                       40/68 
+  Installing       : giflib-5.1.4-3.el8.x86_64                            41/68 
+  Installing       : libdatrie-0.2.9-7.el8.x86_64                         42/68 
+  Running scriptlet: libdatrie-0.2.9-7.el8.x86_64                         42/68 
+  Installing       : libthai-0.1.27-2.el8.x86_64                          43/68 
+  Running scriptlet: libthai-0.1.27-2.el8.x86_64                          43/68 
+  Installing       : pango-1.42.4-8.el8.x86_64                            44/68 
+  Running scriptlet: pango-1.42.4-8.el8.x86_64                            44/68 
+  Installing       : atk-2.28.1-1.el8.x86_64                              45/68 
+  Installing       : libfontenc-1.1.3-8.el8.x86_64                        46/68 
+  Installing       : javapackages-filesystem-5.3.0-1.module+el8+2447+6f   47/68 
+  Installing       : jbigkit-libs-2.1-14.el8.x86_64                       48/68 
+  Running scriptlet: jbigkit-libs-2.1-14.el8.x86_64                       48/68 
+  Installing       : libtiff-4.0.9-21.el8.x86_64                          49/68 
+  Installing       : libmetalink-0.1.3-7.el8.x86_64                       50/68 
+  Installing       : lksctp-tools-1.0.18-3.el8.x86_64                     51/68 
+  Running scriptlet: lksctp-tools-1.0.18-3.el8.x86_64                     51/68 
+  Installing       : pkgconf-m4-1.4.2-1.el8.noarch                        52/68 
+  Installing       : shared-mime-info-1.9-3.el8.x86_64                    53/68 
+  Running scriptlet: shared-mime-info-1.9-3.el8.x86_64                    53/68 
+  Installing       : gdk-pixbuf2-2.36.12-5.el8.x86_64                     54/68 
+  Running scriptlet: gdk-pixbuf2-2.36.12-5.el8.x86_64                     54/68 
+  Installing       : gdk-pixbuf2-modules-2.36.12-5.el8.x86_64             55/68 
+  Installing       : gtk-update-icon-cache-3.22.30-10.el8.x86_64          56/68 
+  Installing       : libpkgconf-1.4.2-1.el8.x86_64                        57/68 
+  Installing       : pkgconf-1.4.2-1.el8.x86_64                           58/68 
+  Installing       : pkgconf-pkg-config-1.4.2-1.el8.x86_64                59/68 
+  Installing       : xorg-x11-font-utils-1:7.5-41.el8.x86_64              60/68 
+  Installing       : xorg-x11-fonts-Type1-7.5-19.el8.noarch               61/68 
+  Running scriptlet: xorg-x11-fonts-Type1-7.5-19.el8.noarch               61/68 
+  Installing       : avahi-libs-0.7-20.el8.x86_64                         62/68 
+  Installing       : cups-libs-1:2.2.6-44.el8.x86_64                      63/68 
+  Installing       : gtk2-2.24.32-5.el8.x86_64                            64/68 
+  Running scriptlet: gtk2-2.24.32-5.el8.x86_64                            64/68 
+  Installing       : java-1.8.0-openjdk-headless-1:1.8.0.332.b09-2.el8_   65/68 
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.332.b09-2.el8_   65/68 
+  Installing       : java-1.8.0-openjdk-1:1.8.0.332.b09-2.el8_6.x86_64    66/68 
+  Running scriptlet: java-1.8.0-openjdk-1:1.8.0.332.b09-2.el8_6.x86_64    66/68 
+  Installing       : wget-1.19.5-10.el8.x86_64                            67/68 
+  Running scriptlet: wget-1.19.5-10.el8.x86_64                            67/68 
+  Installing       : procps-ng-3.3.15-6.el8.x86_64                        68/68 
+  Running scriptlet: nss-3.67.0-7.el8_5.x86_64                            68/68 
+  Running scriptlet: copy-jdk-configs-4.0-2.el8.noarch                    68/68 
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.332.b09-2.el8_   68/68 
+  Running scriptlet: java-1.8.0-openjdk-1:1.8.0.332.b09-2.el8_6.x86_64    68/68 
+  Running scriptlet: procps-ng-3.3.15-6.el8.x86_64                        68/68 
+  Running scriptlet: fontconfig-2.13.1-4.el8.x86_64                       68/68 
+  Running scriptlet: hicolor-icon-theme-0.17-2.el8.noarch                 68/68 
+  Running scriptlet: shared-mime-info-1.9-3.el8.x86_64                    68/68 
+  Running scriptlet: gdk-pixbuf2-2.36.12-5.el8.x86_64                     68/68 
+  Verifying        : fontpackages-filesystem-1.44-22.el8.noarch            1/68 
+  Verifying        : avahi-libs-0.7-20.el8.x86_64                          2/68 
+  Verifying        : gdk-pixbuf2-2.36.12-5.el8.x86_64                      3/68 
+  Verifying        : libpkgconf-1.4.2-1.el8.x86_64                         4/68 
+  Verifying        : shared-mime-info-1.9-3.el8.x86_64                     5/68 
+  Verifying        : pkgconf-m4-1.4.2-1.el8.noarch                         6/68 
+  Verifying        : libpng-2:1.6.34-5.el8.x86_64                          7/68 
+  Verifying        : pkgconf-1.4.2-1.el8.x86_64                            8/68 
+  Verifying        : dejavu-fonts-common-2.35-7.el8.noarch                 9/68 
+  Verifying        : fontconfig-2.13.1-4.el8.x86_64                       10/68 
+  Verifying        : lksctp-tools-1.0.18-3.el8.x86_64                     11/68 
+  Verifying        : freetype-2.9.1-4.el8_3.1.x86_64                      12/68 
+  Verifying        : libmetalink-0.1.3-7.el8.x86_64                       13/68 
+  Verifying        : pkgconf-pkg-config-1.4.2-1.el8.x86_64                14/68 
+  Verifying        : procps-ng-3.3.15-6.el8.x86_64                        15/68 
+  Verifying        : cups-libs-1:2.2.6-44.el8.x86_64                      16/68 
+  Verifying        : dejavu-sans-fonts-2.35-7.el8.noarch                  17/68 
+  Verifying        : harfbuzz-1.7.5-3.el8.x86_64                          18/68 
+  Verifying        : jbigkit-libs-2.1-14.el8.x86_64                       19/68 
+  Verifying        : libXcomposite-0.4.4-14.el8.x86_64                    20/68 
+  Verifying        : javapackages-filesystem-5.3.0-1.module+el8+2447+6f   21/68 
+  Verifying        : libfontenc-1.1.3-8.el8.x86_64                        22/68 
+  Verifying        : libXrandr-1.5.2-1.el8.x86_64                         23/68 
+  Verifying        : libXfixes-5.0.3-7.el8.x86_64                         24/68 
+  Verifying        : libXft-2.3.3-1.el8.x86_64                            25/68 
+  Verifying        : libXext-1.3.4-1.el8.x86_64                           26/68 
+  Verifying        : libXtst-1.2.3-7.el8.x86_64                           27/68 
+  Verifying        : libXrender-0.9.10-7.el8.x86_64                       28/68 
+  Verifying        : libXinerama-1.1.4-1.el8.x86_64                       29/68 
+  Verifying        : atk-2.28.1-1.el8.x86_64                              30/68 
+  Verifying        : libdatrie-0.2.9-7.el8.x86_64                         31/68 
+  Verifying        : gdk-pixbuf2-modules-2.36.12-5.el8.x86_64             32/68 
+  Verifying        : giflib-5.1.4-3.el8.x86_64                            33/68 
+  Verifying        : libXi-1.7.10-1.el8.x86_64                            34/68 
+  Verifying        : xorg-x11-fonts-Type1-7.5-19.el8.noarch               35/68 
+  Verifying        : libXau-1.0.9-3.el8.x86_64                            36/68 
+  Verifying        : hicolor-icon-theme-0.17-2.el8.noarch                 37/68 
+  Verifying        : ttmkfdir-3.0.9-54.el8.x86_64                         38/68 
+  Verifying        : nspr-4.32.0-1.el8_4.x86_64                           39/68 
+  Verifying        : wget-1.19.5-10.el8.x86_64                            40/68 
+  Verifying        : libthai-0.1.27-2.el8.x86_64                          41/68 
+  Verifying        : gtk2-2.24.32-5.el8.x86_64                            42/68 
+  Verifying        : graphite2-1.3.10-10.el8.x86_64                       43/68 
+  Verifying        : libXcursor-1.1.15-3.el8.x86_64                       44/68 
+  Verifying        : libXdamage-1.1.4-14.el8.x86_64                       45/68 
+  Verifying        : libxcb-1.13.1-1.el8.x86_64                           46/68 
+  Verifying        : fribidi-1.0.4-8.el8.x86_64                           47/68 
+  Verifying        : nss-softokn-3.67.0-7.el8_5.x86_64                    48/68 
+  Verifying        : libjpeg-turbo-1.5.3-12.el8.x86_64                    49/68 
+  Verifying        : nss-sysinit-3.67.0-7.el8_5.x86_64                    50/68 
+  Verifying        : tzdata-java-2022a-1.el8.noarch                       51/68 
+  Verifying        : libtiff-4.0.9-21.el8.x86_64                          52/68 
+  Verifying        : lua-5.3.4-12.el8.x86_64                              53/68 
+  Verifying        : xorg-x11-font-utils-1:7.5-41.el8.x86_64              54/68 
+  Verifying        : gtk-update-icon-cache-3.22.30-10.el8.x86_64          55/68 
+  Verifying        : pixman-0.38.4-2.el8.x86_64                           56/68 
+  Verifying        : java-1.8.0-openjdk-1:1.8.0.332.b09-2.el8_6.x86_64    57/68 
+  Verifying        : alsa-lib-1.2.6.1-3.el8.x86_64                        58/68 
+  Verifying        : nss-softokn-freebl-3.67.0-7.el8_5.x86_64             59/68 
+  Verifying        : nss-util-3.67.0-7.el8_5.x86_64                       60/68 
+  Verifying        : copy-jdk-configs-4.0-2.el8.noarch                    61/68 
+  Verifying        : nss-3.67.0-7.el8_5.x86_64                            62/68 
+  Verifying        : jasper-libs-2.0.14-5.el8.x86_64                      63/68 
+  Verifying        : libX11-common-1.6.8-5.el8.noarch                     64/68 
+  Verifying        : cairo-1.15.12-6.el8.x86_64                           65/68 
+  Verifying        : java-1.8.0-openjdk-headless-1:1.8.0.332.b09-2.el8_   66/68 
+  Verifying        : pango-1.42.4-8.el8.x86_64                            67/68 
+  Verifying        : libX11-1.6.8-5.el8.x86_64                            68/68 
+Installed products updated.
+
+Installed:
+  alsa-lib-1.2.6.1-3.el8.x86_64                                                 
+  atk-2.28.1-1.el8.x86_64                                                       
+  avahi-libs-0.7-20.el8.x86_64                                                  
+  cairo-1.15.12-6.el8.x86_64                                                    
+  copy-jdk-configs-4.0-2.el8.noarch                                             
+  cups-libs-1:2.2.6-44.el8.x86_64                                               
+  dejavu-fonts-common-2.35-7.el8.noarch                                         
+  dejavu-sans-fonts-2.35-7.el8.noarch                                           
+  fontconfig-2.13.1-4.el8.x86_64                                                
+  fontpackages-filesystem-1.44-22.el8.noarch                                    
+  freetype-2.9.1-4.el8_3.1.x86_64                                               
+  fribidi-1.0.4-8.el8.x86_64                                                    
+  gdk-pixbuf2-2.36.12-5.el8.x86_64                                              
+  gdk-pixbuf2-modules-2.36.12-5.el8.x86_64                                      
+  giflib-5.1.4-3.el8.x86_64                                                     
+  graphite2-1.3.10-10.el8.x86_64                                                
+  gtk-update-icon-cache-3.22.30-10.el8.x86_64                                   
+  gtk2-2.24.32-5.el8.x86_64                                                     
+  harfbuzz-1.7.5-3.el8.x86_64                                                   
+  hicolor-icon-theme-0.17-2.el8.noarch                                          
+  jasper-libs-2.0.14-5.el8.x86_64                                               
+  java-1.8.0-openjdk-1:1.8.0.332.b09-2.el8_6.x86_64                             
+  java-1.8.0-openjdk-headless-1:1.8.0.332.b09-2.el8_6.x86_64                    
+  javapackages-filesystem-5.3.0-1.module+el8+2447+6f56d9a6.noarch               
+  jbigkit-libs-2.1-14.el8.x86_64                                                
+  libX11-1.6.8-5.el8.x86_64                                                     
+  libX11-common-1.6.8-5.el8.noarch                                              
+  libXau-1.0.9-3.el8.x86_64                                                     
+  libXcomposite-0.4.4-14.el8.x86_64                                             
+  libXcursor-1.1.15-3.el8.x86_64                                                
+  libXdamage-1.1.4-14.el8.x86_64                                                
+  libXext-1.3.4-1.el8.x86_64                                                    
+  libXfixes-5.0.3-7.el8.x86_64                                                  
+  libXft-2.3.3-1.el8.x86_64                                                     
+  libXi-1.7.10-1.el8.x86_64                                                     
+  libXinerama-1.1.4-1.el8.x86_64                                                
+  libXrandr-1.5.2-1.el8.x86_64                                                  
+  libXrender-0.9.10-7.el8.x86_64                                                
+  libXtst-1.2.3-7.el8.x86_64                                                    
+  libdatrie-0.2.9-7.el8.x86_64                                                  
+  libfontenc-1.1.3-8.el8.x86_64                                                 
+  libjpeg-turbo-1.5.3-12.el8.x86_64                                             
+  libmetalink-0.1.3-7.el8.x86_64                                                
+  libpkgconf-1.4.2-1.el8.x86_64                                                 
+  libpng-2:1.6.34-5.el8.x86_64                                                  
+  libthai-0.1.27-2.el8.x86_64                                                   
+  libtiff-4.0.9-21.el8.x86_64                                                   
+  libxcb-1.13.1-1.el8.x86_64                                                    
+  lksctp-tools-1.0.18-3.el8.x86_64                                              
+  lua-5.3.4-12.el8.x86_64                                                       
+  nspr-4.32.0-1.el8_4.x86_64                                                    
+  nss-3.67.0-7.el8_5.x86_64                                                     
+  nss-softokn-3.67.0-7.el8_5.x86_64                                             
+  nss-softokn-freebl-3.67.0-7.el8_5.x86_64                                      
+  nss-sysinit-3.67.0-7.el8_5.x86_64                                             
+  nss-util-3.67.0-7.el8_5.x86_64                                                
+  pango-1.42.4-8.el8.x86_64                                                     
+  pixman-0.38.4-2.el8.x86_64                                                    
+  pkgconf-1.4.2-1.el8.x86_64                                                    
+  pkgconf-m4-1.4.2-1.el8.noarch                                                 
+  pkgconf-pkg-config-1.4.2-1.el8.x86_64                                         
+  procps-ng-3.3.15-6.el8.x86_64                                                 
+  shared-mime-info-1.9-3.el8.x86_64                                             
+  ttmkfdir-3.0.9-54.el8.x86_64                                                  
+  tzdata-java-2022a-1.el8.noarch                                                
+  wget-1.19.5-10.el8.x86_64                                                     
+  xorg-x11-font-utils-1:7.5-41.el8.x86_64                                       
+  xorg-x11-fonts-Type1-7.5-19.el8.noarch                                        
+
+Complete!
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+25 files removed
+Removing intermediate container 81182ce4aefb
+ ---> a2e20916bbea
+Step 5/20 : RUN useradd -md /home/tomcat -u 1001 tomcat
+ ---> Running in 3296e032e65a
+Removing intermediate container 3296e032e65a
+ ---> 94ac8fa61fcc
+Step 6/20 : USER tomcat
+ ---> Running in 9d3a37ed0e9b
+Removing intermediate container 9d3a37ed0e9b
+ ---> 4de26d189c71
+Step 7/20 : WORKDIR /home/tomcat
+ ---> Running in d294df390103
+Removing intermediate container d294df390103
+ ---> 9bb1394e1f95
+Step 8/20 : RUN wget  ${DOWNLOAD_URL} -O tomcat.tar.gz &&     tar -xvzf tomcat.tar.gz && rm -f tomcat.tar.gz && chown -R tomcat:tomcat /home/tomcat/ && mv apache-tomcat-* apache-tomcat &&  chmod a+x /home/tomcat/apache-tomcat/bin/*
+ ---> Running in 29f68d1f5a1c
+[91m--2022-05-16 18:23:51--  https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz
+[0m[91mResolving dlcdn.apache.org (dlcdn.apache.org)... [0m[91m151.101.2.132, 2a04:4e42::644
+Connecting to dlcdn.apache.org (dlcdn.apache.org)|151.101.2.132|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 10577344 (10M) [application/x-gzip]
+Saving to: 'tomcat.tar.gz'
+[0m[91m
+     0K ..[0m[91m...[0m[91m...[0m[91m..[0m[91m ....[0m[91m...[0m[91m...[0m[91m ....[0m[91m..[0m[91m..[0m[91m..[0m[91m ..[0m[91m..[0m[91m...[0m[91m.[0m[91m.. .[0m[91m.[0m[91m...[0m[91m.[0m[91m..[0m[91m..  0% 2.26M 4s
+    50K [0m[91m......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m....  0% 4.69M 3s
+   100K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m......  1% 24.6M 2s
+   150K ..[0m[91m........ .......... ......[0m[91m.... .......... ..[0m[91m........  1% 9.76M 2s
+   200K ........[0m[91m.. .......... ....[0m[91m...... .......... .......[0m[91m...  2% 8.98M 2s
+   250K .....[0m[91m..... .......... .[0m[91m......... .......... ..........  2% 40.8M 2s
+   300K ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... ..........  3% 25.2M 1s
+   350K .[0m[91m......... .......... .......... ...[0m[91m....... .........[0m[91m.  3% 14.7M 1s
+   400K .......... .....[0m[91m..... .......... .[0m[91m......... ..........  4% 31.9M 1s
+   450K .......... ...[0m[91m....... .......... .......... ..........  4% 12.8M 1s
+   500K ...[0m[91m....... .[0m[91m......... .......[0m[91m... .......... ..........  5% 32.9M 1s
+   550K .[0m[91m......... .......... .....[0m[91m..... .......... ..........  5% 75.1M 1s
+   600K .......... .......... .......... .......... .......[0m[91m...  6%  122M 1s
+   650K .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m... ..........  6% 51.2M 1s
+   700K ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... ..........  7% 50.7M 1s
+   750K .[0m[91m......... .......... .......... ...[0m[91m....... .........[0m[91m.  7% 78.1M 1s
+   800K .......... .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m...  8% 18.8M 1s
+   850K .......... ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m.....  8% 82.4M 1s
+   900K .......... .[0m[91m......... .......[0m[91m... .......... ..........  9% 82.3M 1s
+   950K .[0m[91m......... .......[0m[91m... .....[0m[91m..... .......... .[0m[91m.........  9% 15.8M 1s
+  1000K .......... .......... ...[0m[91m....... .......... .......... 10% 75.5M 1s
+  1050K .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m... .......... 10% 51.0M 1s
+  1100K .......... .......... .......... .......... .......... 11% 68.6M 1s
+  1150K .[0m[91m......... .......... .......... .......... .........[0m[91m. 11% 57.2M 1s
+  1200K .......... .......... .......... .[0m[91m......... .......... 12% 72.5M 1s
+  1250K .....[0m[91m..... .......... .[0m[91m........[0m[91m. .......... .....[0m[91m..... 12% 17.1M 1s
+  1300K .......... .[0m[91m........[0m[91m. .......[0m[91m... ...[0m[91m....... .......... 13% 54.3M 1s
+  1350K .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m......... 13% 10.2M 1s
+  1400K .......[0m[91m... .......... .......... .[0m[91m......... .......... 14% 38.3M 1s
+  1450K .......... .......... .........[0m[91m. .......... .......... 14% 63.0M 0s
+  1500K .......... .........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 15% 61.4M 0s
+  1550K .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... ...[0m[91m....... 15% 48.6M 0s
+  1600K .......... .....[0m[91m..... ...[0m[91m....... .[0m[91m......... .......[0m[91m... 15% 50.3M 0s
+  1650K .......... ...[0m[91m....... .........[0m[91m. .......[0m[91m... .....[0m[91m..... 16% 68.0M 0s
+  1700K .......... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 16% 83.4M 0s
+  1750K .[0m[91m........[0m[91m. .......... .....[0m[91m..... .......... [0m[91m.[0m[91m........[0m[91m. 17% 55.1M 0s
+  1800K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... ........[0m[91m.[0m[91m. .......[0m[91m... 17% 64.6M 0s
+  1850K .....[0m[91m..... ...[0m[91m....... .[0m[91m......... .......[0m[91m... .......... 18% 54.1M 0s
+  1900K ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 18% 64.1M 0s
+  1950K .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .......... 19% 67.6M 0s
+  2000K .......... .......... .......... .......... .......... 19% 86.4M 0s
+  2050K .......... .......... .......... .......[0m[91m... .......... 20%  129M 0s
+  2100K .......... .[0m[91m......... .......[0m[91m... .......... ...[0m[91m....... 20% 87.0M 0s
+  2150K .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. 21% 63.3M 0s
+  2200K ......[0m[91m.[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... 21% 84.3M 0s
+  2250K .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... 22% 75.6M 0s
+  2300K ...[0m[91m....... .[0m[91m........[0m[91m. .......... .......... .......... 22% 90.4M 0s
+  2350K .......... .......... .......... .......... .......... 23% 67.7M 0s
+  2400K .......... .......... ...[0m[91m....... .......... .......... 23%  124M 0s
+  2450K .......... .......... .......... .......... .......... 24% 48.3M 0s
+  2500K .......... .......... .......... .......... .......... 24% 39.1M 0s
+  2550K .........[0m[91m. .......[0m[91m... .....[0m[91m..... .......... .[0m[91m......... 25% 56.5M 0s
+  2600K .....[0m[91m..... .......... .......... .......... .......... 25% 68.4M 0s
+  2650K .......... .......... .......... .......... .......... 26% 66.6M 0s
+  2700K .......... .......... .......... .......... .......... 26% 35.0M 0s
+  2750K .......... .......... .......... .......... .......... 27% 65.3M 0s
+  2800K .......... .....[0m[91m..... .......... .......... ....[0m[91m...... 27% 62.7M 0s
+  2850K .....[0m[91m..... .......... .........[0m[91m. .......... .......... 28% 86.9M 0s
+  2900K .......... .......... .......[0m[91m... .......... .......... 28% 77.4M 0s
+  2950K .........[0m[91m. .......... .....[0m[91m..... .......... .[0m[91m........[0m[91m. 29% 59.4M 0s
+  3000K .......[0m[91m... .......... ...[0m[91m....... .......... .......... 29% 97.2M 0s
+  3050K .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m... .......... 30%  111M 0s
+  3100K .......... .[0m[91m........[0m[91m. .......[0m[91m... .......... .......... 30%  106M 0s
+  3150K .[0m[91m......... .......[0m[91m..[0m[91m. .......... .......... .......... 30%[0m[91m 79.5M 0s
+  3200K .......... .....[0m[91m..... .......... .[0m[91m......... .......... 31% 35.7M 0s
+  3250K .......... ...[0m[91m....... .......... .......... .......... 31% 62.5M 0s
+  3300K .......... .......... .......... .......... .......... 32% 48.7M 0s
+  3350K .......... .......... .......... .......... .......... 32% 73.3M 0s[0m[91m
+  3400K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......... 33% 74.9M 0s
+  3450K .......... .......... .......... .......... .......... 33% 83.9M 0s
+  3500K .......... .........[0m[91m. .......... .....[0m[91m..... .......... 34% 45.0M 0s
+  3550K[0m[91m .[0m[91m......... .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .........[0m[91m. 34% 62.1M 0s
+  3600K .......... .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m... 35% 99.1M 0s
+  3650K .......... ...[0m[91m....... .......... .......... ...[0m[91m..[0m[91m..... 35% 96.5M 0s
+  3700K ...[0m[91m....... .........[0m[91m. .......[0m[91m... [0m[91m.......... ...[0m[91m....... 36% 81.5M 0s
+  3750K .[0m[91m........[0m[91m. .......[0m[91m... .........[0m[91m. .[0m[91m......... .[0m[91m..[0m[91m....... 36% 64.3M 0s
+  3800K ........[0m[91m.. .......... .......... .[0m[91m........[0m[91m. .......[0m[91m... 37%  116M 0s
+  3850K .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......... .......... 37% 71.2M 0s
+  3900K .......... .......... .......... .......... .......... 38%  145M 0s
+  3950K .......... .......... .......... .......... .......... 38% 98.3M 0s
+  4000K .......... .......... .......... .......... .......... 39%  118M 0s
+  4050K .......... .......... .......... .......... .......... 39%  143M 0s
+  4100K .......... .......... .......... .......... ...[0m[91m....... 40% 16.0M 0s
+  4150K .........[0m[91m. .......... .....[0m[91m..... .........[0m[91m. .[0m[91m......... 40%[0m[91m 93.5M 0s
+  4200K [0m[91m.....[0m[91m..... .......... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... 41% 82.2M 0s
+  4250K .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......[0m[91m... .....[0m[91m..... 41% 84.0M 0s
+  4300K[0m[91m ...[0m[91m....... .[0m[91m......... .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 42% 79.6M 0s
+  4350K .[0m[91m......... .......[0m[91m... .......... .......... .......... 42% 55.2M 0s
+  4400K .......... .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m... 43% 77.8M 0s
+  4450K .......... ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... 43% 94.9M 0s
+  4500K .......[0m[91m... .[0m[91m......... .......[0m[91m... .......... ...[0m[91m....... 44% 52.5M 0s
+  4550K .........[0m[91m. .......... .....[0m[91m..... .......... .[0m[91m......... 44% 72.6M 0s
+  4600K .......[0m[91m... .......... ...[0m[91m....... .........[0m[91m. .......... 45% 97.4M 0s
+  4650K .......... .......... .......... .......... .......... 45%  130M 0s
+  4700K .......... .......... .......... .......... .......... 45%  168M 0s
+  4750K .......... .......... .......... .......... .......... 46%  121M 0s
+  4800K .......... .......... .......... .......... .......[0m[91m... 46% 77.0M 0s
+  4850K .......... ...[0m[91m....... .........[0m[91m. .......... .......... 47% 92.6M 0s
+  4900K .......... .......... .......... .......... .......... 47%  108M 0s
+  4950K .........[0m[91m. .......... .......... .......... .......... 48% 71.0M 0s[0m[91m
+  5000K .......... .......... .......... .........[0m[91m. .......... 48% 72.3M 0s
+  5050K .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m... .......... 49% 61.0M 0s
+  5100K ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... .......... 49% 74.7M 0s
+  5150K .[0m[91m......... .......[0m[91m... .......... ...[0m[91m....... .........[0m[91m. 50%  127M 0s
+  5200K .......... .[0m[91m....[0m[91m..... .......... .[0m[91m........[0m[91m. .......[0m[91m... 50% 66.2M 0s
+  5250K .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .......... 51% 93.1M 0s
+  5300K .......... .......... .......... .......... .......... 51% 86.9M 0s
+  5350K .......... .......... .......... ...[0m[91m....... .......... 52%  102M 0s
+  5400K .......... .......... .......... .......... .......... 52% 75.4M 0s
+  5450K .....[0m[91m..... .......... .......... .......[0m[91m... .......... 53%  124M 0s
+  5500K .......... .......... .......... .......... .......... 53%  104M 0s
+  5550K .........[0m[91m. .......... .......... ...[0m[91m....... .......... 54%  116M 0s
+  5600K .......... .....[0m[91m..... ...[0m[91m....... .[0m[91m......... .......[0m[91m... 54% 98.8M 0s
+  5650K .......... .......... .......... .......... .......... 55%  143M 0s
+  5700K .......... .......... .......... .......... .......... 55%  147M 0s
+  5750K .......... .......... .....[0m[91m..... .......... .......... 56%  132M 0s
+  5800K .......... .....[0m[91m..... ...[0m[91m....... .......... .......... 56%  113M 0s
+  5850K .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... 57% 74.7M 0s
+  5900K ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ........[0m[91m.. 57% 61.6M 0s
+  5950K .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... .......... .......... 58% 77.3M 0s
+  6000K .......... .....[0m[91m..... .......... .[0m[91m......... .......... 58% 79.4M 0s
+  6050K ......[0m[91m.... .......... .[0m[91m......... .......... .......... 59% 91.3M 0s
+  6100K .......... .[0m[91m........[0m[91m. .......[0m[91m... .......... .......... 59% 86.1M 0s
+  6150K .......... .......... .......... .......... .......... 60% 69.4M 0s
+  6200K .....[0m[91m..... .......... .......... .......... .......... 60% 90.8M 0s
+  6250K .......... .......... .[0m[91m......... .......... .......... 60% 89.1M 0s
+  6300K .......... .......... .......... .....[0m[91m..... .......... 61% 6.58M 0s
+  6350K .......... .......... .......... .......... .........[0m[91m. 61% 91.2M 0s
+  6400K .......[0m[91m... .....[0m[91m..... ..........[0m[91m .[0m[91m........[0m[91m. .......[0m[91m... 62% 37.8M 0s
+  6450K .......... ...[0m[91m....... .........[0m[91m. .......[0m[91m... .......... 62% 43.0M 0s
+  6500K ...[0m[91m....... [0m[91m.[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m...[0m[91m.. ...[0m[91m....... 63% 40.1M 0s
+  6550K[0m[91m .[0m[91m........[0m[91m. .......... ..[0m[91m...[0m[91m..... .......... .......... 63% 70.3M 0s
+  6600K .......... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......... 64% 69.8M 0s
+  6650K .....[0m[91m..... .......... .......... .......... .......... 64%  102M 0s
+  6700K .......... .......... .......... .......... .......... 65%  137M 0s
+  6750K .......... .......... .......... .......... .......... 65%  139M 0s
+  6800K .......... .......... .......... .......... .......... 66%  169M 0s
+  6850K .......... .......... .......... .......... .......... 66%  101M 0s
+  6900K .......... .......... .......... .......... .......... 67% 56.0M 0s
+  6950K .......... .......... .......... .......... .......... 67%  110M 0s
+  7000K .......... .......... .......... .[0m[91m........[0m[91m. .......... 68%  110M 0s[0m[91m
+  7050K .....[0m[91m..... .......... .[0m[91m......... .......... .......... 68% 74.1M 0s
+  7100K .......... .......... .......... .....[0m[91m..... .......... 69%  113M 0s
+  7150K .[0m[91m......... .......[0m[91m... .......... ...[0m[91m....... .........[0m[91m. 69% 80.5M 0s
+  7200K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m......... ......[0m[91m.[0m[91m... 70% 78.2M 0s
+  7250K .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......... .....[0m[91m..... 70% 61.2M 0s
+  7300K .......... .......... .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 71% 81.9M 0s
+  7350K .........[0m[91m. .......[0m[91m... .....[0m[91m..... .......... .[0m[91m......... 71% 81.6M 0s
+  7400K ....[0m[91m...[0m[91m... .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......[0m[91m... 72%  100M 0s
+  7450K .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .......... 72% 53.8M 0s
+  7500K ...[0m[91m....... .......[0m[91m..[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 73% 38.2M 0s
+  7550K .[0m[91m........[0m[91m. .......... .......... .......... .......... 73% 73.8M 0s
+  7600K .......... .......... .......... .......... .......... 74% 89.0M 0s
+  7650K .......... .......... .........[0m[91m. .......... .....[0m[91m..... 74% 91.1M 0s
+  7700K ...[0m[91m....... .[0m[91m......... ......[0m[91m.[0m[91m... .......... .......... 75% 76.4M 0s
+  7750K .......... .......... .......... .......... .[0m[91m......... 75% 65.6M 0s
+  7800K .......[0m[91m... .......... .......... .........[0m[91m. .......... 75%  109M 0s
+  7850K .....[0m[91m..... .......... .......... .......... .......... 76% 83.2M 0s
+  7900K .......... .........[0m[91m. .......... .....[0m[91m..... .......... 76% 92.8M 0s
+  7950K .[0m[91m......... .......... .......... .......... .......... 77% 40.4M 0s
+  8000K .......... .......... ...[0m[91m....... .[0m[91m......... .......[0m[91m... 77% 62.1M 0s
+  8050K .......... ...[0m[91m....... .........[0m[91m. .......[0m[91m... .......... 78% 76.0M 0s
+  8100K .......... .[0m[91m......... .......[0m[91m... .....[0m[91m..... .......... 78% 85.0M 0s
+  8150K .......... .......... .....[0m[91m..... .......... .[0m[91m......... 79% 85.0M 0s
+  8200K .......... .......... .......... .......... .......... 79% 63.4M 0s
+  8250K .......... .......... .......... .......... .......... 80% 55.4M 0s
+  8300K .......... .......... .......... .......... .......... 80% 87.1M 0s
+  8350K .......... .......... .......... .......... .......... 81% 87.2M 0s
+  8400K .......... .......... .......... .......... .......... 81% 75.1M 0s
+  8450K .......... .......... .......... .......... .......... 82%  116M 0s
+  8500K .......... .......... .......... .......... .......... 82% 73.9M 0s
+  8550K .......... .......... .......... .......... .......... 83% 84.7M 0s
+  8600K .......... .......... .......... .......... .......... 83%  138M 0s
+  8650K .......... .......... .......... .......... .......... 84%  132M 0s
+  8700K .......... .......... .......... .......... .......... 84%  142M 0s
+  8750K .......... .......... .......... .......... .......... 85% 99.4M 0s
+  8800K .......... .......... .......... .......... .......... 85%  118M 0s
+  8850K .......... .......... .......... .......... .......... 86% 92.4M 0s
+  8900K .......... .......... .......... .......... .......... 86% 80.6M 0s
+  8950K .......... .......... .......... .......... .......... 87% 64.1M 0s
+  9000K .......... .......... .......... .......... .......... 87% 86.9M 0s
+  9050K .....[0m[91m..... .......... .......... .......... .......... 88% 92.3M 0s
+  9100K .......... .......... .......... .......... .......... 88% 82.3M 0s
+  9150K .......... .......... .......... ...[0m[91m....... .......... 89% 50.6M 0s
+  9200K .......... .......... .......... .......... .......... 89% 59.7M 0s
+  9250K .......... ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... 90% 60.6M 0s
+  9300K ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 90% 74.4M 0s
+  9350K .........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. 91% 80.7M 0s
+  9400K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......[0m[91m... 91% 84.8M 0s
+  9450K .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... ..[0m[91m........ 91% 81.0M 0s
+  9500K ...[0m[91m....... .........[0m[91m. .......... .......... .......... 92% 98.9M 0s
+  9550K .......... .......[0m[91m... .......... ...[0m[91m....... .......... 92% 3.93M 0s
+  9600K .......[0m[91m... .....[0m[91m..... .......... .[0m[91m......... .......... 93% 4.03M 0s
+  9650K ..........[0m[91m ...[0m[91m....... .........[0m[91m. .......[0m[91m... .......... 93% 55.2M 0s
+  9700K .......... .[0m[91m........[0m[91m. ......[0m[91m.[0m[91m... .....[0m[91m..... ...[0m[91m....... 94% 62.2M 0s
+  9750K .[0m[91m........[0m[91m. .......... .....[0m[91m..... ...[0m[91m....... .........[0m[91m. 94% 50.6M 0s
+  9800K .......[0m[91m... .......... ...[0m[91m....... .........[0m[91m. .......... 95% 59.1M 0s
+  9850K .....[0m[91m..... .......... .[0m[91m........[0m[91m. .......[0m[91m... .......... 95% 41.9M 0s
+  9900K ..[0m[91m.[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m.......[0m[91m 96% 31.7M 0s
+  9950K .[0m[91m......... .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. 96% 60.7M 0s
+ 10000K .......... .....[0m[91m..... .......... .[0m[91m......... .......... 97%  155M 0s
+ 10050K .......... ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... 97%  117M 0s
+ 10100K .......... .[0m[91m......... .......[0m[91m... .......... ...[0m[91m....... 98%  118M 0s
+ 10150K .........[0m[91m. .......... .....[0m[91m..... .......... .........[0m[91m. 98%  143M 0s
+ 10200K .......[0m[91m... .......... ...[0m[91m....... .......... .......... 99% 90.9M 0s
+ 10250K .......... .......... .......... .......... .......... 99% 92.4M 0s
+ 10300K ...[0m[91m....... .......... .........                    [0m[91m   100% 71.6M=0.2s
+
+[0m[91m2022-05-16 18:23:51 (44.0 MB/s) - 'tomcat.tar.gz' saved [10577344/10577344]
+
+[0mapache-tomcat-8.5.78/conf/
+apache-tomcat-8.5.78/conf/catalina.policy
+apache-tomcat-8.5.78/conf/catalina.properties
+apache-tomcat-8.5.78/conf/context.xml
+apache-tomcat-8.5.78/conf/jaspic-providers.xml
+apache-tomcat-8.5.78/conf/jaspic-providers.xsd
+apache-tomcat-8.5.78/conf/logging.properties
+apache-tomcat-8.5.78/conf/server.xml
+apache-tomcat-8.5.78/conf/tomcat-users.xml
+apache-tomcat-8.5.78/conf/tomcat-users.xsd
+apache-tomcat-8.5.78/conf/web.xml
+apache-tomcat-8.5.78/bin/
+apache-tomcat-8.5.78/lib/
+apache-tomcat-8.5.78/logs/
+apache-tomcat-8.5.78/temp/
+apache-tomcat-8.5.78/webapps/
+apache-tomcat-8.5.78/webapps/ROOT/
+apache-tomcat-8.5.78/webapps/ROOT/WEB-INF/
+apache-tomcat-8.5.78/webapps/docs/
+apache-tomcat-8.5.78/webapps/docs/WEB-INF/
+apache-tomcat-8.5.78/webapps/docs/annotationapi/
+apache-tomcat-8.5.78/webapps/docs/api/
+apache-tomcat-8.5.78/webapps/docs/appdev/
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/docs/
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/src/
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/src/mypackage/
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/web/
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/web/WEB-INF/
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/web/images/
+apache-tomcat-8.5.78/webapps/docs/architecture/
+apache-tomcat-8.5.78/webapps/docs/architecture/requestProcess/
+apache-tomcat-8.5.78/webapps/docs/architecture/startup/
+apache-tomcat-8.5.78/webapps/docs/config/
+apache-tomcat-8.5.78/webapps/docs/elapi/
+apache-tomcat-8.5.78/webapps/docs/images/
+apache-tomcat-8.5.78/webapps/docs/images/fonts/
+apache-tomcat-8.5.78/webapps/docs/jaspicapi/
+apache-tomcat-8.5.78/webapps/docs/jspapi/
+apache-tomcat-8.5.78/webapps/docs/servletapi/
+apache-tomcat-8.5.78/webapps/docs/tribes/
+apache-tomcat-8.5.78/webapps/docs/websocketapi/
+apache-tomcat-8.5.78/webapps/examples/
+apache-tomcat-8.5.78/webapps/examples/META-INF/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/checkbox/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/colors/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/dates/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/error/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/filters/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/el/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/listeners/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/num/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/sessions/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/util/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/validators/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/chat/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/jsp/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/lib/
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/tags/
+apache-tomcat-8.5.78/webapps/examples/jsp/
+apache-tomcat-8.5.78/webapps/examples/jsp/async/
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/
+apache-tomcat-8.5.78/webapps/examples/jsp/checkbox/
+apache-tomcat-8.5.78/webapps/examples/jsp/colors/
+apache-tomcat-8.5.78/webapps/examples/jsp/dates/
+apache-tomcat-8.5.78/webapps/examples/jsp/error/
+apache-tomcat-8.5.78/webapps/examples/jsp/forward/
+apache-tomcat-8.5.78/webapps/examples/jsp/images/
+apache-tomcat-8.5.78/webapps/examples/jsp/include/
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/
+apache-tomcat-8.5.78/webapps/examples/jsp/jsptoserv/
+apache-tomcat-8.5.78/webapps/examples/jsp/num/
+apache-tomcat-8.5.78/webapps/examples/jsp/security/
+apache-tomcat-8.5.78/webapps/examples/jsp/security/protected/
+apache-tomcat-8.5.78/webapps/examples/jsp/sessions/
+apache-tomcat-8.5.78/webapps/examples/jsp/simpletag/
+apache-tomcat-8.5.78/webapps/examples/jsp/snp/
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/
+apache-tomcat-8.5.78/webapps/examples/jsp/xml/
+apache-tomcat-8.5.78/webapps/examples/servlets/
+apache-tomcat-8.5.78/webapps/examples/servlets/images/
+apache-tomcat-8.5.78/webapps/examples/servlets/nonblocking/
+apache-tomcat-8.5.78/webapps/examples/websocket/
+apache-tomcat-8.5.78/webapps/host-manager/
+apache-tomcat-8.5.78/webapps/host-manager/META-INF/
+apache-tomcat-8.5.78/webapps/host-manager/WEB-INF/
+apache-tomcat-8.5.78/webapps/host-manager/WEB-INF/jsp/
+apache-tomcat-8.5.78/webapps/host-manager/css/
+apache-tomcat-8.5.78/webapps/host-manager/images/
+apache-tomcat-8.5.78/webapps/manager/
+apache-tomcat-8.5.78/webapps/manager/META-INF/
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/
+apache-tomcat-8.5.78/webapps/manager/css/
+apache-tomcat-8.5.78/webapps/manager/images/
+apache-tomcat-8.5.78/work/
+apache-tomcat-8.5.78/BUILDING.txt
+apache-tomcat-8.5.78/CONTRIBUTING.md
+apache-tomcat-8.5.78/LICENSE
+apache-tomcat-8.5.78/NOTICE
+apache-tomcat-8.5.78/README.md
+apache-tomcat-8.5.78/RELEASE-NOTES
+apache-tomcat-8.5.78/RUNNING.txt
+apache-tomcat-8.5.78/bin/bootstrap.jar
+apache-tomcat-8.5.78/bin/catalina-tasks.xml
+apache-tomcat-8.5.78/bin/catalina.bat
+apache-tomcat-8.5.78/bin/ciphers.bat
+apache-tomcat-8.5.78/bin/commons-daemon-native.tar.gz
+apache-tomcat-8.5.78/bin/commons-daemon.jar
+apache-tomcat-8.5.78/bin/configtest.bat
+apache-tomcat-8.5.78/bin/digest.bat
+apache-tomcat-8.5.78/bin/setclasspath.bat
+apache-tomcat-8.5.78/bin/shutdown.bat
+apache-tomcat-8.5.78/bin/startup.bat
+apache-tomcat-8.5.78/bin/tomcat-juli.jar
+apache-tomcat-8.5.78/bin/tomcat-native.tar.gz
+apache-tomcat-8.5.78/bin/tool-wrapper.bat
+apache-tomcat-8.5.78/bin/version.bat
+apache-tomcat-8.5.78/lib/annotations-api.jar
+apache-tomcat-8.5.78/lib/catalina-ant.jar
+apache-tomcat-8.5.78/lib/catalina-ha.jar
+apache-tomcat-8.5.78/lib/catalina-storeconfig.jar
+apache-tomcat-8.5.78/lib/catalina-tribes.jar
+apache-tomcat-8.5.78/lib/catalina.jar
+apache-tomcat-8.5.78/lib/ecj-4.6.3.jar
+apache-tomcat-8.5.78/lib/el-api.jar
+apache-tomcat-8.5.78/lib/jasper-el.jar
+apache-tomcat-8.5.78/lib/jasper.jar
+apache-tomcat-8.5.78/lib/jaspic-api.jar
+apache-tomcat-8.5.78/lib/jsp-api.jar
+apache-tomcat-8.5.78/lib/servlet-api.jar
+apache-tomcat-8.5.78/lib/tomcat-api.jar
+apache-tomcat-8.5.78/lib/tomcat-coyote.jar
+apache-tomcat-8.5.78/lib/tomcat-dbcp.jar
+apache-tomcat-8.5.78/lib/tomcat-i18n-de.jar
+apache-tomcat-8.5.78/lib/tomcat-i18n-es.jar
+apache-tomcat-8.5.78/lib/tomcat-i18n-fr.jar
+apache-tomcat-8.5.78/lib/tomcat-i18n-ja.jar
+apache-tomcat-8.5.78/lib/tomcat-i18n-ko.jar
+apache-tomcat-8.5.78/lib/tomcat-i18n-ru.jar
+apache-tomcat-8.5.78/lib/tomcat-i18n-zh-CN.jar
+apache-tomcat-8.5.78/lib/tomcat-jdbc.jar
+apache-tomcat-8.5.78/lib/tomcat-jni.jar
+apache-tomcat-8.5.78/lib/tomcat-util-scan.jar
+apache-tomcat-8.5.78/lib/tomcat-util.jar
+apache-tomcat-8.5.78/lib/tomcat-websocket.jar
+apache-tomcat-8.5.78/lib/websocket-api.jar
+apache-tomcat-8.5.78/temp/safeToDelete.tmp
+apache-tomcat-8.5.78/webapps/ROOT/RELEASE-NOTES.txt
+apache-tomcat-8.5.78/webapps/ROOT/WEB-INF/web.xml
+apache-tomcat-8.5.78/webapps/ROOT/asf-logo-wide.svg
+apache-tomcat-8.5.78/webapps/ROOT/bg-button.png
+apache-tomcat-8.5.78/webapps/ROOT/bg-middle.png
+apache-tomcat-8.5.78/webapps/ROOT/bg-nav.png
+apache-tomcat-8.5.78/webapps/ROOT/bg-upper.png
+apache-tomcat-8.5.78/webapps/ROOT/favicon.ico
+apache-tomcat-8.5.78/webapps/ROOT/index.jsp
+apache-tomcat-8.5.78/webapps/ROOT/tomcat.css
+apache-tomcat-8.5.78/webapps/ROOT/tomcat.svg
+apache-tomcat-8.5.78/webapps/docs/BUILDING.txt
+apache-tomcat-8.5.78/webapps/docs/RELEASE-NOTES.txt
+apache-tomcat-8.5.78/webapps/docs/RUNNING.txt
+apache-tomcat-8.5.78/webapps/docs/WEB-INF/web.xml
+apache-tomcat-8.5.78/webapps/docs/aio.html
+apache-tomcat-8.5.78/webapps/docs/annotationapi/index.html
+apache-tomcat-8.5.78/webapps/docs/api/index.html
+apache-tomcat-8.5.78/webapps/docs/appdev/build.xml.txt
+apache-tomcat-8.5.78/webapps/docs/appdev/deployment.html
+apache-tomcat-8.5.78/webapps/docs/appdev/index.html
+apache-tomcat-8.5.78/webapps/docs/appdev/installation.html
+apache-tomcat-8.5.78/webapps/docs/appdev/introduction.html
+apache-tomcat-8.5.78/webapps/docs/appdev/processes.html
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/build.xml
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/docs/README.txt
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/index.html
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/sample.war
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/src/mypackage/Hello.java
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/web/WEB-INF/web.xml
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/web/hello.jsp
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/web/images/tomcat.gif
+apache-tomcat-8.5.78/webapps/docs/appdev/sample/web/index.html
+apache-tomcat-8.5.78/webapps/docs/appdev/source.html
+apache-tomcat-8.5.78/webapps/docs/appdev/web.xml.txt
+apache-tomcat-8.5.78/webapps/docs/apr.html
+apache-tomcat-8.5.78/webapps/docs/architecture/index.html
+apache-tomcat-8.5.78/webapps/docs/architecture/overview.html
+apache-tomcat-8.5.78/webapps/docs/architecture/requestProcess.html
+apache-tomcat-8.5.78/webapps/docs/architecture/requestProcess/authentication-process.png
+apache-tomcat-8.5.78/webapps/docs/architecture/requestProcess/request-process.png
+apache-tomcat-8.5.78/webapps/docs/architecture/startup.html
+apache-tomcat-8.5.78/webapps/docs/architecture/startup/serverStartup.pdf
+apache-tomcat-8.5.78/webapps/docs/architecture/startup/serverStartup.txt
+apache-tomcat-8.5.78/webapps/docs/balancer-howto.html
+apache-tomcat-8.5.78/webapps/docs/building.html
+apache-tomcat-8.5.78/webapps/docs/cgi-howto.html
+apache-tomcat-8.5.78/webapps/docs/changelog.html
+apache-tomcat-8.5.78/webapps/docs/class-loader-howto.html
+apache-tomcat-8.5.78/webapps/docs/cluster-howto.html
+apache-tomcat-8.5.78/webapps/docs/comments.html
+apache-tomcat-8.5.78/webapps/docs/config/ajp.html
+apache-tomcat-8.5.78/webapps/docs/config/automatic-deployment.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-channel.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-deployer.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-interceptor.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-listener.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-manager.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-membership.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-receiver.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-sender.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster-valve.html
+apache-tomcat-8.5.78/webapps/docs/config/cluster.html
+apache-tomcat-8.5.78/webapps/docs/config/context.html
+apache-tomcat-8.5.78/webapps/docs/config/cookie-processor.html
+apache-tomcat-8.5.78/webapps/docs/config/credentialhandler.html
+apache-tomcat-8.5.78/webapps/docs/config/engine.html
+apache-tomcat-8.5.78/webapps/docs/config/executor.html
+apache-tomcat-8.5.78/webapps/docs/config/filter.html
+apache-tomcat-8.5.78/webapps/docs/config/globalresources.html
+apache-tomcat-8.5.78/webapps/docs/config/host.html
+apache-tomcat-8.5.78/webapps/docs/config/http.html
+apache-tomcat-8.5.78/webapps/docs/config/http2.html
+apache-tomcat-8.5.78/webapps/docs/config/index.html
+apache-tomcat-8.5.78/webapps/docs/config/jar-scan-filter.html
+apache-tomcat-8.5.78/webapps/docs/config/jar-scanner.html
+apache-tomcat-8.5.78/webapps/docs/config/jaspic.html
+apache-tomcat-8.5.78/webapps/docs/config/listeners.html
+apache-tomcat-8.5.78/webapps/docs/config/loader.html
+apache-tomcat-8.5.78/webapps/docs/config/manager.html
+apache-tomcat-8.5.78/webapps/docs/config/realm.html
+apache-tomcat-8.5.78/webapps/docs/config/resources.html
+apache-tomcat-8.5.78/webapps/docs/config/server.html
+apache-tomcat-8.5.78/webapps/docs/config/service.html
+apache-tomcat-8.5.78/webapps/docs/config/sessionidgenerator.html
+apache-tomcat-8.5.78/webapps/docs/config/systemprops.html
+apache-tomcat-8.5.78/webapps/docs/config/valve.html
+apache-tomcat-8.5.78/webapps/docs/connectors.html
+apache-tomcat-8.5.78/webapps/docs/default-servlet.html
+apache-tomcat-8.5.78/webapps/docs/deployer-howto.html
+apache-tomcat-8.5.78/webapps/docs/developers.html
+apache-tomcat-8.5.78/webapps/docs/elapi/index.html
+apache-tomcat-8.5.78/webapps/docs/extras.html
+apache-tomcat-8.5.78/webapps/docs/host-manager-howto.html
+apache-tomcat-8.5.78/webapps/docs/html-host-manager-howto.html
+apache-tomcat-8.5.78/webapps/docs/html-manager-howto.html
+apache-tomcat-8.5.78/webapps/docs/images/add.gif
+apache-tomcat-8.5.78/webapps/docs/images/asf-logo.svg
+apache-tomcat-8.5.78/webapps/docs/images/code.gif
+apache-tomcat-8.5.78/webapps/docs/images/cors-flowchart.png
+apache-tomcat-8.5.78/webapps/docs/images/design.gif
+apache-tomcat-8.5.78/webapps/docs/images/docs-stylesheet.css
+apache-tomcat-8.5.78/webapps/docs/images/docs.gif
+apache-tomcat-8.5.78/webapps/docs/images/fix.gif
+apache-tomcat-8.5.78/webapps/docs/images/fonts/OpenSans400.woff
+apache-tomcat-8.5.78/webapps/docs/images/fonts/OpenSans400italic.woff
+apache-tomcat-8.5.78/webapps/docs/images/fonts/OpenSans600.woff
+apache-tomcat-8.5.78/webapps/docs/images/fonts/OpenSans600italic.woff
+apache-tomcat-8.5.78/webapps/docs/images/fonts/OpenSans700.woff
+apache-tomcat-8.5.78/webapps/docs/images/fonts/OpenSans700italic.woff
+apache-tomcat-8.5.78/webapps/docs/images/fonts/fonts.css
+apache-tomcat-8.5.78/webapps/docs/images/tomcat.gif
+apache-tomcat-8.5.78/webapps/docs/images/tomcat.png
+apache-tomcat-8.5.78/webapps/docs/images/update.gif
+apache-tomcat-8.5.78/webapps/docs/images/void.gif
+apache-tomcat-8.5.78/webapps/docs/index.html
+apache-tomcat-8.5.78/webapps/docs/introduction.html
+apache-tomcat-8.5.78/webapps/docs/jasper-howto.html
+apache-tomcat-8.5.78/webapps/docs/jaspicapi/index.html
+apache-tomcat-8.5.78/webapps/docs/jdbc-pool.html
+apache-tomcat-8.5.78/webapps/docs/jndi-datasource-examples-howto.html
+apache-tomcat-8.5.78/webapps/docs/jndi-resources-howto.html
+apache-tomcat-8.5.78/webapps/docs/jspapi/index.html
+apache-tomcat-8.5.78/webapps/docs/logging.html
+apache-tomcat-8.5.78/webapps/docs/manager-howto.html
+apache-tomcat-8.5.78/webapps/docs/maven-jars.html
+apache-tomcat-8.5.78/webapps/docs/mbeans-descriptors-howto.html
+apache-tomcat-8.5.78/webapps/docs/mbeans-descriptors.dtd
+apache-tomcat-8.5.78/webapps/docs/monitoring.html
+apache-tomcat-8.5.78/webapps/docs/proxy-howto.html
+apache-tomcat-8.5.78/webapps/docs/realm-howto.html
+apache-tomcat-8.5.78/webapps/docs/rewrite.html
+apache-tomcat-8.5.78/webapps/docs/security-howto.html
+apache-tomcat-8.5.78/webapps/docs/security-manager-howto.html
+apache-tomcat-8.5.78/webapps/docs/servletapi/index.html
+apache-tomcat-8.5.78/webapps/docs/setup.html
+apache-tomcat-8.5.78/webapps/docs/ssi-howto.html
+apache-tomcat-8.5.78/webapps/docs/ssl-howto.html
+apache-tomcat-8.5.78/webapps/docs/tribes/developers.html
+apache-tomcat-8.5.78/webapps/docs/tribes/faq.html
+apache-tomcat-8.5.78/webapps/docs/tribes/interceptors.html
+apache-tomcat-8.5.78/webapps/docs/tribes/introduction.html
+apache-tomcat-8.5.78/webapps/docs/tribes/membership.html
+apache-tomcat-8.5.78/webapps/docs/tribes/setup.html
+apache-tomcat-8.5.78/webapps/docs/tribes/status.html
+apache-tomcat-8.5.78/webapps/docs/tribes/transport.html
+apache-tomcat-8.5.78/webapps/docs/virtual-hosting-howto.html
+apache-tomcat-8.5.78/webapps/docs/web-socket-howto.html
+apache-tomcat-8.5.78/webapps/docs/websocketapi/index.html
+apache-tomcat-8.5.78/webapps/docs/windows-auth-howto.html
+apache-tomcat-8.5.78/webapps/docs/windows-service-howto.html
+apache-tomcat-8.5.78/webapps/examples/META-INF/context.xml
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/CookieExample.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/CookieExample.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/HelloWorldExample.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/HelloWorldExample.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings_de.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings_ja.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings_ko.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings_ru.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/LocalStrings_zh_CN.properties
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/RequestHeaderExample.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/RequestHeaderExample.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/RequestInfoExample.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/RequestInfoExample.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/RequestParamExample.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/RequestParamExample.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/ServletToJsp.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/ServletToJsp.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/SessionExample.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/SessionExample.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async0$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async0.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async0.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async1$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async1.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async2$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async2.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async2.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async3.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Async3.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Stockticker$TickListener.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Stockticker.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/async/Stockticker.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/Entries.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/Entries.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/Entry.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/Entry.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/JspCalendar.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/JspCalendar.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/TableBean.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/cal/TableBean.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/checkbox/CheckTest.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/checkbox/CheckTest.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/colors/ColorGameBean.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/colors/ColorGameBean.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/dates/JspCalendar.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/dates/JspCalendar.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/error/Smart.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/error/Smart.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/FooTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/FooTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/LogTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/LogTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/ValuesTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/listeners/ContextListener.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/listeners/ContextListener.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/listeners/SessionListener.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/listeners/SessionListener.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$CounterListener.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$NumberWriterListener.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/num/NumberGuessBean.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/sessions/DummyCart.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/util/CookieFilter.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/util/CookieFilter.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/util/HTMLFilter.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/util/HTMLFilter.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/validators/DebugValidator.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/validators/DebugValidator.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Client$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage$ParseException.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$2.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$2.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$MessageType.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$Player.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$CompletedFuture.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerBinary.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerText.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/echo/servers.json
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/Direction.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/Location$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/Location.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/Location.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/Snake.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/jsp/debug-taglib.tld
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/jsp/example-taglib.tld
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/tags/displayProducts.tag
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/tags/helloWorld.tag
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/tags/panel.tag
+apache-tomcat-8.5.78/webapps/examples/WEB-INF/web.xml
+apache-tomcat-8.5.78/webapps/examples/index.html
+apache-tomcat-8.5.78/webapps/examples/jsp/async/async1.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/async/async1.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/async/async3.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/async/async3.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/async/index.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/async/index.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/Entries.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/Entry.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/JspCalendar.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/TableBean.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/cal1.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/cal1.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/cal2.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/cal2.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/calendar.html
+apache-tomcat-8.5.78/webapps/examples/jsp/cal/login.html
+apache-tomcat-8.5.78/webapps/examples/jsp/checkbox/CheckTest.html
+apache-tomcat-8.5.78/webapps/examples/jsp/checkbox/check.html
+apache-tomcat-8.5.78/webapps/examples/jsp/checkbox/checkresult.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/checkbox/checkresult.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/checkbox/cresult.html
+apache-tomcat-8.5.78/webapps/examples/jsp/colors/ColorGameBean.html
+apache-tomcat-8.5.78/webapps/examples/jsp/colors/clr.html
+apache-tomcat-8.5.78/webapps/examples/jsp/colors/colors.html
+apache-tomcat-8.5.78/webapps/examples/jsp/colors/colrs.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/colors/colrs.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/dates/date.html
+apache-tomcat-8.5.78/webapps/examples/jsp/dates/date.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/dates/date.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/error/er.html
+apache-tomcat-8.5.78/webapps/examples/jsp/error/err.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/error/err.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/error/error.html
+apache-tomcat-8.5.78/webapps/examples/jsp/error/errorpge.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/error/errorpge.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/forward/forward.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/forward/forward.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/forward/fwd.html
+apache-tomcat-8.5.78/webapps/examples/jsp/forward/one.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/forward/one.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/forward/two.html
+apache-tomcat-8.5.78/webapps/examples/jsp/images/code.gif
+apache-tomcat-8.5.78/webapps/examples/jsp/images/execute.gif
+apache-tomcat-8.5.78/webapps/examples/jsp/images/return.gif
+apache-tomcat-8.5.78/webapps/examples/jsp/include/foo.html
+apache-tomcat-8.5.78/webapps/examples/jsp/include/foo.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/include/foo.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/include/inc.html
+apache-tomcat-8.5.78/webapps/examples/jsp/include/include.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/include/include.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/index.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/Functions.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/ValuesBean.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/ValuesTag.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/basic-arithmetic.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/basic-comparisons.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/composite.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/composite.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/composite.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/functions.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/functions.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/functions.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/implicit-objects.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/implicit-objects.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/el/implicit-objects.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/FooBean.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/HelloWorldSimpleTag.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/ShuffleSimpleTag.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/TileSimpleTag.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/jspattribute.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/shuffle.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/basic.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/basic.jspx
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/basic.jspx.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/svgexample.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/textRotate.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/textRotate.jpg
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/textRotate.jspx
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/jspx/textRotate.jspx.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/EchoAttributesTag.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/coda.jspf
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/coda.jspf.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/config.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/config.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/config.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/dynamicattrs.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/prelude.jspf
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/misc/prelude.jspf.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/BookBean.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/FindBookSimpleTag.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/Functions.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/HelloWorldSimpleTag.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/RepeatSimpleTag.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/book.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/book.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/book.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/hello.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/hello.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/hello.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/repeat.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/repeat.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/simpletag/repeat.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/displayProducts.tag.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/hello.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/hello.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/hello.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/helloWorld.tag.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/panel.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/panel.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/panel.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/panel.tag.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/products.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/products.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsp2/tagfiles/products.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsptoserv/ServletToJsp.java.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsptoserv/hello.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsptoserv/hello.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/jsptoserv/jts.html
+apache-tomcat-8.5.78/webapps/examples/jsp/num/numguess.html
+apache-tomcat-8.5.78/webapps/examples/jsp/num/numguess.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/num/numguess.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/security/protected/error.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/security/protected/error.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/security/protected/index.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/security/protected/index.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/security/protected/login.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/security/protected/login.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/sessions/DummyCart.html
+apache-tomcat-8.5.78/webapps/examples/jsp/sessions/carts.html
+apache-tomcat-8.5.78/webapps/examples/jsp/sessions/carts.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/sessions/carts.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/sessions/crt.html
+apache-tomcat-8.5.78/webapps/examples/jsp/simpletag/foo.html
+apache-tomcat-8.5.78/webapps/examples/jsp/simpletag/foo.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/simpletag/foo.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/snp/snoop.html
+apache-tomcat-8.5.78/webapps/examples/jsp/snp/snoop.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/snp/snoop.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/choose.html
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/choose.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/choose.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/foreach.html
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/foreach.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/foreach.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/howto.html
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/if.html
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/if.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/if.jsp.html
+apache-tomcat-8.5.78/webapps/examples/jsp/tagplugin/notes.html
+apache-tomcat-8.5.78/webapps/examples/jsp/xml/xml.html
+apache-tomcat-8.5.78/webapps/examples/jsp/xml/xml.jsp
+apache-tomcat-8.5.78/webapps/examples/jsp/xml/xml.jsp.html
+apache-tomcat-8.5.78/webapps/examples/servlets/cookies.html
+apache-tomcat-8.5.78/webapps/examples/servlets/helloworld.html
+apache-tomcat-8.5.78/webapps/examples/servlets/images/code.gif
+apache-tomcat-8.5.78/webapps/examples/servlets/images/execute.gif
+apache-tomcat-8.5.78/webapps/examples/servlets/images/return.gif
+apache-tomcat-8.5.78/webapps/examples/servlets/index.html
+apache-tomcat-8.5.78/webapps/examples/servlets/nonblocking/bytecounter.html
+apache-tomcat-8.5.78/webapps/examples/servlets/reqheaders.html
+apache-tomcat-8.5.78/webapps/examples/servlets/reqinfo.html
+apache-tomcat-8.5.78/webapps/examples/servlets/reqparams.html
+apache-tomcat-8.5.78/webapps/examples/servlets/sessions.html
+apache-tomcat-8.5.78/webapps/examples/websocket/chat.xhtml
+apache-tomcat-8.5.78/webapps/examples/websocket/drawboard.xhtml
+apache-tomcat-8.5.78/webapps/examples/websocket/echo.xhtml
+apache-tomcat-8.5.78/webapps/examples/websocket/index.xhtml
+apache-tomcat-8.5.78/webapps/examples/websocket/snake.xhtml
+apache-tomcat-8.5.78/webapps/host-manager/META-INF/context.xml
+apache-tomcat-8.5.78/webapps/host-manager/WEB-INF/jsp/401.jsp
+apache-tomcat-8.5.78/webapps/host-manager/WEB-INF/jsp/403.jsp
+apache-tomcat-8.5.78/webapps/host-manager/WEB-INF/jsp/404.jsp
+apache-tomcat-8.5.78/webapps/host-manager/WEB-INF/manager.xml
+apache-tomcat-8.5.78/webapps/host-manager/WEB-INF/web.xml
+apache-tomcat-8.5.78/webapps/host-manager/css/manager.css
+apache-tomcat-8.5.78/webapps/host-manager/images/asf-logo.svg
+apache-tomcat-8.5.78/webapps/host-manager/images/tomcat.svg
+apache-tomcat-8.5.78/webapps/host-manager/index.jsp
+apache-tomcat-8.5.78/webapps/manager/META-INF/context.xml
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/401.jsp
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/403.jsp
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/404.jsp
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/connectorCerts.jsp
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/connectorCiphers.jsp
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/jsp/sessionsList.jsp
+apache-tomcat-8.5.78/webapps/manager/WEB-INF/web.xml
+apache-tomcat-8.5.78/webapps/manager/css/manager.css
+apache-tomcat-8.5.78/webapps/manager/images/asf-logo.svg
+apache-tomcat-8.5.78/webapps/manager/images/tomcat.svg
+apache-tomcat-8.5.78/webapps/manager/index.jsp
+apache-tomcat-8.5.78/webapps/manager/status.xsd
+apache-tomcat-8.5.78/webapps/manager/xform.xsl
+apache-tomcat-8.5.78/bin/catalina.sh
+apache-tomcat-8.5.78/bin/ciphers.sh
+apache-tomcat-8.5.78/bin/configtest.sh
+apache-tomcat-8.5.78/bin/daemon.sh
+apache-tomcat-8.5.78/bin/digest.sh
+apache-tomcat-8.5.78/bin/setclasspath.sh
+apache-tomcat-8.5.78/bin/shutdown.sh
+apache-tomcat-8.5.78/bin/startup.sh
+apache-tomcat-8.5.78/bin/tool-wrapper.sh
+apache-tomcat-8.5.78/bin/version.sh
+Removing intermediate container 29f68d1f5a1c
+ ---> 2ab128ed6d45
+Step 9/20 : RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
+ ---> Running in 83836d7dbe2c
+Removing intermediate container 83836d7dbe2c
+ ---> f0cdeb049e0d
+Step 10/20 : ADD https://tomcat.apache.org/tomcat-5.5-doc/appdev/sample/sample.war /home/tomcat/apache-tomcat/webapps/
+
+
+ ---> 104207c334e0
+Step 11/20 : COPY bin/ /home/tomcat/apache-tomcat/bin/
+ ---> 85f21c01afb4
+Step 12/20 : COPY conf/ /home/tomcat/apache-tomcat/conf/
+ ---> fe5f10e26c8d
+Step 13/20 : COPY lib/ /home/tomcat/apache-tomcat/lib/
+ ---> f51ba0a21578
+Step 14/20 : USER root
+ ---> Running in 35e0bf791eee
+Removing intermediate container 35e0bf791eee
+ ---> 1575895d887b
+Step 15/20 : RUN chmod a+x /home/tomcat/apache-tomcat/bin/setenv.sh
+ ---> Running in ab274325ce86
+Removing intermediate container ab274325ce86
+ ---> e4f7a8474d26
+Step 16/20 : USER tomcat
+ ---> Running in 51d3d16199ae
+Removing intermediate container 51d3d16199ae
+ ---> c8d51b6e9309
+Step 17/20 : EXPOSE 8080/tcp
+ ---> Running in d81213d4cd4e
+Removing intermediate container d81213d4cd4e
+ ---> df0384d0f7bc
+Step 18/20 : EXPOSE 8686/tcp
+ ---> Running in b12df967740f
+Removing intermediate container b12df967740f
+ ---> 111269ffb6d7
+Step 19/20 : ENV PATH ${PATH}:/home/tomcat/apache-tomcat/bin/
+ ---> Running in c57f2a16f26a
+Removing intermediate container c57f2a16f26a
+ ---> 0b6c40df6c3c
+Step 20/20 : CMD ["catalina.sh", "run"]
+ ---> Running in bc9f117bcf21
+Removing intermediate container bc9f117bcf21
+ ---> 978c4c3ed900
+Successfully built 978c4c3ed900
+Successfully tagged default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:29
+[8mha:////4EskYBtp1AnLmjBtSAi86Og9J5/O6Jid4KOVqlgJ6wh4AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJESDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQG9gN7HvgAAAA==[0m[Pipeline] }
+[8mha:////4Pne7H0kp2zzvlfQdrUtYPn5M3vXkBGxde3I7ckAMdC7AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiREGBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQG7xuaSvgAAAA==[0m[Pipeline] // withEnv
+[8mha:////4CTlNvvPSfYp4g7M3opCIgSUP887Xh4QKZAG7axpgiyUAAAApB+LCAAAAAAAAP9tjbEOwiAURV9rHFwd/QiabibGyZWw+AXYIkLJexSodPKL/DX/QbSJk3e4uecu5/mCdQxwpKCZVTgYjJ1h3k26LJYpDFdHmVm6sI4wklNMqCyoV6cFBSUFS6oaVhw2CjtH0aBOsOVW3mXjJOrmnEL5Dhxq04/wgIoXc5IhfWEOsLtNfST8ef4KYPYJ6rb91N6/AS/qhM++AAAA[0m[Pipeline] isUnix
+[8mha:////4HKlF+sCf/WpJTTBK/p5zNgzePfzCDqK/DZ3zG7ycmIjAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUHRFiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPrPxt8cIAAAA=[0m[Pipeline] withEnv
+[8mha:////4BBNTINWQBuvnF8/IuQsne9kX4TKxHPKIxMlok0xbsxUAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogU2BDqxBp14QShCSFp9H9JUtKJE3E17kCgEhMeLNuS9Z4vqIKHhrxmVmFvMHSGDW7UObFEvr84SszSmXWEgZxirUotSXWca0tRwayihAWHpcLOUTCoI6y4FXdRO4G6PkWftwOH0sgbPKDgmRyFj98yeVhfRxkIf5y/AJiGCOV2n223+TyrN7xWSV3CAAAA[0m[Pipeline] {
+[8mha:////4MPPo5ZxZcyPyV8AlyLivfD0S1WUzbpyKKot+opEdMmmAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICtIgqreWGF5jYGCfWnbEdkooX8TX+QCASFVusdraZ5wuWKcKRo8XWUOcoNQ6D7+20cODYXTwP2PIZG6bE3qA0g2Rt6hklZwNzihIWAlaGGs/Jkc2wFq26q8orstUpx+k7CCidvsEDCjGZs4r5C2OEzbXXienn+SuAMWQo99tP7cIbaOP4NL4AAAA=[0m[Pipeline] sh
++ docker tag default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:29 default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:29
+[8mha:////4Pty7ZFG2yyVZjorkL4gQjfrhMuGyoe/HEHt58GoMLn8AAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKC0iIqWisNLzCJMXasO8d2cCpexNf4A4FIVGyx2tlmni9YxwBHDhqtot5QbA16N+p5YebQXx1ntHzBlimyU9io3HCnTgs2nBQsKUpYCdgoah1HQzrBVlh5l5WTpKtzCvN3EFCaboAHFGI2JxnSF6YAu9vYRaaf568AJu8TlHX9qf0b7E/nQb4AAAA=[0m[Pipeline] }
+[8mha:////4HVAh2AxErnqHxT6tTqxqk7FWoscA37uOF1SlBao7MUyAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIioEIoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcrdPtf28AEud0rYvgAAAA==[0m[Pipeline] // withEnv
+[8mha:////4LSDmPFSGkW0YNCda8HaTg46z6Ixas7FYUdl3ptJWxMUAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiIDpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNknKOs61/7gP3obd2G+AAAA[0m[Pipeline] isUnix
+[8mha:////4I1y7yYURHXG8RB5kCYNXUgFNtdD0fVIRjY9hIP8t0T6AAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohURWJCTF2jLpwgNCEkjf4vSUo6cSKuxh0IVGLCg2Vbst7zBVXwcCSvmVU4GAy9YaObdE4skR8ujhKzdGY9YSCnWKdSR1K1S+0oKlhUlLDisFbYOwoGdYQNt+IuaidQ16fo83bgUBp5gwcUPJOj8PFbZg/b6yQD4Y/zFwDzGKFsmmy7/edZvQFKJke3wgAAAA==[0m[Pipeline] withEnv
+[8mha:////4DTdNlMKWd6cvQ0+XMhsMwYjBKiwxRYJWIjCOiKcW5QvAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUQoIFMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfACW9ZT2wgAAAA==[0m[Pipeline] {
+[8mha:////4P0j6t2fxgGcncQovsWDdNN/B0vB/64QUIaVHlV9N5o1AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiUUCBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAHUcXIBvgAAAA==[0m[Pipeline] sh
++ docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:29
+The push refers to repository [default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic]
+e864df59899a: Preparing
+2b590563472e: Preparing
+618fb1e05bdb: Preparing
+25140fdd39c5: Preparing
+5bb7587576f7: Preparing
+345018aa3573: Preparing
+aa38148ae805: Preparing
+d4388a5c8f60: Preparing
+4c269a482dd1: Preparing
+773711fd02f0: Preparing
+5bf135c4a0de: Preparing
+345018aa3573: Waiting
+aa38148ae805: Waiting
+d4388a5c8f60: Waiting
+4c269a482dd1: Waiting
+773711fd02f0: Waiting
+5bf135c4a0de: Waiting
+5bb7587576f7: Pushed
+25140fdd39c5: Pushed
+e864df59899a: Pushed
+618fb1e05bdb: Pushed
+2b590563472e: Pushed
+773711fd02f0: Layer already exists
+5bf135c4a0de: Layer already exists
+d4388a5c8f60: Pushed
+345018aa3573: Pushed
+aa38148ae805: Pushed
+4c269a482dd1: Pushed
+29: digest: sha256:6514c45ce0744e4de614df99c45525336f6356093bcfeb0bdb8cbf9aac02303f size: 2616
+[8mha:////4KsaR2Km3RdBDngJEws5aTfyS8Ior/NhLyWgmHoDEbueAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiUSAkRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyu//U7g2/yR8JvgAAAA==[0m[Pipeline] }
+[8mha:////4Mo/mESPG4b/0tbwFstuYKVmckXh1Sty9I39Eyrpmg11AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIVEgRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyu//U7g2gS0pbvgAAAA==[0m[Pipeline] // withEnv
+[8mha:////4Gl6/i+/aguaE1wUGFt7gfOjQkp92kj4IYkdJVXbVFDjAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIhokRUaa00vMDEh3Fi3RnbIal4EV/jD1hEomKL1c4283rDOgY4cTCiRxosxc4K70aTl5g4DFfHk+j5IjqmyA5Fi1PLGpsFW04IS4oSVhI2SJ3jaMkk2MpePVTlFJnqnEL+jhJKq+/whEJmc1IhfWEOsLuNOjL9PH8FMPsEZV3nOuz9B0m02QS+AAAA[0m[Pipeline] isUnix
+[8mha:////4EC+6mdbbC3IMxcmlcjapHrKuDOQGde+8iM0FxS5n5nQAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUESNiYo2ycIKQhJA2+r8kKe3EibgadyBQiQkPlm3Jes8XNCnCgaJjncXeY9KeDWF0JbGJYn8JNLGOzkwTJgqWSTtJMva4VEnZwqKqhpWAtUUdKHl0GTaiU3fVBoWuPeVYtr2A2psbPKAShZxVzN8yR9heR5MIf5y/AJiHDDXnxXb882ze6G+hisIAAAA=[0m[Pipeline] withEnv
+[8mha:////4ETr1n9DRhmOSVj80eBh9ylCNFiYyWJHJr7HsNj2RcmEAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUwIiYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLDbrb9/Cw+2YMO4MIAAAA=[0m[Pipeline] {
+[8mha:////4EmYYOfGGUTiFFyR4+j261OtIGb0cXmlRtUZuOBdiCcoAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIikRJR0VppeIFJjLFj3Tm2g1PxIr7GHwhEomKL1c4283zBOgY4ctBoFfWGYmvQu1HPCzOH/uo4o+ULtkyRncJG5YY7dVqw4aRgSVHCSsBGUes4GtIJtsLKu6ycJF2dU5i/g4DSdAM8oBCzOcmQvjAF2N3GLjL9PH8FMPkEZb3/VO3favo5XL4AAAA=[0m[Pipeline] sh
++ docker tag default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:29 default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:latest
+[8mha:////4CHtCOYBmTLdhMgWKq8KkKPgm4RQYAhflvtvHm8zFWSyAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiAR2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nbf2r7Bij33Ma+AAAA[0m[Pipeline] }
+[8mha:////4HbG+MpaOHrhGTfLUdGHp60QRX/hLKi8vwnkD6s5gjuWAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIihKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrd/lPbNzd1iZS+AAAA[0m[Pipeline] // withEnv
+[8mha:////4BEA6H9OcpUlmsYJih4dSIx1tBbBOEqhfyxkvEgdqFuDAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiCIkGUaW10vACExvjxLoztkNS8SK+xh+wiETFFqudbeb1hnUMcOJgsNc0WIqdRe9GkxdOHIar4wl7vmDHFNlpbPXUstLNgi0nDUuKElYCNpo6x9GSSbAVvXzIykky1TmF/B0FlFbd4QmFyOYkQ/rCHGB3G1Vk+nn+CmD2Ccq6zrU/+A/PE4NSvgAAAA==[0m[Pipeline] isUnix
+[8mha:////4Hq2RKCKQX0VNjLo0eRa8eyp/wy0ClGozjtX8k44KyXSAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUFQMDYuoadeEEoQkhafR/SVLSiRNxNe5AoBITHizbkvWeL6iChyN5zazCwWDoDRvdpHNiifxwcZSYpTPrCQM5xTqVOpKqXWpHUcGiooQVh7XC3lEwqCNsuBV3UTuBuj5Fn7cDh9LIGzyg4JkchY/fMnvYXicZCH+cvwCYxwhl02Tb7T/P6g31jPhcwgAAAA==[0m[Pipeline] withEnv
+[8mha:////4CUHAh9/MIR+u6flFwIhJJ5HI+aQA+dxi+eNM3F/CrB8AAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0YAAJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfAD8aiCpwgAAAA==[0m[Pipeline] {
+[8mha:////4PYSnzqKvMPn5UrXKv70b2uHrXxAn8JptKxiWVIpbvQWAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJS0IAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN65NpgK+AAAA[0m[Pipeline] sh
++ docker push default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic:latest
+The push refers to repository [default-route-openshift-image-registry.apps-crc.testing/portic-devops/tomcat8-portic]
+e864df59899a: Preparing
+2b590563472e: Preparing
+618fb1e05bdb: Preparing
+25140fdd39c5: Preparing
+5bb7587576f7: Preparing
+345018aa3573: Preparing
+aa38148ae805: Preparing
+d4388a5c8f60: Preparing
+4c269a482dd1: Preparing
+773711fd02f0: Preparing
+5bf135c4a0de: Preparing
+4c269a482dd1: Waiting
+345018aa3573: Waiting
+773711fd02f0: Waiting
+aa38148ae805: Waiting
+5bf135c4a0de: Waiting
+d4388a5c8f60: Waiting
+618fb1e05bdb: Layer already exists
+e864df59899a: Layer already exists
+5bb7587576f7: Layer already exists
+2b590563472e: Layer already exists
+25140fdd39c5: Layer already exists
+d4388a5c8f60: Layer already exists
+aa38148ae805: Layer already exists
+345018aa3573: Layer already exists
+4c269a482dd1: Layer already exists
+5bf135c4a0de: Layer already exists
+773711fd02f0: Layer already exists
+latest: digest: sha256:6514c45ce0744e4de614df99c45525336f6356093bcfeb0bdb8cbf9aac02303f size: 2616
+[8mha:////4HL6SRUGGig09/PJi9tPiFiaOjGUoVU8SRq0agJuVWLRAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCBAUSSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wArmI/eL4AAAA=[0m[Pipeline] }
+[8mha:////4IRJQCzSnUXjiiQYV/kAxZgFnFIW3b/vuJwmH+T9E/KEAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiBBIFSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wAmqzcI74AAAA=[0m[Pipeline] // withEnv
+[8mha:////4BZaIrXuSDVHYwpzW7MtVedWI6bJL+65/jv9q+18okqOAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiIDpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOVhn6uuP4MZHX6+AAAA[0m[Pipeline] }
+[8mha:////4A/1Tc2WPijkvP7HFdaFt2ZC2Q34nVOrMntgRrsKiILwAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICgg6lorXc8AKTGOPEugu2g1PxIr7GH7CIRMUWq51t5vWGZfBQszfYaeothcbi4EaTFyb2/dVxwo4v2DAFdhqlTpJbfZpRctQwpyhhIWClqXEcLJkIa9Gph6qcIlOdo8/fUUBp2zs8oRDZHJWPX5g8bG5jG5h+nr8CmIYhQnnY59ptP7D6RsK+AAAA[0m[Pipeline] // withDockerRegistry
+[8mha:////4BShaI82s1X+i2zyRa/HqqMVXIjxgvZAoK2bVvCj2JbtAAAAox+LCAAAAAAAAP9tjTESgjAQRT84FraWHiI0NI5jZZuh8QQRYgxkdjFZhMoTeTXvICMzVv7qv9e81xvrFHHk6FRrqfOUaq/6MLj5qZFjdw08qpYvqmZKHKyq7FhxY08LViwWy7IcK42NpTpw8uQEW92ahymCIVecJc7uoJH75o4nMj2XxUT5whSxuw1NYvp1/gYw9b0gL0tBtv8AS2C5Cb0AAAA=[0m[Pipeline] }
+[8mha:////4IgwwM86C/co6hJRbdp0afbZ2bLE4uYc+dB0B7vzFIYXAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJpQEJCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5NudINt/AG153kO9AAAA[0m[Pipeline] // withEnv
+[8mha:////4JW/xqcMhdkyb/HGDcfDjs3MGT5221uh0go691Bd4bUSAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJpEBSIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsTZPsPLB7BlL0AAAA=[0m[Pipeline] }
+[8mha:////4BfIOwmnbim/Pn+pJedU2wGBCPoK5IXnb93ZTdEzpWiXAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJpEBSIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsXZLsPCgem3r0AAAA=[0m[Pipeline] // dir
+[8mha:////4KzDLlxxgju9B+9J+9JxvOoZMikITo3HLA/NKX/uqHgSAAAAox+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6IsDCbGybVh8Qsq1Fpo3sP2IUx+kb/mP0gkcfJO95zlvN5Yp4gjR6daS52nVHvVh8HNT40cu2vgUbV8UTVT4mBVZceKG3tasGKxWJblWGlsLNWBkycn2OrWPEwRDLniLHF2B43cN3c8kem5LCbKF6aI3W1oEtOv8zeAqRdkpSAv9/0HthBPnb0AAAA=[0m[Pipeline] sh
++ date -d 7 days ago +%Y-%m-%dT00:00:00
++ docker image prune --force --filter=until=2022-05-09T00:00:00
+Total reclaimed space: 0B
+[8mha:////4FuA4WrFzB4RzgW9fes9/EVfstFghAkSEvBbqiTEoODWAAAAox+LCAAAAAAAAP9tjTESgjAQRT84FraWHiI0NI5jZZuh8QQRYgxkdjFZhMoTeTXvICMzVv7qv9e81xvrFHHk6FRrqfOUaq/6MLj5qZFjdw08qpYvqmZKHKyq7FhxY08LViwWy7IcK42NpTpw8uQEW92ahymCIVecJc7uoJH75o4nMj2XxUT5whSxuw1NYvp1/gYw9b0gL/eCrPwAR9iYj70AAAA=[0m[Pipeline] }
+[8mha:////4MqCtLw44T/hxVSXVZdQZ3ZNVddG44zCl/aYtbGEfnfWAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJBQlSIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfL8VZLsPMPyw170AAAA=[0m[Pipeline] // node
+[8mha:////4MjnWjytYACOg6ASBwDzzIK11A9Nn7VU2pc+wBJOjqPQAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRSFSIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfL8VZLsPFuXXnb0AAAA=[0m[Pipeline] End of Pipeline
+Finished: SUCCESS

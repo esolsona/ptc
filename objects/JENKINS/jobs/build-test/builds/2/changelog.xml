@@ -1,0 +1,10 @@
+commit 7b824cae9d7937d1eaa8d9caa0b3510ec2b20d04
+tree 339e17bdbc86d78a9cdf852a0fc327e574a8bb17
+parent 76164cea3fafd16488507c7bdcecbfb6959a166f
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-17 19:53:31 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-17 19:53:31 +0200
+
+    build TOMCAT add --insecure-skip-tls-verify
+
+
+:100755 100755 764bbfda4f49e571ceda5dbfe421bab52da499e4 33be72c70c56aa36e5bfaf93c3f69187c444764b M	objects/TOMCAT/build.sh

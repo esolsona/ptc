@@ -1,0 +1,20 @@
+commit 4bdac044da8bcd38a19357fe581050b11bddf120
+tree ac945c2df0f346a409c34e52017a375e6cb1146d
+parent 6fc56f145a3538f8fece35b2119a93ba7b992d66
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 02:05:01 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 02:05:01 +0200
+
+    build.sh added login
+
+
+:100755 100755 4ef5194f74f710d9875dd02f513517d9928114f3 a310643431096e9707fbb25964409136a228d14b M	objects/TOMCAT/build.sh
+commit 6fc56f145a3538f8fece35b2119a93ba7b992d66
+tree 2fb401e125af78b18c6a80c80bb98181f9319c88
+parent 82dd88a02b2a33dba45ab6b35414d33d51947e6f
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 02:04:44 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 02:04:44 +0200
+
+    build.sh added login
+
+
+:100755 100755 3fafd8ad1c319374915014946fea87a794fa4f52 4ef5194f74f710d9875dd02f513517d9928114f3 M	objects/TOMCAT/build.sh

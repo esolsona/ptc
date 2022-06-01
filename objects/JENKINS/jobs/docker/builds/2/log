@@ -1,0 +1,132 @@
+Started by user [8mha:////4FNfmFRewAwP4PwKcHVgBH5UKvxe8ao8Avf4ZfKbPbn5AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Checking out git https://github.com/cmajo/ptc.git into /var/jenkins_home/workspace/docker@script/e7b75f0f5e70d21a71ef869cf7e6114f6ad01128c5211349837d526d1ea6d25e to read Jenkinsfile
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/docker@script/e7b75f0f5e70d21a71ef869cf7e6114f6ad01128c5211349837d526d1ea6d25e/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 2e7abf889c2f7a6cbc2a17e96115205918e8ccd0 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2e7abf889c2f7a6cbc2a17e96115205918e8ccd0 # timeout=10
+Commit message: "Delete daemon.json"
+ > git rev-list --no-walk 2e7abf889c2f7a6cbc2a17e96115205918e8ccd0 # timeout=10
+[8mha:////4Jm8GNeOpbjJQpHbels8gm/hxIoTujwlcZFSnOydlVcvAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4ECx64eLgYfe0RkjDq/1+N3bmxOt8Wtf8wSq68+XaCaEAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4C65rR+l7Zk1UdYMIZUF0SIB65p1NcPxs/jOOn3sYRERAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZR/eT83ILSktQifY2k0sycEt3MPE19AHHxbH3KAAAA[0mJenkins in /var/jenkins_home/workspace/docker
+[8mha:////4HPauEQsZqie1f9qFBX0vqMaGpRPsn5PHaq1nWmKNeGlAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4EgNcGqBZPCNeWsben4cvxMQHcyS5zTXAi+a1f2T0HR/AAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaGWsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gdpL1fxvAAAAA==[0m[Pipeline] checkout
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/docker/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cmajo/ptc.git # timeout=10
+Fetching upstream changes from https://github.com/cmajo/ptc.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/cmajo/ptc.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 2e7abf889c2f7a6cbc2a17e96115205918e8ccd0 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2e7abf889c2f7a6cbc2a17e96115205918e8ccd0 # timeout=10
+Commit message: "Delete daemon.json"
+[8mha:////4GcwoTO1a5S5IjZEDOKuoZc7vD1rzjFWeY/fobfj/CvGAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0QSyIiTXKwglCEkLa6P82SWknTsTVuAOBSkxYsmRbst7zBXWKcKToeGux85i0530YXUl8othdA028pQvXhImC5dJOkow9LVVStrCIVbASsLaoAyWPLsNGtOqumqDQNeccy3YQUHkzwAOYKOSsYv6WOcL2NppE+OP8BcDcZ2C74v3nV78BmoXK/sAAAAA=[0m[Pipeline] withEnv
+[8mha:////4He68Kv45TL733NZ09/CDKMaEnbZuqUBwBiPCOs2KVWFAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gwExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jcChmMxwAAAAA==[0m[Pipeline] {
+[8mha:////4F2IRw7gvLcpdJGbQBwxUckiieU+6oy7DYK+b4aWJxc8AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BAkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfpX/cvwAAAAA==[0m[Pipeline] withDockerRegistry
+$ docker login -u developer -p ******** https://default-route-openshift-image-registry.apps-crc.testing/
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:40Z" level=error msg="unable to write system event: \"write unixgram @009f3->/run/systemd/journal/socket: sendmsg: no such file or directory\""
+Login Succeeded!
+[8mha:////4HywNutOfC9+5YPgZgSkGMeO1FP5pRmA8nL6cZOegeo8AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BSEm1igLJwhJCGmj/9skpZ04EVfjDgQqMWHJkm3Jes8X1CnCkaLjrcXOY9Ke92F0JfGJYncNNPGWLlwTJgqWSztJMva0VEnZwiJWwUrA2qIOlDy6DBvRqrtqgkLXnHMs20FA5c0AD2CikLOK+VvmCNvbaBLhj/MXAHOfge2K959f/QbB16AVwAAAAA==[0m[Pipeline] {
+[8mha:////4KlJNzvMgdzgbciZEtb2wJnrYUKZ1BwUt66h+/sOLCLEAAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKBEiEqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBjJ8j2gny37T6VOYoyvQAAAA==[0m[Pipeline] isUnix
+[8mha:////4BrCOBZkX8lXORZyLPd8uiPEXP1TuPFDMYuPaB90B7+5AAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BKWgpeYSjlAhR0VpueIGJjXFi3QX7QlLxIr7GHzBEomKrnZVW83xBlSIcKDrRWew9ptaLIYwuNzFR7C+BJtHRWbSEiYIVyk6KjD0uqIgtLClKWElYW2wDJY+OYSM7fdd10OjqE8e87SWU3tzgAYXMZtaRvzBH2F5Hkwh/nr8CmAeGYsdQNs3nWL0BFHriUcEAAAA=[0m[Pipeline] withEnv
+[8mha:////4EzS9l1KZ/GPytKUQsX9ArVqY5YL9Cqz7ii/GxzcqTM4AAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUZUVMrFEWThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbqhjgRMEwp7GzGFvLej+aObFMobt5yszRlbWEkbxmQmdBSp/XKihpWFWUsOGw1dh6ihZNgh138iFrL9HUlxTm7cihtGqAJxR8JicZ0rdMAfb3UUXCH+cvAKY+Qdk0ix2WZ/UBbwyqm8IAAAA=[0m[Pipeline] {
+[8mha:////4Lph4ZP2KkRAX7iJgx3ffEfRgwobYIw3nGW8T7yO80ZGAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIioERUaS03vMDExjix7oztkFS8iK/xBwKRqNhitbPNPF+wTBGOHC22hjpHqXEYfG+nhQPH7uJ5wJbP2DAl9galGSRrU88oORuYU5SwELAy1HhOjmyGtWjVXVVeka1OOU7fQUDp9A0eUIjJnFXMXxgjbK69Tkw/z18BjCFDud19ah/eeSmYHb4AAAA=[0m[Pipeline] sh
++ docker build -t portic-devops/tomcat8-portic:2 .
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:13:41Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+STEP 1: FROM docker.io/redhat/ubi8
+Getting image source signatures
+Copying blob sha256:545277d800059b32cf03377a9301094e9ac8aa4bb42d809766d7355ca9aa8652
+Copying blob sha256:f70d60810c69edad990aaf0977a87c6d2bcc9cd52904fa6825f08507a9b6e7bc
+Copying config sha256:1264065f6ae851d6a33d7be03ffde100356592e385b9b72f65f91b5d9b944b92
+Writing manifest to image destination
+Storing signatures
+STEP 2: LABEL MAINTAINER=cmajo@kyndryl.com
+--> e21f25ebdeb
+STEP 3: USER root
+--> 85d5a4394bd
+STEP 4: RUN yum install -y wget gzip java-1.8.0-openjdk.x86_64 procps-ng &&     yum clean all &&     rm -rf /var/cache/yum
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+time="2022-05-11T14:14:38Z" level=info msg="Using DOCKER_CONFIG environment variable for authfile path /var/jenkins_home/workspace/docker@tmp/d6936d21-d8ab-4d40-bb60-bb89745f85d9"
+error running container: error creating container for [/bin/sh -c yum install -y wget gzip java-1.8.0-openjdk.x86_64 procps-ng &&     yum clean all &&     rm -rf /var/cache/yum]: cannot open sd-bus: No such file or directory
+: exit status 1
+time="2022-05-11T14:14:41Z" level=error msg="unable to write build event: \"write unixgram @009f4->/run/systemd/journal/socket: sendmsg: no such file or directory\""
+Error: error building at STEP "RUN yum install -y wget gzip java-1.8.0-openjdk.x86_64 procps-ng &&     yum clean all &&     rm -rf /var/cache/yum": error while running runtime: exit status 1
+[8mha:////4Hcq6KKu+EhFwL5gu/Jh+EnSAVr5T8I3LRe7+JDwiFx2AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiEB2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7ndf2r3BoOEdWO+AAAA[0m[Pipeline] }
+[8mha:////4LSARyfLmR95EeRfDnLei2HQh32WooWFMk2pjo1+41O0AAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggyKawcK1uGxhNggghh/idAJJUn8mreQTQzVm6xs2+b93zBOgY4UtDMKhwMxs4w7yZdFssUhqujzCxdWEcYySkmVBbUq9OCgpKCJVUNKw4bhZ2jaFAn2HIr77JxEnVzTqF8Bw616Ud4QMWLOcmQvjAH2N2mPhL+PH8FMHufoG73n2rfnAYgMb4AAAA=[0m[Pipeline] // withEnv
+[8mha:////4OHehmK41lkr/dfbm0muKWJb6lD5IxikUpf+8Ka58+N5AAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRDRJCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5NudINt/AJiitCO9AAAA[0m[Pipeline] }
+[8mha:////4D0cnJc1QOeWio+t84sMNkVa5BJNjoq4dKx/Qa3PS9ftAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRFUiIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsTZPsPvrvTab0AAAA=[0m[Pipeline] // withDockerRegistry
+[8mha:////4N9cpRCay3Hx46+4WE2BCnKR6EAmbyBr2YVxXw5kb5RoAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRFUiIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsXZLsP/jE8e70AAAA=[0m[Pipeline] }
+[8mha:////4BWM38qOgu9YPFgsZyHmxPjebuolGfWn78U1kEbmHb1oAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRDRJCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5Nu9INt9ANgoWzG9AAAA[0m[Pipeline] // withEnv
+[8mha:////4N4mUH5rxPu6PrN+EuHxyoXhlU+mryNdFlp4xXNz4EA1AAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJBiA5R0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYu06Q77aCbP8BK1nRVL0AAAA=[0m[Pipeline] }
+[8mha:////4JruFQC9KN/8WfmyBWd7a6aRBZYaayZXr8alGWOG9bRGAAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRUCIqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBj1wny3VaQ7T845dX3vQAAAA==[0m[Pipeline] // node
+[8mha:////4KvSljzwIzMKnS7XA0Jp0AkSZhR7u4RQ/cXjT5hPLL+rAAAAoh+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6IkrMbJtWHxCyrUWmjeg/YhTH6Rv+Y/SCRx8k73nOW83timiBNHp1pLnadUe9WH0S1PTRy7W+BJtXxVNVPiYFVlp4obe16xYrFYl+XYaOws1YGTJyfY69Y8TBEMueIicXFHjdw3A57I9FIWE+ULc8ThPjaJ6df5G8Dc94K8LAVZ+QF+r3LHvQAAAA==[0m[Pipeline] End of Pipeline
+ERROR: script returned exit code 125
+Finished: FAILURE

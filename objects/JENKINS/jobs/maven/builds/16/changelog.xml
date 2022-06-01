@@ -1,0 +1,11 @@
+commit fcf7851cd95a6054e37ed897faee2829765e4048
+tree 61cbaf957ee9b6609e83ddaec44b6553878bc505
+parent 299be81fd3e58f272d948eb237fa4c4a53ea820e
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:01:09 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:01:09 +0200
+
+    Added artifactory war
+
+
+:100644 100644 5f17ca43d140221c96e074defbf85b5caeed7274 9523305531cd286f83890a2a9c807dcc6c7cda48 M	objects/TOMCAT/Dockerfile
+:100644 100644 b97554615abe60e1711a2f613274cab76f36251e 9ffb872603a9e7ae6fc0288e5049806315008232 M	objects/TOMCAT/Jenkinsfile.old

@@ -1,0 +1,45 @@
+commit 45e3e25e41f8fb78748888431889263a69cbcc37
+tree 1fa7b37654af4e8b3244e2dc65747e5eda1b94d1
+parent f37a0c5646f1909267408988f026b934fd77caa0
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-16 15:44:47 +0200
+committer GitHub <noreply@github.com> 2022-05-16 15:44:47 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 d9cee4a56a4c326a82f9fdedcc63b65481798e89 aab6b421a34845bcb1dca8cc06bd8e978fcc19cb M	objects/TOMCAT/Jenkinsfile
+commit f37a0c5646f1909267408988f026b934fd77caa0
+tree 62d7855e680aa3f4ca6e3ab9fd4b676a245e7e1b
+parent c439da7f66362062e48b1ef0eb27f04ab444fc08
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-16 15:44:34 +0200
+committer GitHub <noreply@github.com> 2022-05-16 15:44:34 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 2073c3f5c366b009395b4bd1c4fa94dcbb7d0e31 d9cee4a56a4c326a82f9fdedcc63b65481798e89 M	objects/TOMCAT/Jenkinsfile
+commit c439da7f66362062e48b1ef0eb27f04ab444fc08
+tree 8118ce8b79c7b1054dbe2643ba002304b16d8108
+parent 373f72b15885d55c7a170aba51bca427e9ab8206
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-16 15:20:07 +0200
+committer GitHub <noreply@github.com> 2022-05-16 15:20:07 +0200
+
+    Delete wrapper.sh
+
+:100755 000000 33423c1b363783e21a2455bf6b8da36834bbafbd 0000000000000000000000000000000000000000 D	objects/JENKINS/wrapper.sh
+commit 373f72b15885d55c7a170aba51bca427e9ab8206
+tree 6e0424674bf18a82b8cce406539558420066d5cb
+parent 2a3a0778965923c75e5b38320b2eba826c6de700
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-16 15:18:20 +0200
+committer GitHub <noreply@github.com> 2022-05-16 15:18:20 +0200
+
+    Update Dockerfile
+
+:100644 100644 93abfbf06d0aa53add07862a6bb4dc9623a6ce7c 124ef91cc481f12bd5867ca9cab22222f9f964f1 M	objects/JENKINS/Dockerfile
+commit 2a3a0778965923c75e5b38320b2eba826c6de700
+tree f1504cb0486b370182602081a9999ebd854087ad
+parent da0f95a5ef8346f198902052650b43ada4b0d9d8
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-16 15:17:59 +0200
+committer GitHub <noreply@github.com> 2022-05-16 15:17:59 +0200
+
+    Update DOCKER_HOST
+
+:100644 100644 25f2f8dc1d242d0005b419a2d7f806f6f95db22a 93abfbf06d0aa53add07862a6bb4dc9623a6ce7c M	objects/JENKINS/Dockerfile

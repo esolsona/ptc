@@ -1,0 +1,72 @@
+commit 7bf61657e459519414ad2017512d4be4f739600e
+tree 1ca80e5b0d0ce0c154d8a7fb8300d0edf949e316
+parent e593108119984e1317e429ee20143b0e64c0c127
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:44:39 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:44:39 +0200
+
+    build.sh added login
+
+
+:100755 100755 572090b12ba33e3538c7a9bbae584966062441ef 22de250a050d9c24b0f8f7832a9cce3347c8ec09 M	objects/TOMCAT/build.sh
+commit e593108119984e1317e429ee20143b0e64c0c127
+tree d34f45fc9739087c9c2e7c385e267130388afbfd
+parent cb2cedae4c4b563f579ece44b846452f44d197a4
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:39:42 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:39:42 +0200
+
+    build.sh added login
+
+
+:100644 100644 37fad0d7bc90ee590ca6808627a8ab34ac09ca39 5db339617d05efe984c55a5359b8f77206b892c8 M	objects/TOMCAT/Dockerfile
+:000000 100644 0000000000000000000000000000000000000000 7d43a060238f9560f58fe371616991b567c4bf0e A	objects/TOMCAT/war/hello-world-maven-1.war
+commit cb2cedae4c4b563f579ece44b846452f44d197a4
+tree f07ff54d32b509012746101a66db6d7746d9feb9
+parent ebc758729e529c0b8f1d84f1a9cee7ce9275f221
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:37:38 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:37:38 +0200
+
+    build.sh added login
+
+
+:100644 100644 ce8e32bbc340212e2c7ba4dff83c9e5e62702359 37fad0d7bc90ee590ca6808627a8ab34ac09ca39 M	objects/TOMCAT/Dockerfile
+commit ebc758729e529c0b8f1d84f1a9cee7ce9275f221
+tree dd9e458dc9e2ac210de81cf10461ddad00c19faf
+parent edac4ca49a84ba295f18dcc71a5cbb541f484fc8
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:35:53 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:35:53 +0200
+
+    build.sh added login
+
+
+:100644 100644 be63d96796f484f8c26b50fda22d5a95c57e9e80 ce8e32bbc340212e2c7ba4dff83c9e5e62702359 M	objects/TOMCAT/Dockerfile
+commit edac4ca49a84ba295f18dcc71a5cbb541f484fc8
+tree 08140e59976da8b80dee7122fb0733a8f6839c18
+parent c51b6b6193fdc5a8b00e8a73c615c81350dae0ab
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:33:48 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:33:48 +0200
+
+    build.sh added login
+
+
+:100644 100644 da5a3b52939ee9bc1cb8ed734df429046815424c be63d96796f484f8c26b50fda22d5a95c57e9e80 M	objects/TOMCAT/Dockerfile
+:000000 100644 0000000000000000000000000000000000000000 7d43a060238f9560f58fe371616991b567c4bf0e A	objects/TOMCAT/hello-world-maven-1.war
+commit c51b6b6193fdc5a8b00e8a73c615c81350dae0ab
+tree 5742226866c1361800aa805879d5b127b217cc4b
+parent a9198f7d4f252a97aa442f948fd12308658f8dac
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:24:32 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:24:32 +0200
+
+    build.sh added login
+
+
+:100755 100755 8f2b5f791fabb425d600218ef1b2aa78ea4cb678 572090b12ba33e3538c7a9bbae584966062441ef M	objects/TOMCAT/build.sh
+commit 713499df6a670ab4cbfd981d9c34e301807f54c4
+tree 5c14a9e3caf1be59e7b476014cf7d085eec14eb6
+parent 951e8f2a78d3c517b6e950d85ce38fe0d995a7dc
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:22:02 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-20 00:22:02 +0200
+
+    build.sh added login
+
+
+:100755 100755 2d7d15b03ee0c319531cc1e00b4993827b65e965 8f2b5f791fabb425d600218ef1b2aa78ea4cb678 M	objects/TOMCAT/build.sh

@@ -1,0 +1,51 @@
+commit cd7c50207147a96ebebca8722929c80241ecf635
+tree 57bd7a124bd6c5139619057b51772ecbca3d4e99
+parent ee2b6d84163c0e277dfe0a1b8e4695a4b18e720f
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-11 21:34:35 +0200
+committer GitHub <noreply@github.com> 2022-05-11 21:34:35 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 c99e31d919783b5f80202b84b92ec136b373ac2f 853ee8b787a1b4628ea2350d5d2cc3b937f55f01 M	Jenkinsfile
+commit ee2b6d84163c0e277dfe0a1b8e4695a4b18e720f
+tree 1efd4443626f68b79f9070ebaa7f47174fe2b5c5
+parent 31cd7f47531dc1cf3a1e0b4621ba2acc66da6cf4
+author cmajo <47557324+cmajo@users.noreply.github.com> 2022-05-11 21:33:55 +0200
+committer GitHub <noreply@github.com> 2022-05-11 21:33:55 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 2073c3f5c366b009395b4bd1c4fa94dcbb7d0e31 c99e31d919783b5f80202b84b92ec136b373ac2f M	Jenkinsfile
+commit 31cd7f47531dc1cf3a1e0b4621ba2acc66da6cf4
+tree 95e9d931dd0b827030b718a576c8ac09e2573044
+parent ba05a4cd5e7fd0a9c6e3045c719813f514a5479d
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-11 20:56:25 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-11 20:56:25 +0200
+
+    added copy certs in Dockerfile
+
+
+:100644 100644 268652e91fa73db260d696b3eb6816319432d230 cd87a1b35f332e5013080728240ecd3201fbd29b M	objects/JENKINS/Dockerfile
+commit 2a3c1504521ff0f136e88ccd61fdb0cd2145becc
+tree 9aff387e6ebd2a8dd3d1e29c0635aece05d1dd72
+parent 495cf4055f74e884e9e33b158d7578f86b2a7e1b
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-11 20:52:14 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-11 20:52:14 +0200
+
+    Added certs
+
+
+:100644 100644 00a746ab068927ee5da8f6b30f439fd1cca9042b 8322c98153d75b4e21e0d05e5bd4be6d3677b7c2 M	Dockerfile
+:100644 100644 162c774ceb39cf26bd39cbb1350a223b2b4de005 268652e91fa73db260d696b3eb6816319432d230 M	objects/JENKINS/Dockerfile
+:000000 100644 0000000000000000000000000000000000000000 162c774ceb39cf26bd39cbb1350a223b2b4de005 A	objects/JENKINS/Dockerfile.dockerapt
+:100644 000000 f445235faabe8b566a31d85148953788f726bbbc 0000000000000000000000000000000000000000 D	objects/JENKINS/Dockerfile_old
+commit 495cf4055f74e884e9e33b158d7578f86b2a7e1b
+tree 9ba6262ba15d46dfa0279b594a97057566263ca9
+parent 19f96d6a6b65dad05dd940d6b7cffee2a26872d5
+author cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-11 20:49:25 +0200
+committer cmajo@kyndryl.com <cmajo@kyndryl.com> 2022-05-11 20:49:25 +0200
+
+    added certs
+
+
+:000000 100644 0000000000000000000000000000000000000000 34554d146e0aed9f89b044b7d5d32b1e6bd46401 A	objects/JENKINS/certs.crt
