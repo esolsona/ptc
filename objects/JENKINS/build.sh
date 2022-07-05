@@ -1,7 +1,7 @@
 #!/bin/bash
-podman build . -t default-route-openshift-image-registry.apps-crc.testing/portic-devops/jenkins-portic:latest
-podman login default-route-openshift-image-registry.apps-crc.testing/portic-devops -u developer -p $(oc whoami -t)
-podman push default-route-openshift-image-registry.apps-crc.testing/portic-devops/jenkins-portic:latest
+podman build . -t console-openshift-console.apps.clocpd00.portic.net/devops-pre/jenkins:latest
+podman login console-openshift-console.apps.clocpd00.portic.net/devops-pre -u developer -p $(oc whoami -t)
+podman push console-openshift-console.apps.clocpd00.portic.net/devops-pre/jenkins:latest
 
 oc apply -f jenkins_deployment.yaml
 oc apply -f jenkins-route.yaml
